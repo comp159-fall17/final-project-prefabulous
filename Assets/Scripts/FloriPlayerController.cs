@@ -174,14 +174,18 @@ public class FloriPlayerController : MonoBehaviour {
 			if (hit.transform.gameObject.CompareTag("Flower")) flower = hit.transform.gameObject.GetComponent<Flower>();
 			else flower = hit.transform.parent.gameObject.GetComponent<Flower>();
 
-			if (flower.CanBePicked()) {
+			Debug.Log (flower.gameObject.name);
+
+			if (flower.CanBePicked()) 
+			{
 				GameObject parentSeed = flower.gameObject.transform.parent.gameObject;
 				Planter planter = parentSeed.transform.parent.gameObject.GetComponent<Planter>();
 				flower.Pick ();
 				Destroy (parentSeed);
 				planter.RemoveCropFrom ();
-
-			} else {
+			} 
+			else 
+			{
 				DJOsvaldo.PlayClipAt ("cheer");
 			}
 
