@@ -18,7 +18,7 @@ public class MarketCart : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Flower"))	{
-			PlayerController.instance.ForceDropObject ();
+			FloriPlayerController.instance.ForceDropObject ();
 			Debug.Log (other.gameObject.name);
 			DJOsvaldo.PlayClipAt ("whoosh", 1f);
 			Accountant.AddCoin (other.gameObject.name.TrimEnd(clone));

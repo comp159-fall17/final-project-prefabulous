@@ -36,7 +36,7 @@ public class Flower : MonoBehaviour {
 		transform.localPosition = flowerPosition;
 		transform.gameObject.AddComponent <Holdable>();
 		transform.gameObject.AddComponent <Rigidbody>();
-		PlayerController.instance.HoldGivenObject (gameObject);
+		FloriPlayerController.instance.HoldGivenObject (gameObject);
 	}
 
 }
