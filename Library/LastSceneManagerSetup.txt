@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_Scenes/Garden (Deprecated).unity
-  isLoaded: 1
-  isActive: 1
