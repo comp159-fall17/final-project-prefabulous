@@ -12,9 +12,9 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			WateringCan.PlayerIsHolding = false;
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
-		}
+//		if (Input.GetKeyDown(KeyCode.Escape)) {
+//			WateringCan.PlayerIsHolding = false;
+//			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+//		}
 	}
 }

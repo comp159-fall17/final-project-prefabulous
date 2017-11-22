@@ -53,6 +53,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -68,6 +69,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -95,7 +97,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSeeds: 5
+  stageOneHeightLimit: 350
+  stageTwoHeightLimit: 350
   seedPrefab: {fileID: 1540983157377744, guid: a3d43d8703f5f1547bbe8b32f90702e5, type: 2}
+  collectable: 1
+  isGrowing: 0
+  stageOne: 1
+  stageTwo: 0
+  flower: {fileID: 1994892676839140, guid: 9159d8a1d132b5e4199c8cc5aff07f12, type: 2}
 --- !u!114 &114491522772243286
 MonoBehaviour:
   m_ObjectHideFlags: 1
