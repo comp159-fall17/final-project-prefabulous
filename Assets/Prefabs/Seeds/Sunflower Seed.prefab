@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSeeds: 5
   stageOneHeightLimit: 350
-  stageTwoHeightLimit: 350
+  stageTwoHeightLimit: 650
   seedPrefab: {fileID: 1540983157377744, guid: a3d43d8703f5f1547bbe8b32f90702e5, type: 2}
   collectable: 1
   isGrowing: 0
