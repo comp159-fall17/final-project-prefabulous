@@ -12,7 +12,7 @@ public class MarketCart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		clone = new char[] {'(', 'C', 'l', 'o', 'n', 'e', ')' };
+        clone = new char[] {'(', 'C', 'l', 'o', 'n', 'e', ')' }; // Used to remove that "(Clone)" from the name of the item when it's coin value is looke up.
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -23,6 +23,8 @@ public class MarketCart : MonoBehaviour {
 			DJOsvaldo.PlayClipAt ("whoosh", 1f);
 			Accountant.AddCoin (other.gameObject.name.TrimEnd(clone));
 			Destroy (other.gameObject);
+
+            // Temporary way of generating new seeds w/o full market system.
 			GameObject newSeed = (GameObject)Instantiate (GetRandomFlower(), seedOrigin, Quaternion.identity) as GameObject;
 			newSeed.name = newSeed.name.TrimEnd (clone);
 			newSeed.AddComponent<Rigidbody> ();
