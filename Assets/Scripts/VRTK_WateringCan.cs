@@ -14,16 +14,21 @@ public class VRTK_WateringCan : MonoBehaviour {
 	[Tooltip("Angle at which the watering can starts pouring water")]
 	[Range(45f, 75f)]
 	public float activationAngle = 60f;
+	[Tooltip("Integer maximum of water level variable")]
+	[Range(0f, 100f)]
+	public int maximumWaterLevel = 10;
+
 
 	MeshRenderer render;
 	float lastAngle;
+	int waterLevel;
 
 	// Use this for initialization
 	void Start () {
 
 		render = GetComponent<MeshRenderer> ();
 		lastAngle = transform.eulerAngles.z;
-	
+		waterLevel = 0; // initialize at empty?
 	}
 	
 	// Update is called once per frame
@@ -57,4 +62,37 @@ public class VRTK_WateringCan : MonoBehaviour {
 		}	
 
 	}
+
+	void PourWater()
+	{
+		if (waterLevel != 0)
+		{
+			waterLevel--;
+		} 
+		else
+		{
+			Debug.Log ("Watering Can is empty");
+			// TODO: Add a visual signal that the can is empty
+		}
+	}
+
+	// add a volume of water to the can
+	public void AddWaterOf(int volume)
+	{
+		waterLevel += volume;
+		waterLevel = Mathf.Clamp (waterLevel, 0, maximumWaterLevel);
+	}
+
+	// set the water level directly - clamped to avoid overflow
+	public void SetWaterLevelTo(int newLevel)
+	{
+		waterLevel = newLevel;
+		waterLevel = Mathf.Clamp(waterLevel, 0 , maximumWaterLevel);
+	}
+
+	void UpdateWaterVisuals()
+	{
+		// TODO: Update a physical water level within the can
+	}
+
 }
