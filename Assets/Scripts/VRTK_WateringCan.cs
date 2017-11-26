@@ -31,14 +31,14 @@ public class VRTK_WateringCan : MonoBehaviour {
 
 		float currentAngle = Mathf.Floor (transform.eulerAngles.z);
 
-		// normalize rotation angle in case the can has somehow been flipped multiple times
-		while (currentAngle > 360f) 
-		{
-			currentAngle -= 360f;
-		}
-
 		if (lastAngle != currentAngle)
 		{
+			// normalize rotation angle in case the can has somehow been flipped multiple times
+			while (currentAngle > 360f) 
+			{
+				currentAngle -= 360f;
+			}
+
 			if (currentAngle > activationAngle && currentAngle < 120f)
 			{
 				if (render.material != inRangeMaterial) 
