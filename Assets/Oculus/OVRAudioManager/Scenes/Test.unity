@@ -162,18 +162,22 @@ MonoBehaviour:
       falloffDistance: {x: 1, y: 25}
       falloffCurve: 2
       volumeFalloffCurve:
+        serializedVersion: 2
         m_Curve:
-        - time: 0
+        - serializedVersion: 2
+          time: 0
           value: 1.0044228
           inSlope: -1.9459304
           outSlope: -1.9459304
           tangentMode: 0
-        - time: 0.27001944
+        - serializedVersion: 2
+          time: 0.27001944
           value: 0.24837627
           inSlope: -1.3226271
           outSlope: -1.3226271
           tangentMode: 0
-        - time: 0.99744946
+        - serializedVersion: 2
+          time: 0.99744946
           value: -0.0020017216
           inSlope: -0.42040923
           outSlope: -0.42040923
@@ -182,18 +186,22 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 0
       reverbZoneMix:
+        serializedVersion: 2
         m_Curve:
-        - time: 0
+        - serializedVersion: 2
+          time: 0
           value: 1.0044228
           inSlope: -1.9459304
           outSlope: -1.9459304
           tangentMode: 0
-        - time: 0.36357749
+        - serializedVersion: 2
+          time: 0.36357749
           value: 0.4567863
           inSlope: -1.3226271
           outSlope: -1.3226271
           tangentMode: 0
-        - time: 0.99594045
+        - serializedVersion: 2
+          time: 0.99594045
           value: 0.19572063
           inSlope: -0.107312
           outSlope: -0.107312
@@ -211,6 +219,7 @@ MonoBehaviour:
         useFastOverride: 1
         gain: 0
         enableInvSquare: 1
+        volumetric: 0
         invSquareFalloff: {x: 1, y: 250}
       soundClips:
       - {fileID: 8300000, guid: 7000b4d67a1320940b363f3cf891dfff, type: 3}
@@ -223,13 +232,16 @@ MonoBehaviour:
       falloffDistance: {x: 1, y: 25}
       falloffCurve: 1
       volumeFalloffCurve:
+        serializedVersion: 2
         m_Curve:
-        - time: 0
+        - serializedVersion: 2
+          time: 0
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - serializedVersion: 2
+          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -238,13 +250,16 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       reverbZoneMix:
+        serializedVersion: 2
         m_Curve:
-        - time: 0
+        - serializedVersion: 2
+          time: 0
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - serializedVersion: 2
+          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -262,6 +277,7 @@ MonoBehaviour:
         useFastOverride: 0
         gain: 0
         enableInvSquare: 0
+        volumetric: 0
         invSquareFalloff: {x: 1, y: 25}
       soundClips:
       - {fileID: 8300000, guid: 485ac48a563e2bf44bb4de7ead5a1f68, type: 3}
