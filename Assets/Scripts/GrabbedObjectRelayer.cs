@@ -15,7 +15,8 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	protected override void PerformGrabAttempt (GameObject objectToGrab)
 	{
 		base.PerformGrabAttempt (objectToGrab);
-		if (objectToGrab != null) {
+		if (objectToGrab != null) 
+		{
 			Debug.Log (objectToGrab.name);
 		}
 	}
