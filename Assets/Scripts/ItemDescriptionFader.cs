@@ -25,7 +25,6 @@ public class ItemDescriptionFader : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void LateUpdate () {
 
 		if (DistanceFromCamera() <= activeDistance && descriptionText.color.a == 0) 
