@@ -16,11 +16,16 @@ public class VRTK_WateringCan : MonoBehaviour {
 
 	[Header("Active Range Variables")]
 	[Tooltip("Angle at which the watering can starts pouring water")]
-	[Range(45f, 75f)]
-    public float activationAngle = 60f;
+	[Range(15f, 175f)]
+    public float pouringAngle = 60f;
     [Tooltip("Specifies the direction the can should be rotated to produce water.")]
     [SerializeField]
-    private Axis wateringAxis = Axis.Z_POSITIVE;
+    private Axis pouringAxis = Axis.Z_POSITIVE;
+    [Tooltip("Specifies whether or not spilling is enabled")]
+    public bool allowSpilling = true;
+    [Tooltip("Angle at which the watering can should starting spilling water")]
+    [Range(15f, 175f)]
+    public float spillingAngle = 95f;
 
     [Header("Water Level Variables")]
     [Tooltip("Integer maximum of water level variable")]
@@ -53,7 +58,7 @@ public class VRTK_WateringCan : MonoBehaviour {
     {
         // TODO: See if there is an equivalent VRTK method to Update, which is only called when the object is interacted with.
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
-        wateringCanIsActive = CanIsTipped();
+        wateringCanIsActive = CanIsPouring();
         if (wateringCanIsActive)
         {
             if (render.material != inRangeMaterial)
@@ -86,15 +91,25 @@ public class VRTK_WateringCan : MonoBehaviour {
         }
     }
 
-    public bool CanIsTipped()
+    //Converts an angle in the range of 0..360 to the range -180..180
+    private float ConvertToSignedAngleRange(float angle) {
+        if (angle > 180f)
+        {
+            angle -= 360f;
+        }
+        return angle;
+    }
+
+    //Returns true if the can is positioned to pour water
+    public bool CanIsPouring()
     {
         int signedDirection = 1;
         float magnitudeOfAngle;
-        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.Z_NEGATIVE)
+        if (pouringAxis == Axis.X_NEGATIVE || pouringAxis == Axis.Z_NEGATIVE)
         {
             signedDirection = -1;
         }
-        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.X_POSITIVE)
+        if (pouringAxis == Axis.X_NEGATIVE || pouringAxis == Axis.X_POSITIVE)
         {
             magnitudeOfAngle = transform.eulerAngles.x;
         }
@@ -102,12 +117,19 @@ public class VRTK_WateringCan : MonoBehaviour {
         {
             magnitudeOfAngle = transform.eulerAngles.z;
         }
-        if (magnitudeOfAngle > 180f)
-        {
-            magnitudeOfAngle -= 360f;
-        }
+        magnitudeOfAngle = ConvertToSignedAngleRange(magnitudeOfAngle);
 
-        return magnitudeOfAngle * signedDirection >= activationAngle;
+        return magnitudeOfAngle * signedDirection >= pouringAngle;
+    }
+
+    //Returns true if the can is positioned to spill water
+    public bool CanIsSpilling() {
+        float magnitudeOfX = transform.eulerAngles.x;
+        float magnitudeOfZ = transform.eulerAngles.z;
+        magnitudeOfX = ConvertToSignedAngleRange(magnitudeOfX);
+        magnitudeOfZ = ConvertToSignedAngleRange(magnitudeOfZ);
+
+        return (Mathf.Abs(magnitudeOfX) >= spillingAngle) || (Mathf.Abs(magnitudeOfZ) >= spillingAngle);
     }
 
     // add a volume of water to the can
