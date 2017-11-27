@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VRTK_WateringCan : MonoBehaviour {
+    private enum Axis { X_POSITIVE, X_NEGATIVE, Z_POSITIVE, Z_NEGATIVE };
 
 	[Header("Testing Materials")]
 	[Tooltip("Material the test can shows during its active range")]
@@ -13,11 +14,13 @@ public class VRTK_WateringCan : MonoBehaviour {
 	[Header("Active Range Variables")]
 	[Tooltip("Angle at which the watering can starts pouring water")]
 	[Range(45f, 75f)]
-	public float activationAngle = 60f;
+    public float activationAngle = 60f;
+    [Tooltip("Specifies the direction the can should be rotated to produce water.")]
+    [SerializeField]
+    private Axis wateringAxis = Axis.Z_POSITIVE;
 	[Tooltip("Integer maximum of water level variable")]
 	[Range(0f, 100f)]
 	public int maximumWaterLevel = 10;
-
 
 	MeshRenderer render;
 	float lastAngle;
@@ -95,4 +98,18 @@ public class VRTK_WateringCan : MonoBehaviour {
 		// TODO: Update a physical water level within the can
 	}
 
+
+    public bool CanIsTipped() {
+        int signedDirection = 1;
+        float magnitudeOfAngle;
+        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.Z_NEGATIVE) {
+            signedDirection = -1;
+        }
+        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.X_POSITIVE) {
+            magnitudeOfAngle = transform.eulerAngles.x;
+        } else {
+            magnitudeOfAngle = transform.eulerAngles.z;
+        }
+        return magnitudeOfAngle * signedDirection >= activationAngle;;
+    }
 }
