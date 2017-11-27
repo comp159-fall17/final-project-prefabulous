@@ -35,7 +35,6 @@ public class VRTK_WateringCan : MonoBehaviour {
     public float timeInterval = 2f;
 
 	MeshRenderer render;
-	float lastAngle;
     int waterLevel;
     float timeCounter = 0;
     bool wateringCanIsActive;
@@ -44,7 +43,6 @@ public class VRTK_WateringCan : MonoBehaviour {
     void Start()
     {
         render = GetComponent<MeshRenderer>();
-        lastAngle = transform.eulerAngles.z;
         waterLevel = startingWaterLevel;
         displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
@@ -75,6 +73,7 @@ public class VRTK_WateringCan : MonoBehaviour {
                 }
             }
         }
+        UpdateWaterLevel();
 	}
 
     //Decrements water, or displays debug log if the can is empty
