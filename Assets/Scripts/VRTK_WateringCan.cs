@@ -31,7 +31,7 @@ public class VRTK_WateringCan : MonoBehaviour {
     [Range(0f, 100f)]
     public int startingWaterLevel = 10;
     [Tooltip("Time interval between water level decrements")]
-    [Range(0f, 10f)]
+    [Range(0f, 100f)]
     public float timeInterval = 2f;
 
 	MeshRenderer render;
@@ -43,7 +43,7 @@ public class VRTK_WateringCan : MonoBehaviour {
     void Start()
     {
         render = GetComponent<MeshRenderer>();
-        waterLevel = startingWaterLevel;
+        waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
     }
