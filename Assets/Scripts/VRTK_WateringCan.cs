@@ -41,34 +41,6 @@ public class VRTK_WateringCan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		float currentAngle = Mathf.Floor (transform.eulerAngles.z);
-
-        // DEPRECATED: Use CanIsTipped() instead. 
-        //if (lastAngle != currentAngle)
-        //{
-        //	// normalize rotation angle in case the can has somehow been flipped multiple times
-        //	while (currentAngle > 360f) 
-        //	{
-        //		currentAngle -= 360f;
-        //	}
-
-        //	if (currentAngle > activationAngle && currentAngle < 120f)
-        //	{
-        //		if (render.material != inRangeMaterial) 
-        //		{
-        //			render.material = inRangeMaterial;
-        //		}
-        //	}
-        //	else
-        //	{
-        //		if (render.material != outOfRangeMaterial) 
-        //		{
-        //			render.material = outOfRangeMaterial;
-        //		}
-        //	}
-        //	lastAngle = currentAngle;
-        //}	
         if (CanIsTipped())
         {
             if (render.material != inRangeMaterial)
