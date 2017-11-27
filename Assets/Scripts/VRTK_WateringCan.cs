@@ -21,13 +21,14 @@ public class VRTK_WateringCan : MonoBehaviour
     [Tooltip("Integer maximum of water level variable")]
     [Range(0f, 100f)]
     public int maximumWaterLevel = 10;
-    [Tooltip("Time interval for watering")]
-    public float timeInterval;
+    [Tooltip("Time interval between water level decrements")]
+	[Range(0f, 10f)]
+	public float timeInterval = 2f;
 
     MeshRenderer render;
     float lastAngle;
     int waterLevel;
-    float timeIntervalStart = 0;
+    float timeCounter = 0;
     bool wateringCanIsActive;
     // Use this for initialization
     void Start()
@@ -35,7 +36,7 @@ public class VRTK_WateringCan : MonoBehaviour
         render = GetComponent<MeshRenderer>();
         lastAngle = transform.eulerAngles.z;
         waterLevel = 10; // initialize at empty?
-        displayWaterAmount.text = "Remaining \n Water " + waterLevel.ToString();
+        displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
     }
 
@@ -66,13 +67,13 @@ public class VRTK_WateringCan : MonoBehaviour
                 if (render.material != outOfRangeMaterial)
                 {
                     render.material = outOfRangeMaterial;
-                    timeIntervalStart = 0;
+                    timeCounter = 0;
                     wateringCanIsActive = false;
                 }
             }
             lastAngle = currentAngle;
         }
-        TimeInterval();
+        UpdateWaterLevel();
     }
 
     //Decrements water, or displays debug log if the can is empty
@@ -81,7 +82,7 @@ public class VRTK_WateringCan : MonoBehaviour
         if (waterLevel != 0)
         {
             waterLevel--;
-            displayWaterAmount.text = "Remaining \n Water " + waterLevel.ToString();
+            displayWaterAmount.text = waterLevel.ToString();
         }
         else
         {
@@ -110,15 +111,15 @@ public class VRTK_WateringCan : MonoBehaviour
     }
 
     //Counts down the time interval amount. When the amount is under 0 then reset the time interval.
-    void TimeInterval()
+    void UpdateWaterLevel()
     {
         if (waterLevel != 0 && wateringCanIsActive)
         {
-            timeIntervalStart += Time.deltaTime;
-            if (timeIntervalStart >= timeInterval)
+			timeCounter += Time.deltaTime;
+            if (timeCounter >= timeInterval)
             {
                 PourWater();
-                timeIntervalStart = 0;
+                timeCounter = 0;
             }
         }
     }
