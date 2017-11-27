@@ -115,6 +115,9 @@ public class VRTK_WateringCan : MonoBehaviour {
         } else {
             magnitudeOfAngle = transform.eulerAngles.z;
         }
+        if (magnitudeOfAngle > 180f) {
+            magnitudeOfAngle -= 360f;
+        }
         return magnitudeOfAngle * signedDirection >= activationAngle;;
     }
 }
