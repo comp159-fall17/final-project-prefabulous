@@ -49,7 +49,8 @@ public class VRTK_WateringCan : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         // TODO: See if there is an equivalent VRTK method to Update, which is only called when the object is interacted with.
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         if (CanIsTipped())
@@ -65,16 +66,10 @@ public class VRTK_WateringCan : MonoBehaviour {
             if (render.material != outOfRangeMaterial)
             {
                 render.material = outOfRangeMaterial;
-                if (render.material != outOfRangeMaterial)
-                {
-                    render.material = outOfRangeMaterial;
-                    timeCounter = 0;
-                    wateringCanIsActive = false;
-                }
             }
         }
         UpdateWaterLevel();
-	}
+    }
 
     //Decrements water, or displays debug log if the can is empty
     void PourWater()
