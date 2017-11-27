@@ -3028,6 +3028,7 @@ MonoBehaviour:
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
+  itemDescriptionPrefab: {fileID: 0}
 --- !u!114 &647210370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,6 +5167,7 @@ MonoBehaviour:
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
+  itemDescriptionPrefab: {fileID: 0}
 --- !u!1 &1042763351
 GameObject:
   m_ObjectHideFlags: 0
