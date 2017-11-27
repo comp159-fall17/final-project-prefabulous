@@ -51,6 +51,7 @@ Furthermore, Webster's Dictionary defines Flori as:
 * Join the [VRTK Slack channel](http://invite.vrtk.io)
 * We're using VRTK 3.3 alpha, which gives us better functionality! Refer to the [VRTK Docs](https://vrtoolkit.readme.io/docs/) for API help and the [VRTK Youtube](https://www.youtube.com/channel/UCWRk-LEMUNoZxUmY1wO7DBQ) channel for tutorials
 * [Google Low-Poly Library](https://poly.google.com/)
+* Check out the [Flori 3D Zip](https://www.dropbox.com/s/ptpzdqdmo9uxf5p/Flori.zip?dl=0) for reference
 
 ---
 

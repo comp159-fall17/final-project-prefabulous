@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class VRTK_WateringCan : MonoBehaviour {
 
+<<<<<<< HEAD
     [Header("Testing Materials")]
     [Tooltip("Material the test can shows during its active range")]
     public Material inRangeMaterial;
@@ -24,6 +25,23 @@ public class VRTK_WateringCan : MonoBehaviour {
     public float timeInterval;
 
     MeshRenderer render;
+=======
+	[Header("Testing Materials")]
+	[Tooltip("Material the test can shows during its active range")]
+	public Material inRangeMaterial;
+	[Tooltip("Material the test can shows during its inactive range")]
+	public Material outOfRangeMaterial;
+
+	[Header("Active Range Variables")]
+	[Tooltip("Angle at which the watering can starts pouring water")]
+	[Range(45f, 75f)]
+	public float activationAngle = 60f;
+	[Tooltip("Integer maximum of water level variable")]
+	[Range(0f, 100f)]
+	public int maximumWaterLevel = 10;
+
+	MeshRenderer render;
+>>>>>>> 3fb15295d9b4b4ff98e7c5ea81a0ca89aa28b886
 	float lastAngle;
 	int waterLevel;
     float timeIntervalStart = 0;
@@ -32,6 +50,7 @@ public class VRTK_WateringCan : MonoBehaviour {
 	void Start () {
         render = GetComponent<MeshRenderer> ();
 		lastAngle = transform.eulerAngles.z;
+<<<<<<< HEAD
 		waterLevel = 10; // initialize at empty?
         displayWaterAmount.text = "Remaining \n Water " + waterLevel.ToString();
         wateringCanIsActive = false;
@@ -39,6 +58,14 @@ public class VRTK_WateringCan : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+=======
+		waterLevel = 0; // initialize at empty?
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+>>>>>>> 3fb15295d9b4b4ff98e7c5ea81a0ca89aa28b886
 
 		float currentAngle = Mathf.Floor (transform.eulerAngles.z);
 
