@@ -165,10 +165,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inRangeMaterial: {fileID: 2100000, guid: 48dbf134673fd2e439ebef7c58db9bb9, type: 2}
   outOfRangeMaterial: {fileID: 2100000, guid: 29f8668e1f670a14f88afd528907073b, type: 2}
+  spillingMaterial: {fileID: 2100000, guid: 33af27359b49eda48829e2c0bf1e12b8, type: 2}
   displayWaterAmount: {fileID: 114718887188604700}
-  activationAngle: 45
+  pouringAngle: 60
+  pouringAxis: 2
+  allowSpilling: 1
+  spillingAngle: 95
   maximumWaterLevel: 100
-  timeInterval: 1
+  startingWaterLevel: 10
+  pouringInterval: 2
+  spillingInterval: 0.5
 --- !u!114 &114169343141403542
 MonoBehaviour:
   m_ObjectHideFlags: 1
