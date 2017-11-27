@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using VRTK;
+using VOA = VRTK.VRTK_ObjectAppearance;
 
 public class GrabbedObjectRelayer : VRTK_InteractGrab {
 
 	[Header("Grabbed Object UI")]
 	[Tooltip("Canvas prefab that gets overlayed when an object is grabbed")]
 	public GameObject itemDescriptionPrefab;
+
+	GameObject currentItemDescription;
 
 	protected override void PerformGrabAttempt (GameObject objectToGrab)
 	{
@@ -23,7 +26,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	protected override void AttemptReleaseObject ()
 	{
 		base.AttemptReleaseObject ();
-		Debug.Log ("Releasing Object");
+		DestroyItemText ();
 	}
 
 	// Creates a world space text UI that shows the object's name
@@ -32,6 +35,16 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		GameObject itemDescription = Instantiate (itemDescriptionPrefab, forObject.transform);
 		Text descriptionText = itemDescription.GetComponentInChildren<Text> ();
 		descriptionText.text = forObject.name;
+		currentItemDescription = itemDescription;
+	}
+
+	// Destroys the current UI description associated with this controller
+	void DestroyItemText()
+	{
+		if (currentItemDescription != null) 
+		{
+			Destroy (currentItemDescription);
+		}
 	}
 
 
