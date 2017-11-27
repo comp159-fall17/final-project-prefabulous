@@ -18,9 +18,14 @@ public class VRTK_WateringCan : MonoBehaviour {
     [Tooltip("Specifies the direction the can should be rotated to produce water.")]
     [SerializeField]
     private Axis wateringAxis = Axis.Z_POSITIVE;
-	[Tooltip("Integer maximum of water level variable")]
-	[Range(0f, 100f)]
-	public int maximumWaterLevel = 10;
+
+    [Header("Water Level Variables")]
+    [Tooltip("Integer maximum of water level variable")]
+    [Range(0f, 100f)]
+    public int maximumWaterLevel = 100;
+    [Tooltip("Water level when the can is spawned")]
+    [Range(0f, 100f)]
+    public int startingWaterLevel = 10;
 
 	MeshRenderer render;
 	float lastAngle;
@@ -31,7 +36,7 @@ public class VRTK_WateringCan : MonoBehaviour {
 
 		render = GetComponent<MeshRenderer> ();
 		lastAngle = transform.eulerAngles.z;
-		waterLevel = 0; // initialize at empty?
+		waterLevel = startingWaterLevel;
 	}
 	
 	// Update is called once per frame
@@ -64,10 +69,18 @@ public class VRTK_WateringCan : MonoBehaviour {
         //	}
         //	lastAngle = currentAngle;
         //}	
-        if (CanIsTipped()) {
-            Debug.Log("POURING WATER");
-        } else {
-            Debug.Log("NOT POURING");
+        if (CanIsTipped())
+        {
+            if (render.material != inRangeMaterial)
+            {
+                render.material = inRangeMaterial;
+            }
+        } else
+        {
+            if (render.material != outOfRangeMaterial)
+            {
+                render.material = outOfRangeMaterial;
+            }
         }
 	}
 
