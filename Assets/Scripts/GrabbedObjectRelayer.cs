@@ -20,6 +20,12 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		}
 	}
 
+	protected override void AttemptReleaseObject ()
+	{
+		base.AttemptReleaseObject ();
+		Debug.Log ("Releasing Object");
+	}
+
 	// Creates a world space text UI that shows the object's name
 	void CreateItemText(GameObject forObject)
 	{

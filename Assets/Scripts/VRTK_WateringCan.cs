@@ -18,7 +18,6 @@ public class VRTK_WateringCan : MonoBehaviour {
 	[Range(0f, 100f)]
 	public int maximumWaterLevel = 10;
 
-
 	MeshRenderer render;
 	float lastAngle;
 	int waterLevel;
@@ -29,6 +28,7 @@ public class VRTK_WateringCan : MonoBehaviour {
 		render = GetComponent<MeshRenderer> ();
 		lastAngle = transform.eulerAngles.z;
 		waterLevel = 0; // initialize at empty?
+
 	}
 	
 	// Update is called once per frame
