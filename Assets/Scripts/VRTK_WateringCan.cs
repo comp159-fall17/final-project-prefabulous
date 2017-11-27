@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 
 public class VRTK_WateringCan : MonoBehaviour {
     private enum Axis { X_POSITIVE, X_NEGATIVE, Z_POSITIVE, Z_NEGATIVE };
@@ -26,10 +27,16 @@ public class VRTK_WateringCan : MonoBehaviour {
     [Tooltip("Water level when the can is spawned")]
     [Range(0f, 100f)]
     public int startingWaterLevel = 10;
+    [Tooltip("Time interval between water level decrements")]
+    [Range(0f, 10f)]
+    public float timeInterval = 2f;
+
 
 	MeshRenderer render;
 	float lastAngle;
-	int waterLevel;
+    int waterLevel;
+    float timeCounter = 0;
+    bool wateringCanIsActive;
 
 	// Use this for initialization
 	void Start () {
@@ -92,20 +99,26 @@ public class VRTK_WateringCan : MonoBehaviour {
 	}
 
 
-    public bool CanIsTipped() {
+    public bool CanIsTipped()
+    {
         int signedDirection = 1;
         float magnitudeOfAngle;
-        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.Z_NEGATIVE) {
+        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.Z_NEGATIVE)
+        {
             signedDirection = -1;
         }
-        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.X_POSITIVE) {
+        if (wateringAxis == Axis.X_NEGATIVE || wateringAxis == Axis.X_POSITIVE)
+        {
             magnitudeOfAngle = transform.eulerAngles.x;
-        } else {
+        }
+        else
+        {
             magnitudeOfAngle = transform.eulerAngles.z;
         }
-        if (magnitudeOfAngle > 180f) {
+        if (magnitudeOfAngle > 180f)
+        {
             magnitudeOfAngle -= 360f;
         }
-        return magnitudeOfAngle * signedDirection >= activationAngle;;
+        return magnitudeOfAngle * signedDirection >= activationAngle;
     }
 }
