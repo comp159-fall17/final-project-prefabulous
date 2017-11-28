@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VRTK_WateringCan : MonoBehaviour {
+public class Flori_WateringCan : MonoBehaviour {
     private enum Axis { X_POSITIVE, X_NEGATIVE, Z_POSITIVE, Z_NEGATIVE };
 
 	[Header("Testing Materials")]

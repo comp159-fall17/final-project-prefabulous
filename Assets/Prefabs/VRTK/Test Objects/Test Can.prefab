@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 33392112746571066}
   - component: {fileID: 65409126552023434}
   - component: {fileID: 23583458693848854}
-  - component: {fileID: 114108801802769328}
+  - component: {fileID: 114879340714697026}
   - component: {fileID: 114169343141403542}
   - component: {fileID: 114217255020275560}
   - component: {fileID: 114472599544662362}
@@ -152,29 +152,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114108801802769328
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1898907395382066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a64e94c592b7941b2fe7d5b1e2aca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inRangeMaterial: {fileID: 2100000, guid: 48dbf134673fd2e439ebef7c58db9bb9, type: 2}
-  outOfRangeMaterial: {fileID: 2100000, guid: 29f8668e1f670a14f88afd528907073b, type: 2}
-  spillingMaterial: {fileID: 2100000, guid: 33af27359b49eda48829e2c0bf1e12b8, type: 2}
-  displayWaterAmount: {fileID: 114718887188604700}
-  pouringAngle: 60
-  pouringAxis: 2
-  allowSpilling: 1
-  spillingAngle: 95
-  maximumWaterLevel: 100
-  startingWaterLevel: 10
-  pouringInterval: 2
-  spillingInterval: 0.5
 --- !u!114 &114169343141403542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,6 +314,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114879340714697026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1898907395382066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3f8ce87699eea43b6b7f8ba67354d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRangeMaterial: {fileID: 2100000, guid: 48dbf134673fd2e439ebef7c58db9bb9, type: 2}
+  outOfRangeMaterial: {fileID: 2100000, guid: 29f8668e1f670a14f88afd528907073b, type: 2}
+  spillingMaterial: {fileID: 2100000, guid: 33af27359b49eda48829e2c0bf1e12b8, type: 2}
+  displayWaterAmount: {fileID: 114718887188604700}
+  pouringAngle: 45
+  pouringAxis: 2
+  allowSpilling: 1
+  spillingAngle: 95
+  maximumWaterLevel: 100
+  startingWaterLevel: 10
+  pouringInterval: 2
+  spillingInterval: 0.5
 --- !u!222 &222923665377601372
 CanvasRenderer:
   m_ObjectHideFlags: 1
