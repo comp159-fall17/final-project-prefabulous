@@ -15,24 +15,29 @@ public class ItemDescriptionFader : MonoBehaviour {
 	[Range(0.01f, 2f)]
 	public float fadeSpeed = 0.75f;
 
-	Text descriptionText;
+	List<Text> descriptionTexts;
 	Color tempColor;
 
 	// Use this for initialization
 	void Start () {
 
-		descriptionText = GetComponentInChildren<Text> ();
+		descriptionTexts = new List<Text>(GetComponentsInChildren<Text> ());
+		GameObject UIDataHolder = descriptionTexts [0].gameObject.transform.parent.gameObject;
+		if (UIDataHolder.GetComponentInParent<Flori_UIData>() == null || !UIDataHolder.GetComponentInParent<Flori_UIData>().showItemInfo)
+		{
+			ExcludeInfoText ();
+		}
 
 	}
 	
 	void LateUpdate () {
 
-		if (DistanceFromCamera() <= activeDistance && descriptionText.color.a == 0) 
+		if (DistanceFromCamera() <= activeDistance && descriptionTexts[0].color.a == 0) 
 		{
 			Debug.Log ("Text is visible");
 			StartCoroutine ("FadeTextIn");
 		}
-		else if (DistanceFromCamera() > activeDistance && descriptionText.color.a == 1)
+		else if (DistanceFromCamera() > activeDistance && descriptionTexts[0].color.a == 1)
 		{
 			Debug.Log ("Text is hiding");
 			StartCoroutine ("FadeTextOut");
@@ -48,12 +53,15 @@ public class ItemDescriptionFader : MonoBehaviour {
 
 	IEnumerator FadeTextIn()
 	{
-		while (descriptionText.color.a < 1)
+		while (descriptionTexts[0].color.a < 1)
 		{
-			tempColor = descriptionText.color;
+			tempColor = descriptionTexts[0].color;
 			tempColor.a += Time.deltaTime * fadeSpeed;
 
-			descriptionText.color = tempColor;
+			foreach (Text element in descriptionTexts)
+			{
+				element.color = tempColor;	
+			}
 			yield return null;
 		}
 		SetTextOpacityTo (1f);
@@ -63,12 +71,15 @@ public class ItemDescriptionFader : MonoBehaviour {
 
 	IEnumerator FadeTextOut()
 	{
-		while (descriptionText.color.a > 0)
+		while (descriptionTexts[0].color.a > 0)
 		{
-			tempColor = descriptionText.color;
+			tempColor = descriptionTexts[0].color;
 			tempColor.a -= Time.deltaTime * fadeSpeed;
 
-			descriptionText.color = tempColor;
+			foreach (Text element in descriptionTexts)
+			{
+				element.color = tempColor;	
+			}
 			yield return null;
 		}
 		SetTextOpacityTo (0f);
@@ -79,7 +90,23 @@ public class ItemDescriptionFader : MonoBehaviour {
 	void SetTextOpacityTo(float alpha)
 	{
 		tempColor.a = alpha;
-		descriptionText.color = tempColor;
+		foreach (Text element in descriptionTexts)
+		{
+			element.color = tempColor;	
+		}
+	}
+
+	void ExcludeInfoText()
+	{
+		int infoIndex = 0;
+		foreach (Text element in descriptionTexts)
+		{
+			if (element.CompareTag("Item Info"))
+			{
+				infoIndex = descriptionTexts.IndexOf (element);
+			}
+		}
+		descriptionTexts.RemoveAt (infoIndex);
 	}
 
 }

@@ -601,9 +601,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textPosition: {x: 0, y: -0.0075, z: -0.01}
+  descriptionPosition: {x: 0, y: 0, z: -0.01}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
+  namePosition: {x: 0, y: -5, z: -2}
+  infoPosition: {x: 0, y: 10, z: -2}
   doNotInvert: 1
+  itemInfo: Enjoy Flower
+  showItemInfo: 0
 --- !u!114 &114753390489250314
 MonoBehaviour:
   m_ObjectHideFlags: 1
