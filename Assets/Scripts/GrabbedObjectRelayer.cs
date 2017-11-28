@@ -50,7 +50,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			}
 		}
 
-		RotateText (itemDescription, UIData.textRotation);
+		if (UIData != null) RotateText (itemDescription, UIData.textRotation);
 
 		Text[] descriptionTexts = itemDescription.GetComponentsInChildren<Text>();
 		foreach (Text text in descriptionTexts)
