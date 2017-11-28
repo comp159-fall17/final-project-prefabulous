@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4b63d938bd52c3a48a5c4d42f31232e4
-timeCreated: 1511855254
+guid: dc8dc01f482dead4b89be3d3e99ee30b
+timeCreated: 1511855632
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -122,17 +122,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat10
-    second: {fileID: 2100000, guid: 2b2f83dab36183e45bad888ee5e43540, type: 2}
+    second: {fileID: 2100000, guid: debfb3db895080c48b2ee2139067603f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat20
-    second: {fileID: 2100000, guid: cdbaf5f5dc882ea44a44c29a84af7e19, type: 2}
+    second: {fileID: 2100000, guid: 530f69bf23a3c344fb429b69ff840fa0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat9
-    second: {fileID: 2100000, guid: 99f73357895bdea4ba8175039bf22628, type: 2}
+    second: {fileID: 2100000, guid: b25b7e0d2708b7649ac882d711c0f2b8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

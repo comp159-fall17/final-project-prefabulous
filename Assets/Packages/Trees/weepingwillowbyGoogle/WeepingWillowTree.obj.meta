@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 041ca2682cfbb7e41aee12a3cdf0591c
-timeCreated: 1511855253
+guid: da0e65b2248a34742ba98e85b74100b8
+timeCreated: 1511855631
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -17,7 +17,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WeepingWillowTree_mat
-    second: {fileID: 2100000, guid: 48234d560c10a884ab3ce89f78e1b0b2, type: 2}
+    second: {fileID: 2100000, guid: e4e1a22b1f3577c4b9d8736ac8368249, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
