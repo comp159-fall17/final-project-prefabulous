@@ -44,6 +44,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		{
 			if (!itemDescription.GetComponentInParent<Flori_UIData>().doNotInvert)
 			{
+				Debug.Log ("Inverting text");
 				RotateText (itemDescription, 180f);
 			}
 		}
