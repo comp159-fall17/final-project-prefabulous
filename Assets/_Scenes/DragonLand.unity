@@ -7267,11 +7267,7 @@ MonoBehaviour:
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
   itemDescriptionPrefab: {fileID: 0}
-<<<<<<< HEAD
-  leftHand: 0
-=======
   leftHandGrabbing: 0
->>>>>>> 130043d1d05d0464eeb949a8d552efdc5d71a012
 --- !u!114 &1788362916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7949,11 +7945,7 @@ MonoBehaviour:
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
   itemDescriptionPrefab: {fileID: 0}
-<<<<<<< HEAD
-  leftHand: 0
-=======
   leftHandGrabbing: 0
->>>>>>> 130043d1d05d0464eeb949a8d552efdc5d71a012
 --- !u!114 &1905842844
 MonoBehaviour:
   m_ObjectHideFlags: 0
