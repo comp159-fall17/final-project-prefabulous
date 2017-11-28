@@ -11,9 +11,11 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	[Tooltip("Canvas prefab that gets overlayed when an object is grabbed")]
 	public GameObject itemDescriptionPrefab;
 	[Tooltip("Flip text to other side of objects")]
-	public bool leftHand = false;
+	public bool leftHandGrabbing = false;
 
 	GameObject currentItemDescription;
+	Text itemInfo;
+	Text itemName;
 
 	protected override void PerformGrabAttempt (GameObject objectToGrab)
 	{
@@ -35,9 +37,10 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	void CreateItemText(GameObject forObject)
 	{
 		GameObject itemDescription = Instantiate (itemDescriptionPrefab, forObject.transform);
-		itemDescription.transform.localPosition = GetTextPosition (itemDescription);
+		itemDescription.transform.localPosition = GetDescriptionPosition (itemDescription);
 		itemDescription.transform.SetGlobalScale (GetTextScale(itemDescription));
-		if (leftHand)
+
+		if (leftHandGrabbing)
 		{
 			if (!itemDescription.GetComponentInParent<Flori_UIData>().doNotInvert)
 			{
@@ -45,8 +48,28 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			}
 		}
 
-		Text descriptionText = itemDescription.GetComponentInChildren<Text> ();
-		descriptionText.text = forObject.name;
+		Text[] descriptionTexts = itemDescription.GetComponentsInChildren<Text>();
+		foreach (Text text in descriptionTexts)
+		{
+			if (text.gameObject.CompareTag("Item Info"))
+			{
+				itemInfo = text;
+			}
+			if (text.gameObject.CompareTag("Item Name"))
+			{
+				itemName = text;
+			}
+		}
+
+		itemInfo.transform.localPosition = GetInfoPosition (itemInfo.gameObject.transform.parent.gameObject);
+		itemName.transform.localPosition = GetNamePosition (itemName.gameObject.transform.parent.gameObject);
+
+		if (itemInfo.GetComponentInParent<Flori_UIData> () != null)
+		{
+			itemInfo.text = itemInfo.transform.parent.gameObject.GetComponentInParent<Flori_UIData> ().itemInfo;
+		}
+		itemName.text = forObject.name;
+
 		currentItemDescription = itemDescription;
 	}
 
@@ -59,37 +82,36 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		}
 	}
 
-	// Tries to retrieve and return VRTK_UIData position variable
-	Vector3 GetTextPosition(GameObject text)
+	Vector3 GetDescriptionPosition(GameObject text)
 	{
 		try 
 		{
 			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
-			if (!leftHand || UIData.doNotInvert) 
+			if (!leftHandGrabbing || UIData.doNotInvert) 
 			{
-				return UIData.textPosition;
+				return UIData.descriptionPosition;
 			}
 			else
 			{
-				Vector3 textPosition = UIData.textPosition;
+				Vector3 textPosition = UIData.descriptionPosition;
 				textPosition.z *= -1f;
 				return textPosition;
 			}
 		} 
 		catch 
 		{
-			if (!leftHand) 
+			if (!leftHandGrabbing) 
 			{
-				return new Vector3 (0f, -0.4f, -0.7f);
+				return new Vector3 (0f, -0.0f, -0.7f);
 			}
 			else
 			{
-				return new Vector3 (0f, -0.4f, 0.7f);
+				return new Vector3 (0f, -0.0f, 0.7f);
 			}
 		}
 	}
 
-	// Tries to retrieve and return VRTK_UIData scale variable
+	// Tries to retrieve and return Flori_UIData scale variable
 	Vector3 GetTextScale(GameObject text)
 	{
 		try 
@@ -101,6 +123,67 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			return new Vector3 (0.005f, 0.005f, 0.01f);
 		}
 	}
+
+	// Tries to retrieve and return Flori_UIData position variable
+	Vector3 GetNamePosition(GameObject text)
+	{
+		try 
+		{
+			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
+			if (!leftHandGrabbing || UIData.doNotInvert) 
+			{
+				return UIData.namePosition;
+			}
+			else
+			{
+				Vector3 textPosition = UIData.namePosition;
+				textPosition.z *= -1f;
+				return textPosition;
+			}
+		} 
+		catch 
+		{
+			if (!leftHandGrabbing) 
+			{
+				return new Vector3 (0f, -20f, -0.5f);
+			}
+			else
+			{
+				return new Vector3 (0f, -20f, 0.5f);
+			}
+		}
+	}
+
+	// Tries to retrieve and return Flori_UIData position variable
+	Vector3 GetInfoPosition(GameObject text)
+	{
+		try 
+		{
+			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
+			if (!leftHandGrabbing || UIData.doNotInvert) 
+			{
+				return UIData.infoPosition;
+			}
+			else
+			{
+				Vector3 textPosition = UIData.infoPosition;
+				textPosition.z *= -1f;
+				return textPosition;
+			}
+		} 
+		catch 
+		{
+			if (!leftHandGrabbing) 
+			{
+				return new Vector3 (0f, -0.4f, -0.7f);
+			}
+			else
+			{
+				return new Vector3 (0f, -0.4f, 0.7f);
+			}
+		}
+	}
+
 
 	// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default
 	void RotateText(GameObject description, float degrees, int direction = -1)
