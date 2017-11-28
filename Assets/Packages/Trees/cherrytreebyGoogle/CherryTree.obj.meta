@@ -3,7 +3,7 @@ guid: 62eb52b3d1db1e545bf5ef37004f0ac3
 timeCreated: 1511752343
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: CherryTree_mesh
@@ -12,10 +12,17 @@ ModelImporter:
     2300000: CherryTree_mesh
     3300000: CherryTree_mesh
     4300000: CherryTree_mesh
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CherryTree_mat
+    second: {fileID: 2100000, guid: b6c8b1cf3a87c06498e85fc956133b35, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -28,6 +35,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

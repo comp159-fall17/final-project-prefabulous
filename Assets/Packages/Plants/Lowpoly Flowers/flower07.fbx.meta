@@ -1,59 +1,75 @@
 fileFormatVersion: 2
-guid: e17bc1550eac68a47a10923cd404bf2e
-timeCreated: 1511746396
-licenseType: Free
+guid: f74defbe1b9a23449aef9a881263fe0c
+timeCreated: 1444796738
+licenseType: Store
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Bucket
+    100002: pCylinder10
+    100004: pCylinder11
+    100006: pCylinder5
+    100008: pCylinder7
+    100010: pCylinder9
+    100012: pPipe28
+    100014: pSphere6
     400000: //RootNode
-    400002: Bucket
-    2300000: Bucket
-    3300000: Bucket
-    4300000: Bucket
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BucketMat
-    second: {fileID: 2100000, guid: 352f3657b5dc6a9409bdccc8425d37f6, type: 2}
+    400002: pCylinder10
+    400004: pCylinder11
+    400006: pCylinder5
+    400008: pCylinder7
+    400010: pCylinder9
+    400012: pPipe28
+    400014: pSphere6
+    2300000: pCylinder10
+    2300002: pCylinder11
+    2300004: pCylinder5
+    2300006: pCylinder7
+    2300008: pCylinder9
+    2300010: pPipe28
+    2300012: pSphere6
+    3300000: pCylinder10
+    3300002: pCylinder11
+    3300004: pCylinder5
+    3300006: pCylinder7
+    3300008: pCylinder9
+    3300010: pPipe28
+    3300012: pSphere6
+    4300000: pCylinder5
+    4300002: pCylinder7
+    4300004: pSphere6
+    4300006: pPipe28
+    4300008: pCylinder9
+    4300010: pCylinder10
+    4300012: pCylinder11
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0075
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -67,30 +83,24 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
     human: []
     skeleton: []
-    armTwist: 0.5
-    foreArmTwist: 0.5
-    upperLegTwist: 0.5
-    legTwist: 0.5
-    armStretch: 0.05
-    legStretch: 0.05
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
-    hasTranslationDoF: 0
-    hasExtraRoot: 0
-    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
-  humanoidOversampling: 1
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
