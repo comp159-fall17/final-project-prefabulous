@@ -4219,11 +4219,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300008, guid: a142624b359980240ae3c74486457c74, type: 3}
---- !u!1 &244509139 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1234204283699302, guid: 9232839df8fd04d5182bcf499aeebd48,
-    type: 2}
-  m_PrefabInternal: {fileID: 1977424400}
 --- !u!1 &247576224 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100088, guid: a142624b359980240ae3c74486457c74, type: 3}
@@ -35268,91 +35263,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114329179847915398, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: moneyLabel
-      value: 
-      objectReference: {fileID: 244509139}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234204283699302, guid: 9232839df8fd04d5182bcf499aeebd48, type: 2}
-      propertyPath: m_Name
-      value: Money Label
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282618767469798, guid: 9232839df8fd04d5182bcf499aeebd48, type: 2}
-      propertyPath: m_Name
-      value: Label Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 224563607076353632, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 114714736387015146, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.19452193
-      objectReference: {fileID: 0}
-    - target: {fileID: 114714736387015146, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.5514706
-      objectReference: {fileID: 0}
-    - target: {fileID: 114714736387015146, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.11353807
-      objectReference: {fileID: 0}
-    - target: {fileID: 224807679358878864, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 224807679358878864, guid: 9232839df8fd04d5182bcf499aeebd48,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 24
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114305047636968776, guid: 9232839df8fd04d5182bcf499aeebd48, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9232839df8fd04d5182bcf499aeebd48, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1979718388 stripped
