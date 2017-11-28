@@ -7,6 +7,7 @@ using VRTK.GrabAttachMechanics;
 
 public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
     public GameObject moneyLabel;
+    public static PiggyBankController instance;
 
     [Tooltip("The amount of money the user starts with")]
     [Range(0, 10000)]
@@ -15,12 +16,15 @@ public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
     [Range(0.01f, 2f)]
     public float fadeSpeed = 0.75f;
 
-    int money = 0;
+    public int money = 0;
     private Text moneyText;
     Color tempColor;
 
     // Use this for initialization
     void Start () {
+        if (instance != null && instance != this) {
+            Destroy(this);
+        }
         moneyText = moneyLabel.GetComponent<Text>();
         UpdateMoney(startingMoney);
 	}
