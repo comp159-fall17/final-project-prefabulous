@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5465733, g: 0.55136245, b: 0.5216468, a: 1}
+  m_IndirectSpecularColor: {r: 0.54654145, g: 0.5512744, b: 0.52183723, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2976,6 +2976,7 @@ MonoBehaviour:
   interactTouch: {fileID: 0}
   itemDescriptionPrefab: {fileID: 1819651104336762, guid: 5059f7f029dcd0545947bbe2553afb8d,
     type: 2}
+  positionInverted: 0
 --- !u!114 &647210370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5046,6 +5047,7 @@ MonoBehaviour:
   interactTouch: {fileID: 0}
   itemDescriptionPrefab: {fileID: 1819651104336762, guid: 5059f7f029dcd0545947bbe2553afb8d,
     type: 2}
+  positionInverted: 1
 --- !u!1 &1042763351
 GameObject:
   m_ObjectHideFlags: 0

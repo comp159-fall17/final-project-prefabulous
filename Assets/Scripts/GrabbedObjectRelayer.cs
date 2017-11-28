@@ -10,6 +10,8 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	[Header("Grabbed Object UI")]
 	[Tooltip("Canvas prefab that gets overlayed when an object is grabbed")]
 	public GameObject itemDescriptionPrefab;
+	[Tooltip("Flip text to other side of objects")]
+	public bool positionInverted = false;
 
 	GameObject currentItemDescription;
 
@@ -35,6 +37,10 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		GameObject itemDescription = Instantiate (itemDescriptionPrefab, forObject.transform);
 		itemDescription.transform.localPosition = GetTextPosition (itemDescription);
 		itemDescription.transform.SetGlobalScale (GetTextScale(itemDescription));
+		if (positionInverted)
+		{
+			RotateText (itemDescription, 180f);
+		}
 
 		Text descriptionText = itemDescription.GetComponentInChildren<Text> ();
 		descriptionText.text = forObject.name;
@@ -50,18 +56,36 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		}
 	}
 
+	// Tries to retrieve and return VRTK_UIData position variable
 	Vector3 GetTextPosition(GameObject text)
 	{
 		try 
 		{
-			return text.GetComponentInParent<VRTK_UIData>().textPosition;
+			if (!positionInverted) 
+			{
+				return text.GetComponentInParent<VRTK_UIData>().textPosition;
+			}
+			else
+			{
+				Vector3 textPosition = text.GetComponentInParent<VRTK_UIData>().textPosition;
+				textPosition.z *= -1f;
+				return textPosition;
+			}
 		} 
 		catch 
 		{
-			return new Vector3 (0f, -0.4f, -0.7f);
+			if (!positionInverted) 
+			{
+				return new Vector3 (0f, -0.4f, -0.7f);
+			}
+			else
+			{
+				return new Vector3 (0f, -0.4f, 0.7f);
+			}
 		}
 	}
 
+	// Tries to retrieve and return VRTK_UIData scale variable
 	Vector3 GetTextScale(GameObject text)
 	{
 		try 
@@ -74,5 +98,12 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		}
 	}
 
+	// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default
+	void RotateText(GameObject description, float degrees, int direction = -1)
+	{
+		Vector3 descriptionRotation = description.transform.eulerAngles;
+		descriptionRotation.y += direction * degrees;
+		description.transform.eulerAngles = descriptionRotation;
+	}
 
 }
