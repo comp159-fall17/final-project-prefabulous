@@ -11,7 +11,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	[Tooltip("Canvas prefab that gets overlayed when an object is grabbed")]
 	public GameObject itemDescriptionPrefab;
 	[Tooltip("Flip text to other side of objects")]
-	public bool positionInverted = false;
+	public bool leftHand = false;
 
 	GameObject currentItemDescription;
 
@@ -37,9 +37,12 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		GameObject itemDescription = Instantiate (itemDescriptionPrefab, forObject.transform);
 		itemDescription.transform.localPosition = GetTextPosition (itemDescription);
 		itemDescription.transform.SetGlobalScale (GetTextScale(itemDescription));
-		if (positionInverted)
+		if (leftHand)
 		{
-			RotateText (itemDescription, 180f);
+			if (!itemDescription.GetComponentInParent<Flori_UIData>().doNotInvert)
+			{
+				RotateText (itemDescription, 180f);
+			}
 		}
 
 		Text descriptionText = itemDescription.GetComponentInChildren<Text> ();
@@ -61,20 +64,21 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	{
 		try 
 		{
-			if (!positionInverted) 
+			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
+			if (!leftHand || UIData.doNotInvert) 
 			{
-				return text.GetComponentInParent<VRTK_UIData>().textPosition;
+				return UIData.textPosition;
 			}
 			else
 			{
-				Vector3 textPosition = text.GetComponentInParent<VRTK_UIData>().textPosition;
+				Vector3 textPosition = UIData.textPosition;
 				textPosition.z *= -1f;
 				return textPosition;
 			}
 		} 
 		catch 
 		{
-			if (!positionInverted) 
+			if (!leftHand) 
 			{
 				return new Vector3 (0f, -0.4f, -0.7f);
 			}
@@ -90,7 +94,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	{
 		try 
 		{
-			return text.GetComponentInParent<VRTK_UIData>().textScale;
+			return text.GetComponentInParent<Flori_UIData>().textScale;
 		} 
 		catch 
 		{
