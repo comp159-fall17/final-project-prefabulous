@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 114994360748027794}
   - component: {fileID: 114883031899242766}
   - component: {fileID: 114117356565465428}
-  - component: {fileID: 114566603410119862}
+  - component: {fileID: 114683231684869342}
   m_Layer: 0
   m_Name: Sunflower
   m_TagString: Flower
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePicked: 0
   detachedScale: {x: 10, y: 10, z: 10}
---- !u!114 &114566603410119862
+--- !u!114 &114683231684869342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -598,11 +598,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1994892676839140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63acaf3c302f0e4d9a5df44da006abc, type: 3}
+  m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textPosition: {x: 0, y: -0.0075, z: -0.01}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
+  doNotInvert: 1
 --- !u!114 &114753390489250314
 MonoBehaviour:
   m_ObjectHideFlags: 1
