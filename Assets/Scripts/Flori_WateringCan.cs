@@ -44,6 +44,12 @@ public class Flori_WateringCan : MonoBehaviour {
     [Range(0f, 100f)]
     public float spillingInterval = 0.5f;
 
+	[Header("Visual Water Level Variables")]
+	[Tooltip("Visual water level within the can that indicates its programmatic value")]
+	public GameObject visualLevel;
+	[Tooltip("The bounds along the can's local y-axis which dictate the minimum and maximum position of its water level")]
+	public Vector2 visualBounds;
+
 	MeshRenderer render;
     int waterLevel;
     float timeCounter = 0;
@@ -57,6 +63,7 @@ public class Flori_WateringCan : MonoBehaviour {
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
+		SetVisualLevel (waterLevel);
     }
 	
 	// Update is called once per frame
@@ -66,12 +73,14 @@ public class Flori_WateringCan : MonoBehaviour {
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         wateringCanIsActive = CanIsPouring();
         wateringCanIsSpilling = CanIsSpilling();
-        if (wateringCanIsSpilling) {
+        if (wateringCanIsSpilling)
+		{
             if (render.material != spillingMaterial)
             {
                 render.material = spillingMaterial;
             }
-        } else if (wateringCanIsActive)
+        } 
+		else if (wateringCanIsActive)
         {
             if (render.material != inRangeMaterial)
             {
@@ -86,7 +95,7 @@ public class Flori_WateringCan : MonoBehaviour {
             }
         }
         UpdateWaterLevel();
-    }
+	}
 
     //Decrements water, or displays debug log if the can is empty
     void PourWater()
@@ -158,29 +167,43 @@ public class Flori_WateringCan : MonoBehaviour {
         waterLevel = Mathf.Clamp(waterLevel, 0, maximumWaterLevel);
     }
 
-    void UpdateWaterVisuals()
-    {
-        // TODO: Update a physical water level within the can
-    }
-
     //Counts down the time interval amount. When the amount is under 0 then reset the time interval.
     void UpdateWaterLevel()
     {
-        if (waterLevel != 0 && wateringCanIsSpilling) {
+        if (waterLevel != 0 && wateringCanIsSpilling) 
+		{
             timeCounter += Time.deltaTime;
             if (timeCounter >= spillingInterval)
             {
                 PourWater();
+				SetVisualLevel (waterLevel);
                 timeCounter = 0;
             }
-        } else if (waterLevel != 0 && wateringCanIsActive)
+        } 
+		else if (waterLevel != 0 && wateringCanIsActive)
         {
             timeCounter += Time.deltaTime;
             if (timeCounter >= pouringInterval)
             {
                 PourWater();
+				SetVisualLevel(waterLevel);
                 timeCounter = 0;
             }
         }
     }
+
+	/// <summary> Set visual water level inside the can. Is automatically scaled to the maximum water level </summary>
+	void SetVisualLevel(float height)
+	{
+		Vector3 newLevel = visualLevel.transform.localPosition;
+		newLevel.y = Mathf.Clamp(newLevel.y = height / maximumWaterLevel * visualBounds.y, visualBounds.x, visualBounds.y);
+		visualLevel.transform.localPosition = newLevel;
+	}
+
+	/// <summary> Returns true if waterlevel variable is 0 </summary>
+	public bool CanIsEmpty()
+	{
+		return waterLevel == 0;
+	}
+
 }
