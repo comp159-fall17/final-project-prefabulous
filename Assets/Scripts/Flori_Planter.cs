@@ -5,9 +5,8 @@ using UnityEngine;
 using VRTK;
 
 public class Flori_Planter : VRTK_SnapDropZone {
-    public Vector3 seedOrigin = new Vector3(1.5f, 0.25f, 0f);
     public bool hasCrop = false;
-    Seed seedInPlanter;
+    Flori_Seed seedInPlanter;
     // Use this for initialization
     void Start () {
 		
@@ -23,7 +22,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	{
 		try 
 		{
-            seedInPlanter = seed.GetComponent<Seed>();
+            seedInPlanter = seed.GetComponent<Flori_Seed>();
             seedInPlanter.collectable = false;
             // seed.SetActive(true);
             //should I use the line below 
@@ -49,7 +48,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
         seedInPlanter.AddWater();
     }
 
-    public Seed GetSeedInPlanter()
+    public Flori_Seed GetSeedInPlanter()
     {
         return seedInPlanter;
     }
