@@ -25,12 +25,12 @@ GameObject:
   - component: {fileID: 114474551900116946}
   - component: {fileID: 114686353174919584}
   - component: {fileID: 114329179847915398}
+  - component: {fileID: 114723598273221048}
   - component: {fileID: 114506048596802450}
   - component: {fileID: 33628324961783430}
   - component: {fileID: 23271826574754530}
   - component: {fileID: 64742774595690960}
   - component: {fileID: 82093642765258838}
-  - component: {fileID: 114723598273221048}
   m_Layer: 0
   m_Name: Piggy Bank
   m_TagString: Flower
@@ -531,7 +531,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140129026781882}
   m_LocalRotation: {x: -0, y: 0.5145192, z: -0, w: 0.8574789}
-  m_LocalPosition: {x: -0.9068985, y: 0.92100143, z: 0.058853123}
+  m_LocalPosition: {x: -0.9068985, y: 0.87200165, z: 0.058853123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4698749571472384}
@@ -541,7 +541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 61.931004, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.90689933, y: 0.921}
+  m_AnchoredPosition: {x: -0.90689933, y: 0.872}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224563607076353632
