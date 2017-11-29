@@ -20,6 +20,15 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		PlantSeed (objectToSnap);
 	}
 
+	void Update() {
+
+		if (IsBeingWatered())
+		{
+			
+		}
+
+	}
+
 	/// <summary>
 	/// Plants the seed in this Planter instance.
 	/// </summary>
@@ -88,6 +97,10 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		canIsInRange = state;
 	}
 
+	/// <summary>
+	/// Determines whether this instance is being watered.
+	/// </summary>
+	/// <returns><c>true</c> if this instance is being watered; otherwise, <c>false</c>.</returns>
 	bool IsBeingWatered()
 	{
 		return canIsInRange && Flori_WateringCan.Instance.CanIsPouring();
