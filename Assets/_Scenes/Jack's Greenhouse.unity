@@ -501,6 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seedPrefab: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586, type: 2}
   spawnPoint: {fileID: 1665165769}
+  seedScalar: {x: 5, y: 5, z: 5}
 --- !u!1 &372326324 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 6f0de122863a81445a8055a3830cc7bd, type: 3}

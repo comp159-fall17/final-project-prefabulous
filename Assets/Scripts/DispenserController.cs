@@ -7,6 +7,8 @@ public class DispenserController : MonoBehaviour {
     public GameObject seedPrefab;
     [Tooltip("The point where the seed will spawn")]
     public GameObject spawnPoint;
+    [Tooltip("")]
+    public Vector3 seedScalar = new Vector3(10, 10, 10);
 
     GameObject currentSeed;
     private bool grabbed;
@@ -20,7 +22,11 @@ public class DispenserController : MonoBehaviour {
 	void Update () {
         if (!grabbed) {
             grabbed = SeedWasGrabbed();
-            SeedPicked();
+            if (grabbed)
+            {
+                Debug.Log("Picked");
+                SeedPicked();
+            }
         }
         if (SeedWasReleased()) {
             Debug.Log("Released");
@@ -49,17 +55,18 @@ public class DispenserController : MonoBehaviour {
     void SeedDropped() {
         currentSeed.GetComponent<Rigidbody>().useGravity = true;
         currentSeed.transform.localScale = seedPrefab.transform.localScale;
+        currentSeed.transform.parent = null;
 
     }
 
     void SpawnSeed() {
         grabbed = false;
-        currentSeed = Instantiate(seedPrefab,
-                    spawnPoint.transform.position,
-                    Quaternion.identity) as GameObject;
+        currentSeed = Instantiate(seedPrefab) as GameObject;
         currentSeed.transform.parent = gameObject.transform;
         currentSeed.transform.localScale = Vector3.Scale(currentSeed.transform.localScale,
-                                                         new Vector3(4, 4, 4));
+                                                         seedScalar);
+        currentSeed.transform.position = spawnPoint.transform.position;
         currentSeed.GetComponent<Rigidbody>().useGravity = false;
+
     }
 }
