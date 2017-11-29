@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DispenserController : MonoBehaviour {
+    [Header("Seed Spawning")]
     [Tooltip("The prefab for the seed that this dispenser will contain")]
     public GameObject seedPrefab;
     [Tooltip("The point where the seed will spawn")]
     public GameObject spawnPoint;
-    [Tooltip("")]
+    [Tooltip("The amount the seed size is increased by while inside the dispenser")]
     public Vector3 seedScalar = new Vector3(10, 10, 10);
+
+    [Header("Market")]
+    [Tooltip("The amount of money it costs to buy this seed")]
+    public int sellPrice;
+    [Tooltip("The amount of money refuneded if the seed is returned")]
+    public float refundRation = 1f;
 
     GameObject currentSeed;
     private bool grabbed;
@@ -26,6 +33,7 @@ public class DispenserController : MonoBehaviour {
             {
                 Debug.Log("Picked");
                 SeedPicked();
+                PiggyBankController.instance.Spend(sellPrice);
             }
         }
         if (SeedWasReleased()) {
@@ -54,7 +62,6 @@ public class DispenserController : MonoBehaviour {
 
     void SeedDropped() {
         currentSeed.GetComponent<Rigidbody>().useGravity = true;
-        currentSeed.transform.localScale = seedPrefab.transform.localScale;
         currentSeed.transform.parent = null;
 
     }
@@ -67,6 +74,6 @@ public class DispenserController : MonoBehaviour {
                                                          seedScalar);
         currentSeed.transform.position = spawnPoint.transform.position;
         currentSeed.GetComponent<Rigidbody>().useGravity = false;
-
+        currentSeed.name = seedPrefab.name;
     }
 }

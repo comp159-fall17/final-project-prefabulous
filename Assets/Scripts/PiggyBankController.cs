@@ -35,7 +35,9 @@ public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
 
     // Use this for initialization
     void Start () {
-        if (instance != null && instance != this) {
+        if (instance == null) {
+            instance = this;
+        } else if (instance != this) {
             Destroy(this);
         }
         uiData = GetComponent<Flori_UIData>();
@@ -65,12 +67,14 @@ public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
     }
 
     // Reduces the balance by an amount
-    void Spend(int amount) {
+    public void Spend(int amount) {
         Money -= amount;
+        Debug.Log(money);
     }
 
     // Increases the balance by an amount
-    void Earn(int amount) {
+    public void Earn(int amount) {
         Money += amount;
+        Debug.Log(money);
     }
 }
