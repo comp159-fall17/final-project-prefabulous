@@ -61,7 +61,7 @@ public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
 
     // Updates the label to display the current balance
     void UpdateLabel() {
-        uiData.SetItemDescription("$" + String.Format("{0:n}", Money));
+        uiData.SetItemDescription(String.Format("${0:n}", Money));
     }
 
     // Reduces the balance by an amount
