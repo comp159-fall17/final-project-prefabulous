@@ -4,8 +4,9 @@ using UnityEngine;
 using VRTK;
 
 public class Flori_Planter : VRTK_SnapDropZone {
-    
-	public Seed seedInPlanter; //is there a way to get the seed dynamically
+    public Vector3 seedOrigin = new Vector3(1.5f, 0.25f, 0f);
+    public bool hasCrop = false;
+    Seed seedInPlanter;
     // Use this for initialization
     void Start () {
 		
@@ -21,8 +22,14 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	{
 		try 
 		{
-			seedInPlanter = seed.GetComponent<Seed> ();	
-		}
+            seedInPlanter = seed.GetComponent<Seed>();
+            seedInPlanter.collectable = false;
+            // seed.SetActive(true);
+            //should I use the line below
+            //seedInPlanter.SetActive(true);
+            seedInPlanter.Sprout();
+            hasCrop = true;
+        }
 		catch
 		{
 			Debug.Log ("Tried to snap a not-seed in this seed orb. No not-seeds allowed!");
@@ -33,6 +40,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
     public void RemoveCropFrom()
     {
         seedInPlanter = null;
+        hasCrop = false;
     }
 
     public void StartGrowingFlower()
