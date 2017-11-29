@@ -51,6 +51,7 @@ public class Flori_WateringCan : MonoBehaviour {
 	public Vector2 visualBounds;
 
 	MeshRenderer render;
+	ParticleSystem particles;
     int waterLevel;
     float timeCounter = 0;
     bool wateringCanIsActive;
@@ -60,44 +61,42 @@ public class Flori_WateringCan : MonoBehaviour {
     void Start()
     {
         render = GetComponent<MeshRenderer>();
+		particles = GetComponent<ParticleSystem> ();
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
+		particles.Stop ();
 		SetVisualLevel (waterLevel);
     }
 	
 	// Update is called once per frame
     void Update()
     {
+		Debug.Log (particles.main.startSize.constant);
         // TODO: See if there is an equivalent VRTK method to Update, which is only called when the object is interacted with.
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         wateringCanIsActive = CanIsPouring();
         wateringCanIsSpilling = CanIsSpilling();
-        if (wateringCanIsSpilling)
+		if (wateringCanIsSpilling && render.material != spillingMaterial)
 		{
-            if (render.material != spillingMaterial)
-            {
-                render.material = spillingMaterial;
-            }
+            render.material = spillingMaterial;
         } 
-		else if (wateringCanIsActive)
+		else if (wateringCanIsActive && render.material != inRangeMaterial)
         {
-            if (render.material != inRangeMaterial)
-            {
-                render.material = inRangeMaterial;
-            }
+            render.material = inRangeMaterial;
+			TurnParticles (true);
         }
-        else
+		else if (render.material != outOfRangeMaterial)
         {
-            if (render.material != outOfRangeMaterial)
-            {
-                render.material = outOfRangeMaterial;
-            }
+            render.material = outOfRangeMaterial;
+			TurnParticles (false);
         }
         UpdateWaterLevel();
 	}
-
-    //Decrements water, or displays debug log if the can is empty
+		
+	/// <summary>
+	/// Decrements water, or displays debug log if the can is empty
+	/// </summary>
     void PourWater()
     {
         if (waterLevel != 0)
@@ -111,9 +110,13 @@ public class Flori_WateringCan : MonoBehaviour {
             // TODO: Add a visual signal that the can is empty
         }
     }
-
-    //Converts an angle in the range of 0..360 to the range -180..180
-    private float ConvertToSignedAngleRange(float angle) {
+		
+	/// <summary>
+	/// Converts to signed angle range of 0..360 to the range -180..180.
+	/// </summary>
+	/// <returns>The to signed angle range.</returns>
+	/// <param name="angle">Angle.</param>
+    float ConvertToSignedAngleRange(float angle) {
         if (angle > 180f)
         {
             angle -= 360f;
@@ -121,7 +124,10 @@ public class Flori_WateringCan : MonoBehaviour {
         return angle;
     }
 
-    //Returns true if the can is positioned to pour water
+    /// <summary>
+    /// Determines whether this instance can is pouring.
+    /// </summary>
+    /// <returns><c>true</c> if this instance can is pouring; otherwise, <c>false</c>.</returns>
     public bool CanIsPouring()
     {
         int signedDirection = 1;
@@ -143,7 +149,10 @@ public class Flori_WateringCan : MonoBehaviour {
         return magnitudeOfAngle * signedDirection >= pouringAngle;
     }
 
-    //Returns true if the can is positioned to spill water
+	/// <summary>
+	/// Determines whether this instance can is spilling.
+	/// </summary>
+	/// <returns><c>true</c> if this instance can is spilling; otherwise, <c>false</c>.</returns>
     public bool CanIsSpilling() {
         float magnitudeOfX = transform.eulerAngles.x;
         float magnitudeOfZ = transform.eulerAngles.z;
@@ -152,22 +161,30 @@ public class Flori_WateringCan : MonoBehaviour {
 
         return (Mathf.Abs(magnitudeOfX) >= spillingAngle) || (Mathf.Abs(magnitudeOfZ) >= spillingAngle);
     }
-
-    // add a volume of water to the can
+		
+	/// <summary>
+	/// Adds a volume of water to the can.
+	/// </summary>
+	/// <param name="volume">Volume.</param>
     public void AddWaterOf(int volume)
     {
         waterLevel += volume;
         waterLevel = Mathf.Clamp(waterLevel, 0, maximumWaterLevel);
     }
 
-    // set the water level directly - clamped to avoid overflow
+	/// <summary>
+	/// Sets the water level to a new level directly - clamped to avoid overflow.
+	/// </summary>
+	/// <param name="newLevel">New level.</param>
     public void SetWaterLevelTo(int newLevel)
     {
         waterLevel = newLevel;
         waterLevel = Mathf.Clamp(waterLevel, 0, maximumWaterLevel);
     }
 
-    //Counts down the time interval amount. When the amount is under 0 then reset the time interval.
+	/// <summary>
+	/// Counts down the time interval amount. When the amount is under 0 then reset the time interval.
+	/// </summary>
     void UpdateWaterLevel()
     {
         if (waterLevel != 0 && wateringCanIsSpilling) 
@@ -192,7 +209,9 @@ public class Flori_WateringCan : MonoBehaviour {
         }
     }
 
-	/// <summary> Set visual water level inside the can. Is automatically scaled to the maximum water level </summary>
+	/// <summary> 
+	/// Set visual water level inside the can. Is automatically scaled to the maximum water level 
+	/// </summary>
 	void SetVisualLevel(float height)
 	{
 		Vector3 newLevel = visualLevel.transform.localPosition;
@@ -200,10 +219,44 @@ public class Flori_WateringCan : MonoBehaviour {
 		visualLevel.transform.localPosition = newLevel;
 	}
 
-	/// <summary> Returns true if waterlevel variable is 0 </summary>
+	/// <summary> 
+	/// Returns true if waterlevel variable is 0 
+	/// </summary>
 	public bool CanIsEmpty()
 	{
 		return waterLevel == 0;
+	}
+
+	/// <summary>
+	/// Toggle water particle system.
+	/// </summary>
+	void ToggleParticles()
+	{
+		if (particles.isPlaying)
+		{
+			particles.Stop ();
+		}
+		else
+		{
+			particles.Play ();
+		}
+
+	}
+
+	/// <summary>
+	/// Turns the particles to a specific state.
+	/// </summary>
+	/// <param name="on">If set to <c>true</c> on.</param>
+	void TurnParticles(bool on)
+	{
+		if (on)
+		{
+			particles.Play ();
+		}
+		else
+		{
+			particles.Stop ();
+		}
 	}
 
 }
