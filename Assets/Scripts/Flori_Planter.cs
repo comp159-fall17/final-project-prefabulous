@@ -11,14 +11,6 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	public bool hasCrop = false;
     
 	Flori_Seed seedInPlanter;
-	CapsuleCollider waterZone;
-
-	// Use this for initialization
-	void Start() {
-
-		waterZone = GetComponentInParent<CapsuleCollider> ();
-
-	}
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
