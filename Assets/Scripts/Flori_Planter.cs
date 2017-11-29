@@ -5,12 +5,9 @@ using UnityEngine;
 using VRTK;
 
 public class Flori_Planter : VRTK_SnapDropZone {
-    public bool hasCrop = false;
+    
+	public bool hasCrop = false;
     Flori_Seed seedInPlanter;
-    // Use this for initialization
-    void Start () {
-		
-	}
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
@@ -18,17 +15,23 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		PlantSeed (objectToSnap);
 	}
 
+	/// <summary>
+	/// Plants the seed in this Planter instance.
+	/// </summary>
+	/// <param name="seed">Seed.</param>
 	void PlantSeed(VRTK_InteractableObject seed)
 	{
 		try 
 		{
             seedInPlanter = seed.GetComponent<Flori_Seed>();
-            seedInPlanter.collectable = false;
+			seedInPlanter.collectable = false;
+			LockSeedInPlanter();
+
+			hasCrop = true;
             // seed.SetActive(true);
             //should I use the line below 
             //seedInPlanter.SetActive(true);
             seedInPlanter.Sprout();
-            hasCrop = true;
         }
 		catch (NullReferenceException ex)
         {
@@ -37,6 +40,9 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		}
 	}
 
+	/// <summary>
+	/// Removes the crop from this planter.
+	/// </summary>
     public void RemoveCropFrom()
     {
         seedInPlanter = null;
@@ -52,4 +58,13 @@ public class Flori_Planter : VRTK_SnapDropZone {
     {
         return seedInPlanter;
     }
+
+	void LockSeedInPlanter()
+	{
+		if (seedInPlanter != null)
+		{
+			seedInPlanter.GetComponent<VRTK_InteractableObject> ().isGrabbable = false;
+		}
+	}
+
 }
