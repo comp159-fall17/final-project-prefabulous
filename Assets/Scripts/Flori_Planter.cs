@@ -5,12 +5,14 @@ using UnityEngine;
 using VRTK;
 
 public class Flori_Planter : VRTK_SnapDropZone {
-    public bool hasCrop = false;
-    Flori_Seed seedInPlanter;
-    // Use this for initialization
-    void Start () {
-		
-	}
+    
+	[Header("Watering Can Properties")]
+	[Tooltip("Signifies if the planter has a crop planted in it")]
+	public bool hasCrop = false;
+	[Tooltip("True if watering can collider is within bounds to plant")]
+	public bool canIsInRange = false;
+
+	Flori_Seed seedInPlanter;
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
@@ -18,17 +20,29 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		PlantSeed (objectToSnap);
 	}
 
+	void Update() {
+
+		if (IsBeingWatered())
+		{
+			
+		}
+
+	}
+
+	/// <summary>
+	/// Plants the seed in this Planter instance.
+	/// </summary>
+	/// <param name="seed">Seed.</param>
 	void PlantSeed(VRTK_InteractableObject seed)
 	{
 		try 
 		{
             seedInPlanter = seed.GetComponent<Flori_Seed>();
-            seedInPlanter.collectable = false;
-            // seed.SetActive(true);
-            //should I use the line below 
-            //seedInPlanter.SetActive(true);
+			seedInPlanter.collectable = false;
+			LockSeedInPlanter();
+
+			hasCrop = true;
             seedInPlanter.Sprout();
-            hasCrop = true;
         }
 		catch (NullReferenceException ex)
         {
@@ -37,19 +51,59 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		}
 	}
 
+	/// <summary>
+	/// Removes the crop from this planter.
+	/// </summary>
     public void RemoveCropFrom()
     {
         seedInPlanter = null;
         hasCrop = false;
     }
 
-    public void StartGrowingFlower()
+	/// <summary>
+	/// Starts growing the flower inside this planter.
+	/// </summary>
+    public void GrowFlower()
     {
         seedInPlanter.AddWater();
     }
 
+	/// <summary>
+	/// Gets the seed in planter.
+	/// </summary>
+	/// <returns>The seed in planter.</returns>
     public Flori_Seed GetSeedInPlanter()
     {
         return seedInPlanter;
     }
+
+	/// <summary>
+	/// Prevents grabbing the seed from this planter.
+	/// </summary>
+	void LockSeedInPlanter()
+	{
+		if (seedInPlanter != null)
+		{
+			seedInPlanter.GetComponent<VRTK_InteractableObject> ().isGrabbable = false;
+		}
+	}
+
+	/// <summary>
+	/// Sets the canIsInRange bool used to add water to seed.
+	/// </summary>
+	/// <param name="state">If set to <c>true</c> state.</param>
+	public void SetCanInRange(bool state)
+	{
+		canIsInRange = state;
+	}
+
+	/// <summary>
+	/// Determines whether this instance is being watered.
+	/// </summary>
+	/// <returns><c>true</c> if this instance is being watered; otherwise, <c>false</c>.</returns>
+	bool IsBeingWatered()
+	{
+		return canIsInRange && Flori_WateringCan.Instance.CanIsPouring();
+	}
+
 }
