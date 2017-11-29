@@ -26,11 +26,11 @@ GameObject:
   - component: {fileID: 114686353174919584}
   - component: {fileID: 114329179847915398}
   - component: {fileID: 114506048596802450}
-  - component: {fileID: 114652373020219360}
   - component: {fileID: 33628324961783430}
   - component: {fileID: 23271826574754530}
   - component: {fileID: 64742774595690960}
   - component: {fileID: 82093642765258838}
+  - component: {fileID: 114723598273221048}
   m_Layer: 0
   m_Name: Piggy Bank
   m_TagString: Flower
@@ -117,8 +117,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 52225650de37d4deeb06924be58b937c, type: 2}
-  - {fileID: 2100000, guid: fa756b232992781448908e45ad28eece, type: 2}
+  - {fileID: 2100000, guid: 31c2aab9b432f487d80647610522aef2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -387,19 +386,6 @@ MonoBehaviour:
   allowedUseControllers: 0
   objectHighlighter: {fileID: 0}
   usingState: 0
---- !u!114 &114652373020219360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1140129026781882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63acaf3c302f0e4d9a5df44da006abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPosition: {x: 0, y: -0.0075, z: -0.01}
-  textScale: {x: 0.005, y: 0.005, z: 0.01}
 --- !u!114 &114686353174919584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,6 +430,25 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Item Name
+--- !u!114 &114723598273221048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140129026781882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionPosition: {x: 0, y: 0, z: 0.1}
+  textScale: {x: 0.005, y: 0.005, z: 0.01}
+  textRotation: 180
+  namePosition: {x: 0, y: 0.2, z: 0}
+  infoPosition: {x: 0, y: 0.2, z: 0}
+  doNotInvert: 1
+  itemInfo: $1000
+  showItemInfo: 1
 --- !u!114 &114724715727723442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,7 +531,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140129026781882}
   m_LocalRotation: {x: -0, y: 0.5145192, z: -0, w: 0.8574789}
-  m_LocalPosition: {x: -0.8580017, y: 0.86999893, z: 0.107}
+  m_LocalPosition: {x: -0.9068985, y: 0.92100143, z: 0.058853123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4698749571472384}
@@ -536,7 +541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 61.931004, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.858, y: 0.87}
+  m_AnchoredPosition: {x: -0.90689933, y: 0.921}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224563607076353632
