@@ -1,0 +1,29 @@
+Watering Can Polygon Model.
+
+Perfect for animations, visualizations & games.
+
+Features:
+
+Geometry - Polygons , Faces = 2090,   Vertices = 2148
+
+Available formats:  Autodesk FBX, Maya binary .mb and OBJ
+
+Realistic 3d Model with Clean Topology.
+
+UV Mapped - 2048x2048 JPG Texture
+
+Diffuse,Normal and Specular Maps
+
+Rendered with Maya 2011.
+
+
+
+
+
+
+
+
+
+
+
+ 
