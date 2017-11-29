@@ -14,6 +14,11 @@ public class Flori_Planter : VRTK_SnapDropZone {
 
 	Flori_Seed seedInPlanter;
 
+	void Update()
+	{
+		Debug.Log ("Is being watered: " + IsBeingWatered());
+	}
+
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
 		base.SnapObjectToZone (objectToSnap);
@@ -51,16 +56,26 @@ public class Flori_Planter : VRTK_SnapDropZone {
         hasCrop = false;
     }
 
-    public void StartGrowingFlower()
+	/// <summary>
+	/// Starts growing the flower inside this planter.
+	/// </summary>
+    public void GrowFlower()
     {
         seedInPlanter.AddWater();
     }
 
+	/// <summary>
+	/// Gets the seed in planter.
+	/// </summary>
+	/// <returns>The seed in planter.</returns>
     public Flori_Seed GetSeedInPlanter()
     {
         return seedInPlanter;
     }
 
+	/// <summary>
+	/// Prevents grabbing the seed from this planter.
+	/// </summary>
 	void LockSeedInPlanter()
 	{
 		if (seedInPlanter != null)
@@ -76,6 +91,12 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	public void SetCanInZone(bool state)
 	{
 		canInZone = state;
+	}
+
+
+	bool IsBeingWatered()
+	{
+		return canInZone;
 	}
 
 }

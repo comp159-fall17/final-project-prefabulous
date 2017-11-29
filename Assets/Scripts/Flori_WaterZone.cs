@@ -11,6 +11,7 @@ public class Flori_WaterZone : MonoBehaviour {
 			return;
 		}
 
+		GetComponentInChildren<Flori_Planter> ().SetCanInZone (true);
 		Debug.Log ("Can in zone");
 	}
 
@@ -21,6 +22,7 @@ public class Flori_WaterZone : MonoBehaviour {
 			return;
 		}
 
+		GetComponentInChildren<Flori_Planter> ().SetCanInZone (false);
 		Debug.Log ("Out of zone");
 	}
 
