@@ -40,13 +40,17 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		itemDescription.transform.localPosition = GetDescriptionPosition (itemDescription);
 		itemDescription.transform.SetGlobalScale (GetTextScale(itemDescription));
 
+		Flori_UIData UIData = itemDescription.GetComponentInParent<Flori_UIData> ();
 		if (leftHandGrabbing)
 		{
-			if (!itemDescription.GetComponentInParent<Flori_UIData>().doNotInvert)
+			if (!UIData.doNotInvert)
 			{
+				Debug.Log ("Inverting text");
 				RotateText (itemDescription, 180f);
 			}
 		}
+
+		if (UIData != null) RotateText (itemDescription, UIData.textRotation);
 
 		Text[] descriptionTexts = itemDescription.GetComponentsInChildren<Text>();
 		foreach (Text text in descriptionTexts)
@@ -66,7 +70,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 
 		if (itemInfo.GetComponentInParent<Flori_UIData> () != null)
 		{
-			itemInfo.text = itemInfo.transform.parent.gameObject.GetComponentInParent<Flori_UIData> ().itemInfo;
+			itemInfo.text = UIData.itemInfo;
 		}
 		itemName.text = forObject.name;
 
@@ -185,7 +189,11 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	}
 
 
-	// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default
+	/// <summary>
+	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default
+	/// </summary>
+	/// <param name="description">UI Text Description to rotate.</param>
+	/// <param name="direction">Clockwise by default at -1.</param>
 	void RotateText(GameObject description, float degrees, int direction = -1)
 	{
 		Vector3 descriptionRotation = description.transform.eulerAngles;

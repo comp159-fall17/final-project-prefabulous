@@ -9,6 +9,9 @@ public class Flori_UIData : MonoBehaviour {
 	public Vector3 descriptionPosition;
 	[Tooltip("Global (to parent) scale of UI text")]
 	public Vector3 textScale;
+	[Tooltip("Additional rotation about object in clockwise direction")]
+	[Range(0f, 360f)]
+	public float textRotation;
 
 	[Header("Text Properties")]
 	[Tooltip("Local (to parent) position of UI text object name")]

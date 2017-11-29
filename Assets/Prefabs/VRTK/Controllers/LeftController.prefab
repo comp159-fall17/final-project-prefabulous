@@ -78,7 +78,7 @@ MonoBehaviour:
   interactTouch: {fileID: 0}
   itemDescriptionPrefab: {fileID: 1819651104336762, guid: 5059f7f029dcd0545947bbe2553afb8d,
     type: 2}
-  leftHand: 1
+  leftHandGrabbing: 1
 --- !u!114 &114357504360015460
 MonoBehaviour:
   m_ObjectHideFlags: 1
