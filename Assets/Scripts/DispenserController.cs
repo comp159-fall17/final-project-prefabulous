@@ -31,13 +31,11 @@ public class DispenserController : MonoBehaviour {
             grabbed = SeedWasGrabbed();
             if (grabbed)
             {
-                Debug.Log("Picked");
                 SeedPicked();
                 PiggyBankController.instance.Spend(sellPrice);
             }
         }
         if (SeedWasReleased()) {
-            Debug.Log("Released");
             SeedDropped();
             SpawnSeed();
         }
