@@ -1207,6 +1207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 366830746}
+  - {fileID: 1584895973}
   m_Father: {fileID: 1513136170}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1281,6 +1282,21 @@ Prefab:
     - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681467058487572, guid: bd29749cf9d5e4c22ada726e18fd72ab,
+        type: 2}
+      propertyPath: seedPrefab
+      value: 
+      objectReference: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+    - target: {fileID: 23963046087706856, guid: bd29749cf9d5e4c22ada726e18fd72ab,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e0f6c57679e0ca44842bd3643f36fc7, type: 2}
+    - target: {fileID: 1767468049670476, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_Name
+      value: Poppy Dispenser
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
@@ -2061,6 +2077,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2499b32ad20d2264eb1c2ae445b9c65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1584895972
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 745984926}
+    m_Modifications:
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767468049670476, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+      propertyPath: m_Name
+      value: Sunflower Dispenser
+      objectReference: {fileID: 0}
+    - target: {fileID: 23963046087706856, guid: bd29749cf9d5e4c22ada726e18fd72ab,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ef84341b9368604dbf3cf33f0b9ff67, type: 2}
+    - target: {fileID: 114681467058487572, guid: bd29749cf9d5e4c22ada726e18fd72ab,
+        type: 2}
+      propertyPath: seedPrefab
+      value: 
+      objectReference: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bd29749cf9d5e4c22ada726e18fd72ab, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1584895973 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4173328529518032, guid: bd29749cf9d5e4c22ada726e18fd72ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1584895972}
 --- !u!1001 &1597779406
 Prefab:
   m_ObjectHideFlags: 0
