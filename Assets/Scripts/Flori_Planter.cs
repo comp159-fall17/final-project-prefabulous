@@ -6,8 +6,19 @@ using VRTK;
 
 public class Flori_Planter : VRTK_SnapDropZone {
     
+	[Header("Watering Can Properties")]
+	[Tooltip("Signifies if the planter has a crop planted in it")]
 	public bool hasCrop = false;
-    Flori_Seed seedInPlanter;
+    
+	Flori_Seed seedInPlanter;
+	CapsuleCollider waterZone;
+
+	// Use this for initialization
+	void Start() {
+
+		waterZone = GetComponentInParent<CapsuleCollider> ();
+
+	}
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
@@ -28,9 +39,6 @@ public class Flori_Planter : VRTK_SnapDropZone {
 			LockSeedInPlanter();
 
 			hasCrop = true;
-            // seed.SetActive(true);
-            //should I use the line below 
-            //seedInPlanter.SetActive(true);
             seedInPlanter.Sprout();
         }
 		catch (NullReferenceException ex)

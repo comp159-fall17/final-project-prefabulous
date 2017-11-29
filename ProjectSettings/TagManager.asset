@@ -7,6 +7,7 @@ TagManager:
   - Flower
   - Item Info
   - Item Name
+  - Watering Can
   layers:
   - Default
   - TransparentFX
