@@ -17,7 +17,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		PlantSeed (objectToSnap);
 	}
 
-	void PlantSeed(GameObject seed)
+	void PlantSeed(VRTK_InteractableObject seed)
 	{
 		try 
 		{

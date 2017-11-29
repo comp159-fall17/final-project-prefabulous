@@ -4139,6 +4139,7 @@ GameObject:
   - component: {fileID: 863540730}
   - component: {fileID: 863540729}
   - component: {fileID: 863540728}
+  - component: {fileID: 863540731}
   m_Layer: 0
   m_Name: SnapDropZone
   m_TagString: Untagged
@@ -4165,7 +4166,7 @@ MonoBehaviour:
   highlightColor: {r: 0.3455882, g: 0.7021297, b: 1, a: 0}
   validHighlightColor: {r: 0, g: 0.9191176, b: 0.2725659, a: 0}
   highlightAlwaysActive: 0
-  validObjectListPolicy: {fileID: 0}
+  validObjectListPolicy: {fileID: 863540731}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}
@@ -4199,6 +4200,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &863540731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 863540727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 1
+  checkType: 2
+  identifiers:
+  - Flori_Seed
 --- !u!1001 &926301048
 Prefab:
   m_ObjectHideFlags: 0
@@ -8913,6 +8929,7 @@ GameObject:
   - component: {fileID: 1904424228}
   - component: {fileID: 1904424227}
   - component: {fileID: 1904424226}
+  - component: {fileID: 1904424234}
   m_Layer: 0
   m_Name: seed
   m_TagString: Untagged
@@ -9078,6 +9095,17 @@ Transform:
   m_Father: {fileID: 2051997747}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904424234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904424225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aabdaf365e74ed42ab56905bffccdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1917384726
 GameObject:
   m_ObjectHideFlags: 0
