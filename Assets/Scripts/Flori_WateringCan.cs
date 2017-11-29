@@ -236,7 +236,7 @@ public class Flori_WateringCan : MonoBehaviour {
 		{
 			particles.Stop ();
 		}
-		else
+		else if (waterLevel != 0)
 		{
 			particles.Play ();
 		}
@@ -249,7 +249,7 @@ public class Flori_WateringCan : MonoBehaviour {
 	/// <param name="on">If set to <c>true</c> on.</param>
 	void TurnParticles(bool on)
 	{
-		if (on)
+		if (waterLevel != 0 && on)
 		{
 			particles.Play ();
 		}
