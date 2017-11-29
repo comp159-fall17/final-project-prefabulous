@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Flori_WateringCan : MonoBehaviour {
+
+
+	public static Flori_WateringCan Instance;
     private enum Axis { X_POSITIVE, X_NEGATIVE, Z_POSITIVE, Z_NEGATIVE };
 
 	[Header("Testing Materials")]
@@ -60,19 +63,27 @@ public class Flori_WateringCan : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        render = GetComponent<MeshRenderer>();
+		if (Instance == null) 
+		{
+			Instance = this;
+		}
+		else if (Instance == this) 
+		{
+			Destroy (gameObject);
+		}
+		render = GetComponent<MeshRenderer>();
 		particles = GetComponent<ParticleSystem> ();
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
 		particles.Stop ();
 		SetVisualLevel (waterLevel);
+
     }
 	
 	// Update is called once per frame
     void Update()
     {
-		Debug.Log (particles.main.startSize.constant);
         // TODO: See if there is an equivalent VRTK method to Update, which is only called when the object is interacted with.
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         wateringCanIsActive = CanIsPouring();

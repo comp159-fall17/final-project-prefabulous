@@ -10,9 +10,7 @@ public class Flori_WaterZone : MonoBehaviour {
 		{
 			return;
 		}
-
-		GetComponentInChildren<Flori_Planter> ().SetCanInZone (true);
-		Debug.Log ("Can in zone");
+		GetComponentInChildren<Flori_Planter> ().SetCanInRange (true);
 	}
 
 	void OnTriggerExit(Collider other)
@@ -21,9 +19,7 @@ public class Flori_WaterZone : MonoBehaviour {
 		{
 			return;
 		}
-
-		GetComponentInChildren<Flori_Planter> ().SetCanInZone (false);
-		Debug.Log ("Out of zone");
+		GetComponentInChildren<Flori_Planter> ().SetCanInRange (false);
 	}
 
 }
