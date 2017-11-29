@@ -9,7 +9,9 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	[Header("Watering Can Properties")]
 	[Tooltip("Signifies if the planter has a crop planted in it")]
 	public bool hasCrop = false;
-    
+	[Tooltip("True if watering can collider is within bounds to plant")]
+	public bool canInZone = false;
+
 	Flori_Seed seedInPlanter;
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
@@ -65,6 +67,15 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		{
 			seedInPlanter.GetComponent<VRTK_InteractableObject> ().isGrabbable = false;
 		}
+	}
+
+	/// <summary>
+	/// Sets the can in zone bool used to add water to seed.
+	/// </summary>
+	/// <param name="state">If set to <c>true</c> state.</param>
+	public void SetCanInZone(bool state)
+	{
+		canInZone = state;
 	}
 
 }
