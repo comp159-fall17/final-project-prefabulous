@@ -13,6 +13,9 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	public bool canIsInRange = false;
 
 	Flori_Seed seedInPlanter;
+	float waterCounter = 0f;
+	int waterDropsToBloom;
+	int waterDropsReceived = 0;
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
@@ -22,9 +25,9 @@ public class Flori_Planter : VRTK_SnapDropZone {
 
 	void Update() {
 
-		if (IsBeingWatered())
+		if (seedInPlanter != null && IsBeingWatered() && !seedInPlanter.IsGrowing())
 		{
-			
+			UpdateWaterInPlanter ();
 		}
 
 	}
@@ -38,8 +41,8 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		try 
 		{
             seedInPlanter = seed.GetComponent<Flori_Seed>();
-			seedInPlanter.collectable = false;
 			LockSeedInPlanter();
+			waterDropsToBloom = seedInPlanter.GetWaterDropsToBloom();
 
 			hasCrop = true;
             seedInPlanter.Sprout();
@@ -65,7 +68,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	/// </summary>
     public void GrowFlower()
     {
-        seedInPlanter.AddWater();
+        seedInPlanter.StartGrowing();
     }
 
 	/// <summary>
@@ -104,6 +107,24 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	bool IsBeingWatered()
 	{
 		return canIsInRange && Flori_WateringCan.Instance.CanIsPouring();
+	}
+
+	void UpdateWaterInPlanter()
+	{
+		waterCounter += Time.deltaTime;
+		if (waterCounter >= Flori_WateringCan.Instance.pouringInterval)
+		{
+			Debug.Log ("Tick");
+			waterDropsReceived++;
+
+			if (waterDropsReceived == waterDropsToBloom)
+			{
+				waterDropsReceived = 0;
+				seedInPlanter.StartGrowing ();
+			}
+
+			waterCounter = 0f;
+		}
 	}
 
 }
