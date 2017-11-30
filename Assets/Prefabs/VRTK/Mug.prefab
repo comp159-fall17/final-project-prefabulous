@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114731497377094798}
   - component: {fileID: 114265969155141170}
   - component: {fileID: 114602807428672996}
-  - component: {fileID: 114952317033455298}
   - component: {fileID: 33846293486608772}
   - component: {fileID: 23810118629482864}
   - component: {fileID: 64344545313722614}
@@ -58,7 +57,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1538033131810402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.097, y: 0.776, z: -0.185}
   m_LocalScale: {x: 0.0015, y: 0.0015, z: 0.0015}
   m_Children:
@@ -274,16 +273,3 @@ MonoBehaviour:
   intervalOnUse: 0.05
   cancelOnUnuse: 1
   objectToAffect: {fileID: 0}
---- !u!114 &114952317033455298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1538033131810402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63acaf3c302f0e4d9a5df44da006abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPosition: {x: 0, y: -0.0075, z: -0.01}
-  textScale: {x: 0.005, y: 0.005, z: 0.01}
