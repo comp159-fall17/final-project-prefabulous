@@ -125,7 +125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4228260890130894}
   - component: {fileID: 95690441020017802}
-  - component: {fileID: 114536375078795468}
   - component: {fileID: 136668466960000112}
   - component: {fileID: 54483036855162164}
   - component: {fileID: 114877027132612920}
@@ -134,6 +133,7 @@ GameObject:
   - component: {fileID: 114883031899242766}
   - component: {fileID: 114117356565465428}
   - component: {fileID: 114683231684869342}
+  - component: {fileID: 114047479503959014}
   m_Layer: 0
   m_Name: Sunflower
   m_TagString: Flower
@@ -545,6 +545,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114047479503959014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1994892676839140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c1e4c696555e747a306659147f4726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBePicked: 0
+  flowerWorth: 5
 --- !u!114 &114117356565465428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,19 +590,6 @@ MonoBehaviour:
   allowedUseControllers: 0
   objectHighlighter: {fileID: 0}
   usingState: 0
---- !u!114 &114536375078795468
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994892676839140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9b219e3cac62840a7e0081347e6658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePicked: 0
-  detachedScale: {x: 10, y: 10, z: 10}
 --- !u!114 &114683231684869342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -603,6 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionPosition: {x: 0, y: 0, z: -0.01}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
+  textRotation: 0
   namePosition: {x: 0, y: -5, z: -2}
   infoPosition: {x: 0, y: 10, z: -2}
   doNotInvert: 1

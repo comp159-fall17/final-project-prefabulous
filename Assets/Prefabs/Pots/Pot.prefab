@@ -416,6 +416,7 @@ MonoBehaviour:
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}
   hasCrop: 0
+  canIsInRange: 0
 --- !u!114 &114421895845349716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,7 +453,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136109367149813588
 CapsuleCollider:

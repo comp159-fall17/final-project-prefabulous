@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class Flori_Seed : MonoBehaviour {
 
@@ -15,9 +16,12 @@ public class Flori_Seed : MonoBehaviour {
 	[Range(1, 100)]
 	public int waterDropsToBloom = 5;
 
-	[Header("Flower Model")]
+	[Header("Flower Data")]
 	[Tooltip("The flower prefab the seed will sprout once watered")]
-	public GameObject flower;
+	public GameObject flowerModel;
+	[Tooltip("Rate at which this flower grows")]
+	[Range(0.1f, 200f)]
+	public float growthRate = 50f;
 
 	[Header("Testing Variables")]
 	[Tooltip("Flower is currently set to grow until its first height limit")]
@@ -25,14 +29,14 @@ public class Flori_Seed : MonoBehaviour {
 	[Tooltip("Flower has grown to its first height limit and is set to grow until its second and final height limit")]
 	public bool inStageTwoGrowth = false;
 
-    float floweringSpeed = 1.0f;
-    Vector3 flowerScale;
+	GameObject flower;
+	Vector3 flowerScale;
 
-    // Update is called once per frame
-    void Update () {
-        
+	// Update is called once per frame
+	void Update () {
+
 		if (isGrowing)
-        {
+		{
 			if (inStageOneGrowth) 
 			{
 				StageOneGrowth ();
@@ -41,59 +45,63 @@ public class Flori_Seed : MonoBehaviour {
 			{
 				StageTwoGrowth();
 			}
-        }
-    }
+		}
+	}
 
-    //Not sure if need to add in the rest of the code
-    public void Sprout()
-    {
-        Destroy(this.GetComponent<Rigidbody>());
-    }
+	//Not sure if need to add in the rest of the code
+	public void Sprout()
+	{
+		flower = (GameObject)Instantiate (flowerModel, transform);
+		SetFlowerComponents (false);
+		flower.transform.localPosition = Vector3.zero;
+		flower.transform.rotation = Quaternion.identity;
 
-    public void StartGrowing()
-    {
-        isGrowing = true;
-    }
+	}
 
-    void StageOneGrowth()
-    {
-        flowerScale = flower.transform.localScale;
-        flowerScale.y += Time.deltaTime * floweringSpeed;
-        if (flowerScale.x < 200f)
-        {
-            flowerScale.x += Time.deltaTime * floweringSpeed / 3.0f;
-            flowerScale.z += Time.deltaTime * floweringSpeed / 3.0f;
-        }
-        flower.transform.localScale = flowerScale;
+	public void StartGrowing()
+	{
+		isGrowing = true;
+	}
 
-        if (flowerScale.y >= stageOneHeightLimit)
-        {
-            inStageOneGrowth = false;
-            inStageTwoGrowth = true;
-            isGrowing = false;
-        }
-    }
+	void StageOneGrowth()
+	{
+		flowerScale = flower.transform.localScale;
+		flowerScale.y += Time.deltaTime * growthRate;
+		if (flowerScale.x < 200f)
+		{
+			flowerScale.x += Time.deltaTime * growthRate / 3.0f;
+			flowerScale.z += Time.deltaTime * growthRate / 3.0f;
+		}
+		flower.transform.localScale = flowerScale;
 
-    void StageTwoGrowth()
-    {
-        flowerScale = flower.transform.localScale;
-        flowerScale.y += Time.deltaTime * floweringSpeed;
-        flowerScale.x += Time.deltaTime * floweringSpeed / 5.0f;
-        flowerScale.z += Time.deltaTime * floweringSpeed / 5.0f;
-        flower.transform.localScale = flowerScale;
+		if (flowerScale.y >= stageOneHeightLimit)
+		{
+			inStageOneGrowth = false;
+			inStageTwoGrowth = true;
+			isGrowing = false;
+		}
+	}
 
-        if (flowerScale.y >= stageTwoHeightLimit)
-        {
-            FinishGrowing();
-        }
-    }
+	void StageTwoGrowth()
+	{
+		flowerScale = flower.transform.localScale;
+		flowerScale.y += Time.deltaTime * growthRate;
+		flowerScale.x += Time.deltaTime * growthRate / 5.0f;
+		flowerScale.z += Time.deltaTime * growthRate / 5.0f;
+		flower.transform.localScale = flowerScale;
 
-    public void FinishGrowing()
-    {
-        inStageTwoGrowth = false;
-        isGrowing = false;
-        flower.GetComponent<Flower>().SetCanBePicked(true);
-    }
+		if (flowerScale.y >= stageTwoHeightLimit)
+		{
+			FinishGrowing();
+		}
+	}
+
+	public void FinishGrowing()
+	{
+		inStageTwoGrowth = false;
+		isGrowing = false;
+		flower.GetComponent<Flower>().SetCanBePicked(true);
+	}
 
 	public int GetWaterDropsToBloom()
 	{
@@ -105,4 +113,22 @@ public class Flori_Seed : MonoBehaviour {
 		return isGrowing;
 	}
 
+	void SetFlowerComponents(bool on)
+	{
+		if (!on)
+		{
+			Destroy (flower.GetComponent<Rigidbody>());
+		}
+		else
+		{
+			flower.AddComponent<Rigidbody> ();
+		}
+		flower.GetComponent<CapsuleCollider> ().enabled = on;
+		flower.GetComponent<VRTK_InteractableObject> ().isGrabbable = on;
+
+		foreach (MeshCollider collider in flower.GetComponentsInChildren<MeshCollider>())
+		{
+			collider.enabled = on;
+		}
+	}
 }

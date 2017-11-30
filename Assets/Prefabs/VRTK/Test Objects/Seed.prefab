@@ -227,7 +227,10 @@ MonoBehaviour:
   isGrowing: 0
   stageOneHeightLimit: 350
   stageTwoHeightLimit: 600
-  flower: {fileID: 0}
+  waterDropsToBloom: 5
+  flowerModel: {fileID: 1994892676839140, guid: cec05855fa07553408da28f6976e46d6,
+    type: 2}
+  growthRate: 50
   inStageOneGrowth: 1
   inStageTwoGrowth: 0
 --- !u!135 &135278041373732360
