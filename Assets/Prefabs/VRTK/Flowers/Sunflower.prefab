@@ -37,11 +37,11 @@ GameObject:
   - component: {fileID: 95975197822264994}
   - component: {fileID: 136011821679189608}
   - component: {fileID: 54093476498000636}
+  - component: {fileID: 114013199999168574}
   - component: {fileID: 114926301282557006}
   - component: {fileID: 114057555584977726}
   - component: {fileID: 114332878107799396}
   - component: {fileID: 114142798304429684}
-  - component: {fileID: 114013199999168574}
   - component: {fileID: 114577037890436152}
   - component: {fileID: 114647319334037888}
   m_Layer: 0
@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341620893350032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0981, y: 0.79, z: -0.4401}
+  m_LocalPosition: {x: -1.1, y: 0.79, z: -0.4401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4532034301077176}
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBePicked: 0
+  isAttached: 1
   flowerWorth: 5
 --- !u!114 &114926301282557006
 MonoBehaviour:

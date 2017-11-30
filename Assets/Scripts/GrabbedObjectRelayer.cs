@@ -19,18 +19,25 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 
 	protected override void PerformGrabAttempt (GameObject objectToGrab)
 	{
+		if (objectToGrab.CompareTag("Flower") && objectToGrab.GetComponent<Flori_Flower>().IsAttached() && objectToGrab.GetComponent<Flori_Flower>().CanBePicked())
+		{
+			objectToGrab.GetComponent<Rigidbody> ().isKinematic = false;
+			objectToGrab.GetComponent<Flori_Flower> ().Detach ();
+		}
+
 		base.PerformGrabAttempt (objectToGrab);
 		if (objectToGrab != null) 
 		{
-			Debug.Log (objectToGrab.name);
 			CreateItemText (objectToGrab);
 		}
+
 	}
 
 	protected override void AttemptReleaseObject ()
 	{
 		base.AttemptReleaseObject ();
 		DestroyItemText ();
+
 	}
 
 	// Creates a world space text UI that shows the object's name
@@ -187,7 +194,6 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			}
 		}
 	}
-
 
 	/// <summary>
 	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default

@@ -114,7 +114,6 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		waterCounter += Time.deltaTime;
 		if (waterCounter >= Flori_WateringCan.Instance.pouringInterval)
 		{
-			Debug.Log ("Tick");
 			waterDropsReceived++;
 
 			if (waterDropsReceived == waterDropsToBloom)

@@ -12,6 +12,9 @@ public class Flori_Seed : MonoBehaviour {
 	public float stageOneHeightLimit = 350f;
 	[Tooltip("Height limit for the second stage of flower growth")]
 	public float stageTwoHeightLimit = 600f;
+	[Tooltip("Reduced rate multiplier for stage two growth along the x and z axes")]
+	[Range(0.05f, 1f)]
+	public float stageTwoReducer = 0.8f;
 	[Tooltip("Amount of water drops needed to trigger growth")]
 	[Range(1, 100)]
 	public int waterDropsToBloom = 5;
@@ -52,6 +55,7 @@ public class Flori_Seed : MonoBehaviour {
 	public void Sprout()
 	{
 		flower = (GameObject)Instantiate (flowerModel, transform);
+		flower.name = flower.name.TrimEnd (new char[] {'(', 'C', 'l', 'o', 'n', 'e', ')' });
 		SetFlowerComponents (false);
 		flower.transform.localPosition = Vector3.zero;
 		flower.transform.rotation = Quaternion.identity;
@@ -67,10 +71,10 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		flowerScale = flower.transform.localScale;
 		flowerScale.y += Time.deltaTime * growthRate;
-		if (flowerScale.x < 200f)
+		if (flowerScale.x < stageOneHeightLimit / 1.25f)
 		{
-			flowerScale.x += Time.deltaTime * growthRate / 3.0f;
-			flowerScale.z += Time.deltaTime * growthRate / 3.0f;
+			flowerScale.x += Time.deltaTime * growthRate;
+			flowerScale.z += Time.deltaTime * growthRate;
 		}
 		flower.transform.localScale = flowerScale;
 
@@ -86,8 +90,8 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		flowerScale = flower.transform.localScale;
 		flowerScale.y += Time.deltaTime * growthRate;
-		flowerScale.x += Time.deltaTime * growthRate / 5.0f;
-		flowerScale.z += Time.deltaTime * growthRate / 5.0f;
+		flowerScale.x += Time.deltaTime * growthRate * stageTwoReducer;
+		flowerScale.z += Time.deltaTime * growthRate * stageTwoReducer;
 		flower.transform.localScale = flowerScale;
 
 		if (flowerScale.y >= stageTwoHeightLimit)
@@ -100,7 +104,9 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		inStageTwoGrowth = false;
 		isGrowing = false;
-		flower.GetComponent<Flower>().SetCanBePicked(true);
+		SetFlowerComponents (true);
+		flower.transform.SetParent (GameObject.Find("Flowers").transform);
+		flower.GetComponent<Flori_Flower> ().SetCanBePickedTo (true);
 	}
 
 	public int GetWaterDropsToBloom()
@@ -117,12 +123,9 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		if (!on)
 		{
-			Destroy (flower.GetComponent<Rigidbody>());
+			flower.GetComponent<Rigidbody> ().isKinematic = true;
 		}
-		else
-		{
-			flower.AddComponent<Rigidbody> ();
-		}
+
 		flower.GetComponent<CapsuleCollider> ().enabled = on;
 		flower.GetComponent<VRTK_InteractableObject> ().isGrabbable = on;
 
