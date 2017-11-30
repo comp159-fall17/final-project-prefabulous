@@ -1968,6 +1968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363f1ac0d94bb5a4988a81481177ce0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wateringCan: {fileID: 1860934350}
+  waterVolume: 2
 --- !u!1001 &814750384
 Prefab:
   m_ObjectHideFlags: 0
@@ -3579,6 +3581,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c54ca62a2329516459e59d67e7313465, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1860934350 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1582928126453008, guid: 33397cf6547873643a05f5ef6a0675ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 1143943142}
 --- !u!1 &1892912078
 GameObject:
   m_ObjectHideFlags: 0
