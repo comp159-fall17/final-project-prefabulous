@@ -13,6 +13,8 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	public bool canIsInRange = false;
 
 	Flori_Seed seedInPlanter;
+	float waterCounter = 0f;
+	int currentSeedThreshold;
 
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
@@ -24,7 +26,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 
 		if (IsBeingWatered())
 		{
-			
+			UpdateWaterInPlanter ();
 		}
 
 	}
@@ -104,6 +106,11 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	bool IsBeingWatered()
 	{
 		return canIsInRange && Flori_WateringCan.Instance.CanIsPouring();
+	}
+
+	void UpdateWaterInPlanter()
+	{
+		
 	}
 
 }

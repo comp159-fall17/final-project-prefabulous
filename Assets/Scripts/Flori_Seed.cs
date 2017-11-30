@@ -7,28 +7,23 @@ public class Flori_Seed : MonoBehaviour {
     public bool collectable = true, isGrowing = false, stageOne = true, stageTwo = false;
     public GameObject seedPrefab;
 
-    float diameter, floweringSpeed = 1.0f;
+    float floweringSpeed = 1.0f;
     public GameObject flower;
     Vector3 flowerScale;
 
-    // Use this for initialization
-    void Start () {
-
-        diameter = transform.localScale.x;
-        for (int i = 0; i < maxSeeds; i++)
-        {
-            GenerateSeed();
-        }
-    }
-
     // Update is called once per frame
     void Update () {
-        if (isGrowing)
+        
+		if (isGrowing)
         {
-            if (stageOne)
-                StageOneGrowth();
-            else if (stageTwo)
-                StageTwoGrowth();
+			if (stageOne) 
+			{
+				StageOneGrowth ();
+			}
+			else if (stageTwo)
+			{
+				StageTwoGrowth();
+			}
         }
     }
 
@@ -83,25 +78,4 @@ public class Flori_Seed : MonoBehaviour {
         flower.GetComponent<Flower>().SetCanBePicked(true);
     }
 
-    void GenerateSeed()
-    {
-
-        Vector3 seedPosition = transform.position;
-        seedPosition.x += RandomOffset(diameter * 4);
-        seedPosition.z += RandomOffset(diameter * 4);
-
-        if (Vector3.Distance(transform.position, seedPosition) < diameter)
-        {
-            GenerateSeed();
-        }
-
-        GameObject seedling = Instantiate(seedPrefab, seedPosition, Camera.main.transform.rotation); //TODO: null reference here... fix
-        seedling.name = gameObject.name;
-        seedling.transform.SetParent(transform);
-    }
-
-    float RandomOffset(float offsetSize)
-    {
-        return Random.Range(-offsetSize / 2.0f, offsetSize / 2.0f);
-    }
 }
