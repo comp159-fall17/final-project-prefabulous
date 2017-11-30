@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Flori_Seed : MonoBehaviour {
-    public float maxSeeds, stageOneHeightLimit = 350f, stageTwoHeightLimit = 350f;
-    public bool collectable = true, isGrowing = false, stageOne = true, stageTwo = false;
-    public GameObject seedPrefab;
+
+	[Header("Growth Variables")]
+	[Tooltip("Signifies if flower is currently growing")]
+	public bool isGrowing = false;
+	[Tooltip("Height limit for the first stage of flower growth")]
+	public float stageOneHeightLimit = 350f;
+	[Tooltip("Height limit for the second stage of flower growth")]
+	public float stageTwoHeightLimit = 600f;
+	[Header("Flower Data")]
+	[Tooltip("The flower prefab the seed will sprout once watered")]
+	public GameObject flower;
+
+	[Header("Testing Variables")]
+	[Tooltip("Flower is currently set to grow until its first height limit")]
+	public bool inStageOneGrowth = true;
+	[Tooltip("Flower has grown to its first height limit and is set to grow until its second and final height limit")]
+	public bool inStageTwoGrowth = false;
 
     float floweringSpeed = 1.0f;
-    public GameObject flower;
     Vector3 flowerScale;
 
     // Update is called once per frame
@@ -16,11 +29,11 @@ public class Flori_Seed : MonoBehaviour {
         
 		if (isGrowing)
         {
-			if (stageOne) 
+			if (inStageOneGrowth) 
 			{
 				StageOneGrowth ();
 			}
-			else if (stageTwo)
+			else if (inStageTwoGrowth)
 			{
 				StageTwoGrowth();
 			}
@@ -33,7 +46,7 @@ public class Flori_Seed : MonoBehaviour {
         Destroy(this.GetComponent<Rigidbody>());
     }
 
-    public void AddWater()
+    public void StartGrowing()
     {
         isGrowing = true;
     }
@@ -51,8 +64,8 @@ public class Flori_Seed : MonoBehaviour {
 
         if (flowerScale.y >= stageOneHeightLimit)
         {
-            stageOne = false;
-            stageTwo = true;
+            inStageOneGrowth = false;
+            inStageTwoGrowth = true;
             isGrowing = false;
         }
     }
@@ -73,7 +86,7 @@ public class Flori_Seed : MonoBehaviour {
 
     public void FinishGrowing()
     {
-        stageTwo = false;
+        inStageTwoGrowth = false;
         isGrowing = false;
         flower.GetComponent<Flower>().SetCanBePicked(true);
     }
