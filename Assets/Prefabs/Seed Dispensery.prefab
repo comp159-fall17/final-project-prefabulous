@@ -98,7 +98,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1446349378877022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.562, y: 1.4896, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -256,9 +256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seedPrefab: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586, type: 2}
   spawnPoint: {fileID: 1812136633571532}
-  seedScalar: {x: 5, y: 5, z: 5}
-  sellPrice: 50
-  refundRation: 1
+  seedScalar: {x: 1, y: 1, z: 1}
+  sellPrice: 100
+  refundRatio: 1
 --- !u!114 &114870347379417322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,4 +274,4 @@ MonoBehaviour:
   spawnPoint: {fileID: 1938682215329878}
   seedScalar: {x: 5, y: 5, z: 5}
   sellPrice: 50
-  refundRation: 1
+  refundRatio: 1

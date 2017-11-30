@@ -15,7 +15,8 @@ public class DispenserController : MonoBehaviour {
     [Tooltip("The amount of money it costs to buy this seed")]
     public int sellPrice;
     [Tooltip("The amount of money refuneded if the seed is returned")]
-    public float refundRation = 1f;
+    [Range(0f, 1f)]
+    public float refundRatio = 1f;
 
     GameObject currentSeed;
     private bool grabbed;

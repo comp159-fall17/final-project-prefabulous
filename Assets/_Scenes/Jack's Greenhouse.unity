@@ -1373,6 +1373,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
+        type: 2}
+      propertyPath: seedScalar.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
+        type: 2}
+      propertyPath: seedScalar.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
+        type: 2}
+      propertyPath: seedScalar.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc7ae15e3e4ac44b192153c59a74d075, type: 2}
   m_IsPrefabParent: 0
@@ -1488,12 +1503,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 0}
-  actualHeadset: {fileID: 0}
-  actualLeftController: {fileID: 0}
-  actualRightController: {fileID: 0}
-  modelAliasLeftController: {fileID: 0}
-  modelAliasRightController: {fileID: 0}
+  actualBoundaries: {fileID: 1039012354}
+  actualHeadset: {fileID: 2142327668}
+  actualLeftController: {fileID: 692406145}
+  actualRightController: {fileID: 2107573571}
+  modelAliasLeftController: {fileID: 1419021938}
+  modelAliasRightController: {fileID: 977698128}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -1528,6 +1543,11 @@ Transform:
   m_Father: {fileID: 2028721883}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &692406145 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 433938421}
 --- !u!1 &722308908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,6 +1872,11 @@ Transform:
   m_Father: {fileID: 547266189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &977698128 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1883185261795400, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 433938421}
 --- !u!1 &1037423133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +2003,11 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 0578ceb46955e4548ba464d4b6c054ad, type: 3}
   - {fileID: 8300000, guid: 93955aae41197ae4da58e456f92fcb51, type: 3}
+--- !u!1 &1039012354 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 433938421}
 --- !u!1 &1039048401 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1391680734304532, guid: b0432da5edafcd74384540afb8b9ee1f,
@@ -2352,6 +2382,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCount: {fileID: 0}
+--- !u!1 &1419021938 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384746914293964, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 433938421}
 --- !u!1 &1448518284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,6 +3249,11 @@ Transform:
   m_Father: {fileID: 1082740753}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2107573571 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 433938421}
 --- !u!4 &2110955508 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011401111930, guid: be540b97364be0a4890e39e62ac89ed1,
