@@ -11,7 +11,11 @@ public class Flori_Seed : MonoBehaviour {
 	public float stageOneHeightLimit = 350f;
 	[Tooltip("Height limit for the second stage of flower growth")]
 	public float stageTwoHeightLimit = 600f;
-	[Header("Flower Data")]
+	[Tooltip("Amount of water drops needed to trigger growth")]
+	[Range(1, 100)]
+	public int waterDropsToBloom = 5;
+
+	[Header("Flower Model")]
 	[Tooltip("The flower prefab the seed will sprout once watered")]
 	public GameObject flower;
 
@@ -90,5 +94,15 @@ public class Flori_Seed : MonoBehaviour {
         isGrowing = false;
         flower.GetComponent<Flower>().SetCanBePicked(true);
     }
+
+	public int GetWaterDropsToBloom()
+	{
+		return waterDropsToBloom;
+	}
+
+	public bool IsGrowing()
+	{
+		return isGrowing;
+	}
 
 }

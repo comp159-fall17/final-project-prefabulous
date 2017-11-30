@@ -224,8 +224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aabdaf365e74ed42ab56905bffccdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectable: 1
   isGrowing: 0
+  stageOneHeightLimit: 350
+  stageTwoHeightLimit: 600
+  flower: {fileID: 0}
+  inStageOneGrowth: 1
+  inStageTwoGrowth: 0
 --- !u!135 &135278041373732360
 SphereCollider:
   m_ObjectHideFlags: 1
