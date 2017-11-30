@@ -264,10 +264,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114559219978471680, guid: 5e7386d60c5f9104b8292bbc97209586,
-        type: 2}
-      propertyPath: growthRate
-      value: 2
+    - target: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586, type: 2}
+      propertyPath: m_Name
+      value: Sunflower Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7386d60c5f9104b8292bbc97209586, type: 2}

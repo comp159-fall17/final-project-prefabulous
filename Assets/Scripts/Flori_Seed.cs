@@ -107,6 +107,7 @@ public class Flori_Seed : MonoBehaviour {
 		SetFlowerComponents (true);
 		flower.transform.SetParent (GameObject.Find("Flowers").transform);
 		flower.GetComponent<Flori_Flower> ().SetCanBePickedTo (true);
+		Destroy (gameObject);
 	}
 
 	public int GetWaterDropsToBloom()
