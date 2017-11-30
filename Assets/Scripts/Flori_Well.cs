@@ -18,7 +18,7 @@ public class Flori_Well : MonoBehaviour {
     {
         if (other.CompareTag("Refill Point"))
         {
-            gameObject.GetComponent<Transform>().position += Vector3.down * Time.deltaTime;
+            gameObject.GetComponent<Transform>().position += Vector3.up * Time.deltaTime;
         }
     }
 
@@ -26,8 +26,7 @@ public class Flori_Well : MonoBehaviour {
     {
         if (other.CompareTag("Refill Point"))
         {
-            //TODO: play a water refill sound
-            gameObject.GetComponent<Transform>().position += Vector3.up * Time.deltaTime;
+            gameObject.GetComponent<Transform>().position += Vector3.down * Time.deltaTime;
         }
     }
 }
