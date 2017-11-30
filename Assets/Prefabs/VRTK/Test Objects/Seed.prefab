@@ -225,12 +225,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrowing: 0
-  stageOneHeightLimit: 350
-  stageTwoHeightLimit: 600
+  stageOneHeightLimit: 10
+  stageTwoHeightLimit: 20
   waterDropsToBloom: 5
-  flowerModel: {fileID: 1994892676839140, guid: cec05855fa07553408da28f6976e46d6,
+  flowerModel: {fileID: 1341620893350032, guid: 4fe1911cb91884844ab2eb6195148565,
     type: 2}
-  growthRate: 50
+  growthRate: 0.6
   inStageOneGrowth: 1
   inStageTwoGrowth: 0
 --- !u!135 &135278041373732360

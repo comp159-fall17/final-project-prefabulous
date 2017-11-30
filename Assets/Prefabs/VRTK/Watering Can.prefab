@@ -2636,8 +2636,8 @@ MonoBehaviour:
   spillingAngle: 95
   maximumWaterLevel: 100
   startingWaterLevel: 75
-  pouringInterval: 2
-  spillingInterval: 0.5
+  pouringInterval: 0.5
+  spillingInterval: 0.125
   visualLevel: {fileID: 1037303804152308}
   visualBounds: {x: 0.05, y: 0.2}
 --- !u!114 &114141249803238776
@@ -2894,7 +2894,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 421531975
+  randomSeed: -140647949
   InitialModule:
     serializedVersion: 3
     enabled: 1

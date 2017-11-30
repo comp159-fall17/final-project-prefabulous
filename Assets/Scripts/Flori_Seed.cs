@@ -20,8 +20,8 @@ public class Flori_Seed : MonoBehaviour {
 	[Tooltip("The flower prefab the seed will sprout once watered")]
 	public GameObject flowerModel;
 	[Tooltip("Rate at which this flower grows")]
-	[Range(0.1f, 200f)]
-	public float growthRate = 50f;
+	[Range(0.1f, 2f)]
+	public float growthRate = 0.5f;
 
 	[Header("Testing Variables")]
 	[Tooltip("Flower is currently set to grow until its first height limit")]
