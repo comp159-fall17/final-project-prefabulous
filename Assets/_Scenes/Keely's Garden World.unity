@@ -972,6 +972,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1898907395382066, guid: df37bc2e946d7054d85617f9e91f2514, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df37bc2e946d7054d85617f9e91f2514, type: 2}
   m_IsPrefabParent: 0
@@ -6467,6 +6471,7 @@ MonoBehaviour:
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}
   hasCrop: 0
+  canIsInRange: 0
 --- !u!54 &1398197872
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9463,6 +9468,28 @@ Prefab:
     - target: {fileID: 4984936449663404, guid: 5e7386d60c5f9104b8292bbc97209586, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559219978471680, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+      propertyPath: isGrowing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559219978471680, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+      propertyPath: seedPrefab
+      value: 
+      objectReference: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+    - target: {fileID: 114559219978471680, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+      propertyPath: flower
+      value: 
+      objectReference: {fileID: 1994892676839140, guid: cec05855fa07553408da28f6976e46d6,
+        type: 2}
+    - target: {fileID: 114559219978471680, guid: 5e7386d60c5f9104b8292bbc97209586,
+        type: 2}
+      propertyPath: maxSeeds
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7386d60c5f9104b8292bbc97209586, type: 2}
