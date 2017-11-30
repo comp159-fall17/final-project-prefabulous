@@ -8,6 +8,8 @@ TagManager:
   - Item Info
   - Item Name
   - Watering Can
+  - Seed
+  - Refill Point
   layers:
   - Default
   - TransparentFX
