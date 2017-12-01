@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableDescription: 0
   descriptionPosition: {x: 0, y: 0, z: 0.1}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
   textRotation: 40
@@ -364,6 +365,8 @@ MonoBehaviour:
   doNotInvert: 1
   itemInfo: $1000
   showItemInfo: 1
+  overrideDefaultBendAngle: 0
+  bendAngle: -90
 --- !u!224 &224146026351617528
 RectTransform:
   m_ObjectHideFlags: 1
