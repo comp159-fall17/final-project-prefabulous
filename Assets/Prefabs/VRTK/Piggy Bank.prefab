@@ -33,7 +33,7 @@ GameObject:
   - component: {fileID: 82093642765258838}
   m_Layer: 0
   m_Name: Piggy Bank
-  m_TagString: Flower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,9 +356,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionPosition: {x: 0, y: 0, z: 0.1}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
-  textRotation: 180
-  namePosition: {x: 0, y: 0.2, z: 0}
-  infoPosition: {x: 0, y: 20, z: 0}
+  textRotation: 40
+  namePosition: {x: 0, y: 0.2, z: -4}
+  infoPosition: {x: 0, y: 20, z: -2}
+  leftHandTextShift: {x: 0, y: 0, z: 0}
+  leftHandTextRotation: 0
   doNotInvert: 1
   itemInfo: $1000
   showItemInfo: 1

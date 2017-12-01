@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRTK;
 using VOA = VRTK.VRTK_ObjectAppearance;
+using CurvedUI;
 
 public class GrabbedObjectRelayer : VRTK_InteractGrab {
 
@@ -48,6 +49,9 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		itemDescription.transform.SetGlobalScale (GetTextScale(itemDescription));
 
 		Flori_UIData UIData = itemDescription.GetComponentInParent<Flori_UIData> ();
+
+		HandleTextBending (UIData, itemDescription);
+
 		if (leftHandGrabbing)
 		{
 			if (!UIData.doNotInvert)
@@ -55,22 +59,13 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 				Debug.Log ("Inverting text");
 				RotateText (itemDescription, 180f);
 			}
+			RotateText (itemDescription, UIData.leftHandTextRotation);
+			ShiftText (itemDescription, UIData.leftHandTextShift);
 		}
 
 		if (UIData != null) RotateText (itemDescription, UIData.textRotation);
 
-		Text[] descriptionTexts = itemDescription.GetComponentsInChildren<Text>();
-		foreach (Text text in descriptionTexts)
-		{
-			if (text.gameObject.CompareTag("Item Info"))
-			{
-				itemInfo = text;
-			}
-			if (text.gameObject.CompareTag("Item Name"))
-			{
-				itemName = text;
-			}
-		}
+		AssignComponentsOf (itemDescription);
 
 		itemInfo.transform.localPosition = GetInfoPosition (itemInfo.gameObject.transform.parent.gameObject);
 		itemName.transform.localPosition = GetNamePosition (itemName.gameObject.transform.parent.gameObject);
@@ -196,7 +191,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	}
 
 	/// <summary>
-	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default
+	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default.
 	/// </summary>
 	/// <param name="description">UI Text Description to rotate.</param>
 	/// <param name="direction">Clockwise by default at -1.</param>
@@ -205,6 +200,51 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		Vector3 descriptionRotation = description.transform.eulerAngles;
 		descriptionRotation.y += direction * degrees;
 		description.transform.eulerAngles = descriptionRotation;
+	}
+
+	/// <summary>
+	/// Shift GameObject (meant for description objects) by distance vector.
+	/// </summary>
+	/// <param name="description">Description.</param>
+	/// <param name="distance">Distance.</param>
+	void ShiftText(GameObject description, Vector3 distance)
+	{
+		Vector3 location = description.transform.localPosition;
+		location += distance;
+		description.transform.localPosition = location;
+	}
+
+	/// <summary>
+	/// Assigns the components of the item description.
+	/// </summary>
+	/// <param name="itemDescription">Item description.</param>
+	void AssignComponentsOf(GameObject itemDescription)
+	{
+		Text[] descriptionTexts = itemDescription.GetComponentsInChildren<Text>();
+		foreach (Text text in descriptionTexts)
+		{
+			if (text.gameObject.CompareTag("Item Info"))
+			{
+				itemInfo = text;
+			}
+			if (text.gameObject.CompareTag("Item Name"))
+			{
+				itemName = text;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Sets custom text bending if override is selected.
+	/// </summary>
+	/// <param name="UIData">User interface data.</param>
+	/// <param name="itemDescription">Item description.</param>
+	void HandleTextBending(Flori_UIData UIData, GameObject itemDescription)
+	{
+		if (UIData.overrideDefaultBendAngle)
+		{
+			itemDescription.GetComponent<CurvedUISettings> ().Angle = UIData.bendAngle;
+		}
 	}
 
 }
