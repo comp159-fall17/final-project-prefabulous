@@ -10,6 +10,7 @@ TagManager:
   - Watering Can
   - Seed
   - Refill Point
+  - Can Body
   layers:
   - Default
   - TransparentFX

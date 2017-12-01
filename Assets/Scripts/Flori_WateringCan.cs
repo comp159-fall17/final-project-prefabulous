@@ -59,6 +59,7 @@ public class Flori_WateringCan : MonoBehaviour {
     float timeCounter = 0;
     bool wateringCanIsActive;
     bool wateringCanIsSpilling;
+	bool isSubmerged = false;
 
     // Use this for initialization
     void Start()
@@ -110,14 +111,14 @@ public class Flori_WateringCan : MonoBehaviour {
 	/// </summary>
     void PourWater()
     {
-        if (waterLevel != 0)
+		if (waterLevel != 0 && !IsSubmerged())
         {
             waterLevel--;
             displayWaterAmount.text = waterLevel.ToString();
         }
         else
         {
-            Debug.Log("Watering Can is empty");
+            Debug.Log("Watering Can is empty or submerged");
             // TODO: Add a visual signal that the can is empty
         }
     }
@@ -233,9 +234,14 @@ public class Flori_WateringCan : MonoBehaviour {
 	/// <summary> 
 	/// Returns true if waterlevel variable is 0 
 	/// </summary>
-	public bool CanIsEmpty()
+	public bool IsEmpty()
 	{
 		return waterLevel == 0;
+	}
+
+	public bool IsFull()
+	{
+		return waterLevel == maximumWaterLevel;
 	}
 
 	/// <summary>
@@ -268,6 +274,24 @@ public class Flori_WateringCan : MonoBehaviour {
 		{
 			particles.Stop ();
 		}
+	}
+
+	/// <summary>
+	/// Determines whether this instance is submerged in a well.
+	/// </summary>
+	/// <returns><c>true</c> if this instance is submerged; otherwise, <c>false</c>.</returns>
+	public bool IsSubmerged()
+	{
+		return isSubmerged;
+	}
+
+	/// <summary>
+	/// Sets the is submerged bool of this instance.
+	/// </summary>
+	/// <param name="state">If set to <c>true</c> state.</param>
+	public void SetIsSubmerged(bool state)
+	{
+		isSubmerged = state;
 	}
 
 }
