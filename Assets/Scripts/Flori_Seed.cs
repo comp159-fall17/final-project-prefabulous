@@ -58,7 +58,11 @@ public class Flori_Seed : MonoBehaviour {
 		flower.name = flower.name.TrimEnd (new char[] {'(', 'C', 'l', 'o', 'n', 'e', ')' });
 		SetFlowerComponents (false);
 		flower.transform.localPosition = Vector3.zero;
-		flower.transform.rotation = Quaternion.identity;
+		Vector3 rotation = flower.transform.localRotation.eulerAngles;
+		rotation.x = 0;
+		rotation.y = 0;
+		rotation.z = 0;
+		flower.transform.localRotation = Quaternion.Euler(rotation);
 
 	}
 
