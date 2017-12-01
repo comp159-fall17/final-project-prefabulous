@@ -22,6 +22,15 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	{
 		if (objectToGrab.CompareTag("Flower") && objectToGrab.GetComponent<Flori_Flower>().IsAttached() && objectToGrab.GetComponent<Flori_Flower>().CanBePicked())
 		{
+			Flori_Planter planterToReset;
+			foreach (GameObject planter in GameObject.FindGameObjectsWithTag("Planter"))
+			{
+				if (planter.GetComponent<Flori_Planter>().GetSeedInPlanter() == objectToGrab.GetComponent<Flori_Flower>().GetParentSeed())
+				{
+					planter.GetComponent<Flori_Planter> ().RemoveCropFrom ();
+				}	
+			}
+
 			objectToGrab.GetComponent<Rigidbody> ().isKinematic = false;
 			objectToGrab.GetComponent<Flori_Flower> ().Detach ();
 		}

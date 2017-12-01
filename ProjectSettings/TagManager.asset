@@ -11,6 +11,7 @@ TagManager:
   - Seed
   - Refill Point
   - Can Body
+  - Planter
   layers:
   - Default
   - TransparentFX
