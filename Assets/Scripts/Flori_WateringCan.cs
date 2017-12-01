@@ -55,7 +55,16 @@ public class Flori_WateringCan : MonoBehaviour {
 
 	MeshRenderer render;
 	ParticleSystem particles;
-    int waterLevel;
+	int _waterLevel;
+	int waterLevel {
+		get { return _waterLevel; }
+		set 
+		{
+			_waterLevel = value;
+			SetVisualLevel (value);
+			displayWaterAmount.text = waterLevel.ToString();
+		}
+	}
     float timeCounter = 0;
     bool wateringCanIsActive;
     bool wateringCanIsSpilling;
@@ -75,10 +84,8 @@ public class Flori_WateringCan : MonoBehaviour {
 		render = GetComponent<MeshRenderer>();
 		particles = GetComponent<ParticleSystem> ();
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
-        displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
 		particles.Stop ();
-		SetVisualLevel (waterLevel);
 
     }
 	
@@ -114,7 +121,6 @@ public class Flori_WateringCan : MonoBehaviour {
 		if (waterLevel != 0 && !IsSubmerged())
         {
             waterLevel--;
-            displayWaterAmount.text = waterLevel.ToString();
         }
         else
         {
@@ -205,7 +211,6 @@ public class Flori_WateringCan : MonoBehaviour {
             if (timeCounter >= spillingInterval)
             {
                 PourWater();
-				SetVisualLevel (waterLevel);
                 timeCounter = 0;
             }
         } 
@@ -215,7 +220,6 @@ public class Flori_WateringCan : MonoBehaviour {
             if (timeCounter >= pouringInterval)
             {
                 PourWater();
-				SetVisualLevel(waterLevel);
                 timeCounter = 0;
             }
         }
