@@ -24,6 +24,7 @@ public class MarketBoxController : MonoBehaviour {
 	}
 
     void VanishItems() {
+        Debug.Log("Vanishing items.");
         List<GameObject> toBeDestroyed = new List<GameObject>();
         foreach (GameObject go in inCollision) {
             Sellable worth = go.GetComponent<Sellable>();

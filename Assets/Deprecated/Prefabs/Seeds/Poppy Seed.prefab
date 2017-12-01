@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23810678417242982}
   - component: {fileID: 114294859382602814}
   - component: {fileID: 114491522772243286}
+  - component: {fileID: 114414604515775116}
   m_Layer: 0
   m_Name: Poppy Seed
   m_TagString: Seed
@@ -105,6 +106,18 @@ MonoBehaviour:
   stageOne: 1
   stageTwo: 0
   flower: {fileID: 1606988078072154, guid: 71be9c9041847794fadad4a2e139c5d0, type: 2}
+--- !u!114 &114414604515775116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767477344740512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae55674e8656548f6a9df78e3067ff5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worth: 10
 --- !u!114 &114491522772243286
 MonoBehaviour:
   m_ObjectHideFlags: 1
