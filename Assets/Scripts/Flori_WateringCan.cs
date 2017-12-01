@@ -87,10 +87,10 @@ public class Flori_WateringCan : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		render = GetComponent<MeshRenderer>();
-		particles = GetComponent<ParticleSystem> ();
+		particles = GetComponentInChildren<ParticleSystem> ();
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         wateringCanIsActive = false;
-		particles.Stop ();
+//		particles.Stop ();
 		if (!testingCan)
 		{
 			displayWaterAmount.gameObject.SetActive (false);
@@ -105,28 +105,28 @@ public class Flori_WateringCan : MonoBehaviour {
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         wateringCanIsActive = CanIsPouring();
         wateringCanIsSpilling = CanIsSpilling();
-		if (wateringCanIsSpilling && render.material != spillingMaterial)
+		if (wateringCanIsSpilling)
 		{
-			if (testingCan) 
+			if (testingCan && render.material != spillingMaterial) 
 			{
 				render.material = spillingMaterial;
 			}
 		} 
-		else if (wateringCanIsActive && render.material != inRangeMaterial)
+		else if (wateringCanIsActive)
         {
-			if (testingCan) 
+			if (testingCan && render.material != inRangeMaterial) 
 			{
 				render.material = inRangeMaterial;
 			}
-			TurnParticles (true);
+			TurnParticlesOn ();
         }
-		else if (render.material != outOfRangeMaterial)
+		else
         {
-			if (testingCan) 
+			if (testingCan && render.material != outOfRangeMaterial) 
 			{
 				render.material = outOfRangeMaterial;
 			}
-			TurnParticles (false);
+			TurnParticlesOff ();
         }
         UpdateWaterLevel();
 	}
@@ -267,34 +267,22 @@ public class Flori_WateringCan : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Toggle water particle system.
-	/// </summary>
-	void ToggleParticles()
-	{
-		if (particles.isPlaying)
-		{
-			particles.Stop ();
-		}
-		else if (waterLevel != 0)
-		{
-			particles.Play ();
-		}
-
-	}
-
-	/// <summary>
 	/// Turns the particles to a specific state.
 	/// </summary>
 	/// <param name="on">If set to <c>true</c> on.</param>
-	void TurnParticles(bool on)
+	void TurnParticlesOn()
 	{
-		if (waterLevel != 0 && on)
+		if (waterLevel != 0 && !particles.gameObject.activeInHierarchy)
 		{
-			particles.Play ();
+			particles.gameObject.SetActive (true);
 		}
-		else
+	}
+
+	void TurnParticlesOff()
+	{
+		if (particles.gameObject.activeInHierarchy)
 		{
-			particles.Stop ();
+			particles.gameObject.SetActive (false);
 		}
 	}
 
