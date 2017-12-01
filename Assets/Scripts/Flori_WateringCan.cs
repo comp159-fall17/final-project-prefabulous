@@ -9,14 +9,16 @@ public class Flori_WateringCan : MonoBehaviour {
 	public static Flori_WateringCan Instance;
     private enum Axis { X_POSITIVE, X_NEGATIVE, Z_POSITIVE, Z_NEGATIVE };
 
-	[Header("Testing Materials")]
-	[Tooltip("Material the test can shows during its active range")]
+	[Header("Testing Variables")]
+	[Tooltip("Highlights can when spilling or pouring, and displays water level in text.")]
+	public bool testingCan = false;
+	[Tooltip("Material the test can shows during its active range.")]
 	public Material inRangeMaterial;
-	[Tooltip("Material the test can shows during its inactive range")]
+	[Tooltip("Material the test can shows during its inactive range.")]
     public Material outOfRangeMaterial;
-    [Tooltip("Material the test can shows during its spilling range")]
+    [Tooltip("Material the test can shows during its spilling range.")]
     public Material spillingMaterial;
-    [Tooltip("Text to display remaining amount of water in watering can")]
+    [Tooltip("Text to display remaining amount of water in watering can.")]
     public Text displayWaterAmount;
 
 	[Header("Active Range Variables")]
@@ -55,10 +57,23 @@ public class Flori_WateringCan : MonoBehaviour {
 
 	MeshRenderer render;
 	ParticleSystem particles;
-    int waterLevel;
+	int _waterLevel;
+	int waterLevel {
+		get { return _waterLevel; }
+		set 
+		{
+			_waterLevel = value;
+			SetVisualLevel (value);
+			if (testingCan) 
+			{
+				displayWaterAmount.text = waterLevel.ToString ();
+			}
+		}
+	}
     float timeCounter = 0;
     bool wateringCanIsActive;
     bool wateringCanIsSpilling;
+	bool isSubmerged = false;
 
     // Use this for initialization
     void Start()
@@ -71,13 +86,12 @@ public class Flori_WateringCan : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
 		render = GetComponent<MeshRenderer>();
-		particles = GetComponent<ParticleSystem> ();
+		particles = GetComponentInChildren<ParticleSystem> ();
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
-        displayWaterAmount.text = waterLevel.ToString();
         wateringCanIsActive = false;
-		particles.Stop ();
-		SetVisualLevel (waterLevel);
+		displayWaterAmount.gameObject.SetActive (testingCan);
 
     }
 	
@@ -88,19 +102,28 @@ public class Flori_WateringCan : MonoBehaviour {
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         wateringCanIsActive = CanIsPouring();
         wateringCanIsSpilling = CanIsSpilling();
-		if (wateringCanIsSpilling && render.material != spillingMaterial)
+		if (wateringCanIsSpilling)
 		{
-            render.material = spillingMaterial;
-        } 
-		else if (wateringCanIsActive && render.material != inRangeMaterial)
+			if (testingCan && render.material != spillingMaterial) 
+			{
+				render.material = spillingMaterial;
+			}
+		} 
+		else if (wateringCanIsActive)
         {
-            render.material = inRangeMaterial;
-			TurnParticles (true);
+			if (testingCan && render.material != inRangeMaterial) 
+			{
+				render.material = inRangeMaterial;
+			}
+			TurnParticlesOn ();
         }
-		else if (render.material != outOfRangeMaterial)
+		else
         {
-            render.material = outOfRangeMaterial;
-			TurnParticles (false);
+			if (testingCan && render.material != outOfRangeMaterial) 
+			{
+				render.material = outOfRangeMaterial;
+			}
+			TurnParticlesOff ();
         }
         UpdateWaterLevel();
 	}
@@ -110,14 +133,13 @@ public class Flori_WateringCan : MonoBehaviour {
 	/// </summary>
     void PourWater()
     {
-        if (waterLevel != 0)
+		if (waterLevel != 0 && !IsSubmerged())
         {
             waterLevel--;
-            displayWaterAmount.text = waterLevel.ToString();
         }
         else
         {
-            Debug.Log("Watering Can is empty");
+            Debug.Log("Watering Can is empty or submerged");
             // TODO: Add a visual signal that the can is empty
         }
     }
@@ -204,7 +226,6 @@ public class Flori_WateringCan : MonoBehaviour {
             if (timeCounter >= spillingInterval)
             {
                 PourWater();
-				SetVisualLevel (waterLevel);
                 timeCounter = 0;
             }
         } 
@@ -214,7 +235,6 @@ public class Flori_WateringCan : MonoBehaviour {
             if (timeCounter >= pouringInterval)
             {
                 PourWater();
-				SetVisualLevel(waterLevel);
                 timeCounter = 0;
             }
         }
@@ -226,48 +246,59 @@ public class Flori_WateringCan : MonoBehaviour {
 	void SetVisualLevel(float height)
 	{
 		Vector3 newLevel = visualLevel.transform.localPosition;
-		newLevel.y = Mathf.Clamp(newLevel.y = height / maximumWaterLevel * visualBounds.y, visualBounds.x, visualBounds.y);
+		newLevel.y = Mathf.Clamp(height / maximumWaterLevel * visualBounds.y, visualBounds.x, visualBounds.y);
 		visualLevel.transform.localPosition = newLevel;
 	}
 
 	/// <summary> 
 	/// Returns true if waterlevel variable is 0 
 	/// </summary>
-	public bool CanIsEmpty()
+	public bool IsEmpty()
 	{
 		return waterLevel == 0;
 	}
 
-	/// <summary>
-	/// Toggle water particle system.
-	/// </summary>
-	void ToggleParticles()
+	public bool IsFull()
 	{
-		if (particles.isPlaying)
-		{
-			particles.Stop ();
-		}
-		else if (waterLevel != 0)
-		{
-			particles.Play ();
-		}
-
+		return waterLevel == maximumWaterLevel;
 	}
 
 	/// <summary>
 	/// Turns the particles to a specific state.
 	/// </summary>
 	/// <param name="on">If set to <c>true</c> on.</param>
-	void TurnParticles(bool on)
+	void TurnParticlesOn()
 	{
-		if (waterLevel != 0 && on)
+		if (waterLevel != 0 && !particles.gameObject.activeInHierarchy)
 		{
-			particles.Play ();
+			particles.gameObject.SetActive (true);
 		}
-		else
+	}
+
+	void TurnParticlesOff()
+	{
+		if (particles.gameObject.activeInHierarchy)
 		{
-			particles.Stop ();
+			particles.gameObject.SetActive (false);
 		}
+	}
+
+	/// <summary>
+	/// Determines whether this instance is submerged in a well.
+	/// </summary>
+	/// <returns><c>true</c> if this instance is submerged; otherwise, <c>false</c>.</returns>
+	public bool IsSubmerged()
+	{
+		return isSubmerged;
+	}
+
+	/// <summary>
+	/// Sets the is submerged bool of this instance.
+	/// </summary>
+	/// <param name="state">If set to <c>true</c> state.</param>
+	public void SetIsSubmerged(bool state)
+	{
+		isSubmerged = state;
 	}
 
 }

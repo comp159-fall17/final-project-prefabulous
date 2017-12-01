@@ -33,7 +33,7 @@ public class DispenserController : MonoBehaviour {
             if (grabbed)
             {
                 SeedPicked();
-                PiggyBankController.instance.Spend(sellPrice);
+                PiggyBankController.Instance.Spend(sellPrice);
             }
         }
         if (SeedWasReleased()) {

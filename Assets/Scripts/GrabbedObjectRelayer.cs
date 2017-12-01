@@ -55,6 +55,8 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 				Debug.Log ("Inverting text");
 				RotateText (itemDescription, 180f);
 			}
+			RotateText (itemDescription, UIData.leftHandTextRotation);
+			ShiftText (itemDescription, UIData.leftHandTextShift);
 		}
 
 		if (UIData != null) RotateText (itemDescription, UIData.textRotation);
@@ -196,7 +198,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	}
 
 	/// <summary>
-	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default
+	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default.
 	/// </summary>
 	/// <param name="description">UI Text Description to rotate.</param>
 	/// <param name="direction">Clockwise by default at -1.</param>
@@ -205,6 +207,18 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		Vector3 descriptionRotation = description.transform.eulerAngles;
 		descriptionRotation.y += direction * degrees;
 		description.transform.eulerAngles = descriptionRotation;
+	}
+
+	/// <summary>
+	/// Shift GameObject (meant for description objects) by distance vector.
+	/// </summary>
+	/// <param name="description">Description.</param>
+	/// <param name="distance">Distance.</param>
+	void ShiftText(GameObject description, Vector3 distance)
+	{
+		Vector3 location = description.transform.localPosition;
+		location += distance;
+		description.transform.localPosition = location;
 	}
 
 }
