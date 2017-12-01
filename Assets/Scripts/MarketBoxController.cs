@@ -29,7 +29,7 @@ public class MarketBoxController : MonoBehaviour {
             Sellable worth = go.GetComponent<Sellable>();
             if (worth != null)
             {
-                PiggyBankController.instance.Earn(worth.worth);
+                PiggyBankController.Instance.Earn(worth.worth);
                 toBeDestroyed.Add(go);
             }
         }
