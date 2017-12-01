@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114124451727898546}
   - component: {fileID: 114193924692997568}
   - component: {fileID: 114559219978471680}
+  - component: {fileID: 114864859072778806}
   m_Layer: 0
   m_Name: Sunflower Seed
   m_TagString: Untagged
@@ -234,13 +235,36 @@ MonoBehaviour:
   growthRate: 0.8
   inStageOneGrowth: 1
   inStageTwoGrowth: 0
+--- !u!114 &114864859072778806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679342915299756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionPosition: {x: 1, y: 0, z: 0.25}
+  textScale: {x: 0.005, y: 0.005, z: 0.01}
+  textRotation: -40
+  namePosition: {x: 0, y: 0, z: 0}
+  infoPosition: {x: 0, y: 0, z: 0}
+  leftHandTextShift: {x: 0, y: 0, z: 0}
+  leftHandTextRotation: 0
+  doNotInvert: 1
+  itemInfo: 
+  showItemInfo: 0
+  overrideDefaultBendAngle: 1
+  bendAngle: -25
 --- !u!135 &135278041373732360
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679342915299756}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3997ed18198f9754391ce1ce6d04d859, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

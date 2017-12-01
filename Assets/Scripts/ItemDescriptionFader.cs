@@ -13,7 +13,7 @@ public class ItemDescriptionFader : MonoBehaviour {
 	public float activeDistance = 0.5f;
 	[Tooltip("Speed at which the text fades in and out")]
 	[Range(0.01f, 2f)]
-	public float fadeSpeed = 0.9f;
+	public float fadeSpeed = 0.85f;
 
 	List<Text> descriptionTexts;
 	Color tempColor;

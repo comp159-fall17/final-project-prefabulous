@@ -69,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4312183787946880
 Transform:
   m_ObjectHideFlags: 1
@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f8ce87699eea43b6b7f8ba67354d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingCan: 0
   inRangeMaterial: {fileID: 2100000, guid: 48dbf134673fd2e439ebef7c58db9bb9, type: 2}
   outOfRangeMaterial: {fileID: 2100000, guid: 29f8668e1f670a14f88afd528907073b, type: 2}
   spillingMaterial: {fileID: 2100000, guid: 33af27359b49eda48829e2c0bf1e12b8, type: 2}
@@ -337,6 +338,8 @@ MonoBehaviour:
   startingWaterLevel: 10
   pouringInterval: 2
   spillingInterval: 0.5
+  visualLevel: {fileID: 0}
+  visualBounds: {x: 0, y: 0}
 --- !u!222 &222923665377601372
 CanvasRenderer:
   m_ObjectHideFlags: 1
