@@ -231,7 +231,7 @@ public class Flori_WateringCan : MonoBehaviour {
 	void SetVisualLevel(float height)
 	{
 		Vector3 newLevel = visualLevel.transform.localPosition;
-		newLevel.y = Mathf.Clamp(newLevel.y = height / maximumWaterLevel * visualBounds.y, visualBounds.x, visualBounds.y);
+		newLevel.y = Mathf.Clamp(height / maximumWaterLevel * visualBounds.y, visualBounds.x, visualBounds.y);
 		visualLevel.transform.localPosition = newLevel;
 	}
 
