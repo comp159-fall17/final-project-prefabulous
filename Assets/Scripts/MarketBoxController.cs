@@ -5,23 +5,37 @@ using VRTK.Controllables.PhysicsBased;
 
 public class MarketBoxController : MonoBehaviour {
     public GameObject lidObject;
-    public GameObject colliderObject;
+    public List<GameObject> inCollision;
 
     VRTK_PhysicsRotator lid;
-    Collider collider;
 
 	// Use this for initialization
 	void Start () {
         lid = lidObject.GetComponent<VRTK_PhysicsRotator>();
-        collider = colliderObject.GetComponent<Collider>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (!(lid.GetNormalizedValue() > Mathf.Epsilon)) {
+            if (inCollision.Count > 0) {
+                VanishItems();
+            }
+        }
 	}
 
     void VanishItems() {
-        //GameObject[] inCollision = collider.
+        List<GameObject> toBeDestroyed = new List<GameObject>();
+        foreach (GameObject go in inCollision) {
+            Sellable worth = go.GetComponent<Sellable>();
+            if (worth != null)
+            {
+                PiggyBankController.instance.Earn(worth.worth);
+                toBeDestroyed.Add(go);
+            }
+        }
+        foreach (GameObject go in toBeDestroyed) {
+            inCollision.Remove(go);
+            Destroy(go);
+        }
     }
 }

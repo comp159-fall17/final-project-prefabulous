@@ -22,13 +22,14 @@ GameObject:
   - component: {fileID: 33171476603666836}
   - component: {fileID: 65008475328313752}
   - component: {fileID: 23322606842549580}
+  - component: {fileID: 114812510873358880}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: QuantumDeliveryZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1057046134569936
 GameObject:
   m_ObjectHideFlags: 1
@@ -143,6 +144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4633828742928990}
+  - component: {fileID: 114281680834983806}
   m_Layer: 0
   m_Name: Market Box
   m_TagString: Untagged
@@ -231,7 +233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4205287490676228}
   - component: {fileID: 114150881707656828}
-  - component: {fileID: 114576746126209716}
   m_Layer: 0
   m_Name: Lid
   m_TagString: Untagged
@@ -374,8 +375,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044471840524720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0087, y: -0.0384, z: -0.0028}
-  m_LocalScale: {x: 0.29060584, y: 0.06959034, z: 0.19921501}
+  m_LocalPosition: {x: -0.0066, y: -0.0587, z: -0.00486}
+  m_LocalScale: {x: 0.24267045, y: 0.029047491, z: 0.18140705}
   m_Children: []
   m_Father: {fileID: 4633828742928990}
   m_RootOrder: 2
@@ -1206,15 +1207,28 @@ MonoBehaviour:
   releasedFriction: 1
   onlyInteractWith:
   - {fileID: 1672249042223482}
---- !u!114 &114576746126209716
+--- !u!114 &114281680834983806
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1774185238660264}
+  m_GameObject: {fileID: 1442248867800012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c01140e822562049a0d7b10a6d496da, type: 3}
+  m_Script: {fileID: 11500000, guid: f43ac1430bb70434bad210116ae23ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 0}
+  lidObject: {fileID: 1774185238660264}
+  inCollision: []
+--- !u!114 &114812510873358880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044471840524720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc2f5b404e334b328a8ab35831646fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box: {fileID: 1442248867800012}
