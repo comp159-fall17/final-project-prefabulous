@@ -9,14 +9,16 @@ public class Flori_WateringCan : MonoBehaviour {
 	public static Flori_WateringCan Instance;
     private enum Axis { X_POSITIVE, X_NEGATIVE, Z_POSITIVE, Z_NEGATIVE };
 
-	[Header("Testing Materials")]
-	[Tooltip("Material the test can shows during its active range")]
+	[Header("Testing Variables")]
+	[Tooltip("Highlights can when spilling or pouring, and displays water level in text.")]
+	public bool testingCan = false;
+	[Tooltip("Material the test can shows during its active range.")]
 	public Material inRangeMaterial;
-	[Tooltip("Material the test can shows during its inactive range")]
+	[Tooltip("Material the test can shows during its inactive range.")]
     public Material outOfRangeMaterial;
-    [Tooltip("Material the test can shows during its spilling range")]
+    [Tooltip("Material the test can shows during its spilling range.")]
     public Material spillingMaterial;
-    [Tooltip("Text to display remaining amount of water in watering can")]
+    [Tooltip("Text to display remaining amount of water in watering can.")]
     public Text displayWaterAmount;
 
 	[Header("Active Range Variables")]
@@ -62,7 +64,10 @@ public class Flori_WateringCan : MonoBehaviour {
 		{
 			_waterLevel = value;
 			SetVisualLevel (value);
-			displayWaterAmount.text = waterLevel.ToString();
+			if (testingCan) 
+			{
+				displayWaterAmount.text = waterLevel.ToString ();
+			}
 		}
 	}
     float timeCounter = 0;
@@ -86,6 +91,10 @@ public class Flori_WateringCan : MonoBehaviour {
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         wateringCanIsActive = false;
 		particles.Stop ();
+		if (!testingCan)
+		{
+			displayWaterAmount.gameObject.SetActive (false);
+		}
 
     }
 	
@@ -98,16 +107,25 @@ public class Flori_WateringCan : MonoBehaviour {
         wateringCanIsSpilling = CanIsSpilling();
 		if (wateringCanIsSpilling && render.material != spillingMaterial)
 		{
-            render.material = spillingMaterial;
-        } 
+			if (testingCan) 
+			{
+				render.material = spillingMaterial;
+			}
+		} 
 		else if (wateringCanIsActive && render.material != inRangeMaterial)
         {
-            render.material = inRangeMaterial;
+			if (testingCan) 
+			{
+				render.material = inRangeMaterial;
+			}
 			TurnParticles (true);
         }
 		else if (render.material != outOfRangeMaterial)
         {
-            render.material = outOfRangeMaterial;
+			if (testingCan) 
+			{
+				render.material = outOfRangeMaterial;
+			}
 			TurnParticles (false);
         }
         UpdateWaterLevel();

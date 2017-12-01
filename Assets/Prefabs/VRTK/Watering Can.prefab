@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 198552587920939744}
   m_Layer: 0
   m_Name: Watering Can
-  m_TagString: Untagged
+  m_TagString: Can Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2626,6 +2626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f8ce87699eea43b6b7f8ba67354d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingCan: 1
   inRangeMaterial: {fileID: 2100000, guid: 48dbf134673fd2e439ebef7c58db9bb9, type: 2}
   outOfRangeMaterial: {fileID: 2100000, guid: 6f69b64ebff525844bf726123ccbf708, type: 2}
   spillingMaterial: {fileID: 2100000, guid: 33af27359b49eda48829e2c0bf1e12b8, type: 2}
@@ -2894,7 +2895,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1106659058
+  randomSeed: 2121158670
   InitialModule:
     serializedVersion: 3
     enabled: 1

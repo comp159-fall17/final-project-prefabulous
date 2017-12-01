@@ -1737,20 +1737,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1582928126453008, guid: 33397cf6547873643a05f5ef6a0675ea, type: 2}
-      propertyPath: m_TagString
-      value: Can Body
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753872509371510, guid: 33397cf6547873643a05f5ef6a0675ea,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753872509371510, guid: 33397cf6547873643a05f5ef6a0675ea,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33397cf6547873643a05f5ef6a0675ea, type: 2}
   m_IsPrefabParent: 0
