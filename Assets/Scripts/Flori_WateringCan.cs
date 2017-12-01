@@ -86,15 +86,12 @@ public class Flori_WateringCan : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
 		render = GetComponent<MeshRenderer>();
 		particles = GetComponentInChildren<ParticleSystem> ();
         waterLevel = Mathf.Min(maximumWaterLevel, startingWaterLevel);
         wateringCanIsActive = false;
-//		particles.Stop ();
-		if (!testingCan)
-		{
-			displayWaterAmount.gameObject.SetActive (false);
-		}
+		displayWaterAmount.gameObject.SetActive (testingCan);
 
     }
 	

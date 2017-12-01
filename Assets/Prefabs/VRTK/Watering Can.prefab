@@ -649,7 +649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4084583210503600
 Transform:
   m_ObjectHideFlags: 1
@@ -2843,12 +2843,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionPosition: {x: 0, y: 0, z: 0.1}
+  descriptionPosition: {x: -0.075, y: 0, z: 0.05}
   textScale: {x: 0.005, y: 0.005, z: 0.005}
-  textRotation: 180
+  textRotation: 100
   namePosition: {x: 0, y: 12, z: 0}
   infoPosition: {x: 0, y: 40, z: 0}
-  doNotInvert: 0
+  leftHandTextShift: {x: 0, y: 0, z: -0.1}
+  leftHandTextRotation: 60
+  doNotInvert: 1
   itemInfo: You Can Do It
   showItemInfo: 0
 --- !u!136 &136615236551958074

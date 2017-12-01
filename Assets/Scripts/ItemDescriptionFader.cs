@@ -13,7 +13,7 @@ public class ItemDescriptionFader : MonoBehaviour {
 	public float activeDistance = 0.5f;
 	[Tooltip("Speed at which the text fades in and out")]
 	[Range(0.01f, 2f)]
-	public float fadeSpeed = 0.75f;
+	public float fadeSpeed = 0.9f;
 
 	List<Text> descriptionTexts;
 	Color tempColor;
@@ -34,12 +34,10 @@ public class ItemDescriptionFader : MonoBehaviour {
 
 		if (DistanceFromCamera() <= activeDistance && descriptionTexts[0].color.a == 0) 
 		{
-			Debug.Log ("Text is visible");
 			StartCoroutine ("FadeTextIn");
 		}
 		else if (DistanceFromCamera() > activeDistance && descriptionTexts[0].color.a == 1)
 		{
-			Debug.Log ("Text is hiding");
 			StartCoroutine ("FadeTextOut");
 		}
 
