@@ -2872,6 +2872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableDescription: 1
   descriptionPosition: {x: -0.075, y: 0, z: 0.05}
   textScale: {x: 0.005, y: 0.005, z: 0.005}
   textRotation: 100
