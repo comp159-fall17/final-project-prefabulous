@@ -406,7 +406,7 @@ MonoBehaviour:
   highlightObjectPrefab: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586,
     type: 2}
   snapType: 0
-  snapDuration: 0
+  snapDuration: 0.15
   applyScalingOnSnap: 0
   cloneNewOnUnsnap: 0
   highlightColor: {r: 0.3455882, g: 0.7021297, b: 1, a: 0}
