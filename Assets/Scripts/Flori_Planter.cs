@@ -59,6 +59,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	/// </summary>
     public void RemoveCropFrom()
     {
+		Destroy(seedInPlanter.gameObject);
         seedInPlanter = null;
         hasCrop = false;
     }

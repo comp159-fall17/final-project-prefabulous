@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 114642855225675328}
   m_Layer: 0
   m_Name: Seed Snap
-  m_TagString: Untagged
+  m_TagString: Planter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,7 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0187e9c6d46092b4f8c7919cc0cc6c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightObjectPrefab: {fileID: 0}
+  highlightObjectPrefab: {fileID: 1679342915299756, guid: 5e7386d60c5f9104b8292bbc97209586,
+    type: 2}
   snapType: 0
   snapDuration: 0
   applyScalingOnSnap: 0

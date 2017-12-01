@@ -14,6 +14,17 @@ public class Flori_Flower : MonoBehaviour {
 	[Tooltip("Amount of money this flower sells for at the market")]
 	public int flowerWorth = 5;
 
+	Flori_Seed parentSeed;
+
+	// Use this for initialization
+	void Start() {
+
+		if (GetComponentInParent < Flori_Seed>() != null) 
+		{
+			parentSeed = GetComponentInParent<Flori_Seed> ();
+		}	
+
+	}
 
 	public void SetCanBePickedTo(bool state)
 	{
@@ -33,6 +44,15 @@ public class Flori_Flower : MonoBehaviour {
 	public bool IsAttached()
 	{
 		return isAttached;
+	}
+
+	/// <summary>
+	/// Gets the parent seed of this flower if any.
+	/// </summary>
+	/// <returns>The parent seed.</returns>
+	public Flori_Seed GetParentSeed()
+	{
+		return parentSeed;
 	}
 
 }
