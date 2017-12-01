@@ -29,7 +29,16 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 		base.PerformGrabAttempt (objectToGrab);
 		if (objectToGrab != null) 
 		{
-			CreateItemText (objectToGrab);
+			Flori_UIData UIData;
+			if (objectToGrab.GetComponent<Flori_UIData>() != null)
+			{
+				UIData = objectToGrab.GetComponent<Flori_UIData> ();
+			}
+			if (UIData != null && !UIData.disableDescription) 
+			{
+				CreateItemText (objectToGrab);	
+			}
+
 		}
 
 	}

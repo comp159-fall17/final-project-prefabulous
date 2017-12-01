@@ -5,6 +5,8 @@ using UnityEngine;
 public class Flori_UIData : MonoBehaviour {
 
 	[Header("UI Text Variables")]
+	[Tooltip("Disable UI description for this object.")]
+	public bool disableDescription = true;
 	[Tooltip("Local (to parent) position of UI text.")]
 	public Vector3 descriptionPosition;
 	[Tooltip("Global (to parent) scale of UI text.")]
