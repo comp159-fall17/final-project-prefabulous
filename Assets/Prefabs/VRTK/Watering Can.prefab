@@ -2853,6 +2853,8 @@ MonoBehaviour:
   doNotInvert: 1
   itemInfo: You Can Do It
   showItemInfo: 0
+  overrideDefaultBendAngle: 0
+  bendAngle: -90
 --- !u!136 &136615236551958074
 CapsuleCollider:
   m_ObjectHideFlags: 1

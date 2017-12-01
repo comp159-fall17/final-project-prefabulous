@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDistance: 0.5
-  fadeSpeed: 0.75
+  fadeSpeed: 0.85
 --- !u!114 &114961539337614220
 MonoBehaviour:
   m_ObjectHideFlags: 1
