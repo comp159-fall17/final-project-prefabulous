@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillPeriod: 0.05
-  fillAmount: 1
+  fillAmount: 5
 --- !u!114 &114499811712470266
 MonoBehaviour:
   m_ObjectHideFlags: 1

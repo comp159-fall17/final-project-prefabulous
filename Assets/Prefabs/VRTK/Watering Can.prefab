@@ -2696,7 +2696,7 @@ MonoBehaviour:
   maximumWaterLevel: 100
   startingWaterLevel: 75
   pouringInterval: 0.5
-  spillingInterval: 0.125
+  spillingInterval: 0.02
   visualLevel: {fileID: 1562699139025514}
   visualBounds: {x: 0.05, y: 0.2}
 --- !u!114 &114141249803238776
