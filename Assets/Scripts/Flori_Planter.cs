@@ -106,6 +106,17 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	}
 
 	/// <summary>
+	/// Allows grabbing the seed from this planter.
+	/// </summary>
+	void UnlockSeedInPlanter()
+	{
+		if (seedInPlanter != null)
+		{
+			seedInPlanter.GetComponent<VRTK_InteractableObject> ().isGrabbable = true;
+		}
+	}
+
+	/// <summary>
 	/// Sets the canIsInRange bool used to add water to seed.
 	/// </summary>
 	/// <param name="state">If set to <c>true</c> state.</param>
@@ -134,6 +145,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 			{
 				waterDropsReceived = 0;
 				seedInPlanter.StartGrowing ();
+				LockSeedInPlanter (); // prevents from grabbing a growing seed
 			}
 
 			waterCounter = 0f;

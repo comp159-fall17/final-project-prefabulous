@@ -5,9 +5,22 @@ using VRTK;
 
 public class Flori_Seed : MonoBehaviour {
 
+//	[Tooltip("Signifies if flower is currently growing")]
+	bool _isGrowing;
+	public bool isGrowing 
+	{
+		get 
+		{
+			return _isGrowing;
+		}
+		set
+		{
+			_isGrowing = value;
+			SetCanPickFlowerTo (!value);			
+		}
+	}
+
 	[Header("Growth Variables")]
-	[Tooltip("Signifies if flower is currently growing")]
-	public bool isGrowing = false;
 	[Tooltip("Height limit for the first stage of flower growth")]
 	public float stageOneHeightLimit = 350f;
 	[Tooltip("Height limit for the second stage of flower growth")]
@@ -26,14 +39,15 @@ public class Flori_Seed : MonoBehaviour {
 	[Range(0.1f, 2f)]
 	public float growthRate = 0.5f;
 
-	[Header("Testing Variables")]
 	[Tooltip("Flower is currently set to grow until its first height limit")]
-	public bool inStageOneGrowth = true;
+	[HideInInspector] public bool inStageOneGrowth = true;
 	[Tooltip("Flower has grown to its first height limit and is set to grow until its second and final height limit")]
-	public bool inStageTwoGrowth = false;
+	[HideInInspector] public bool inStageTwoGrowth = false;
+		
 
 	GameObject flower;
 	Vector3 flowerScale;
+	bool canPickFlower = false;
 
 	// Update is called once per frame
 	void Update () {
@@ -87,6 +101,7 @@ public class Flori_Seed : MonoBehaviour {
 			inStageOneGrowth = false;
 			inStageTwoGrowth = true;
 			isGrowing = false;
+			SetCanPickFlowerTo (true);
 		}
 	}
 
@@ -102,6 +117,13 @@ public class Flori_Seed : MonoBehaviour {
 		{
 			FinishGrowing();
 		}
+	}
+
+	public void SetCanPickFlowerTo (bool state)
+	{
+		canPickFlower = state;
+		SetFlowerComponents (state);
+		flower.GetComponent < Flori_Flower> ().SetCanBePickedTo(state);
 	}
 
 	public void FinishGrowing()
@@ -121,6 +143,11 @@ public class Flori_Seed : MonoBehaviour {
 	public bool IsGrowing()
 	{
 		return isGrowing;
+	}
+
+	bool CanPickFlower()
+	{
+		return canPickFlower;
 	}
 
 	void SetFlowerComponents(bool on)
@@ -143,4 +170,5 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		return flower;
 	}
+
 }
