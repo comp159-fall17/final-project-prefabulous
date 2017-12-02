@@ -138,4 +138,9 @@ public class Flori_Seed : MonoBehaviour {
 			collider.enabled = on;
 		}
 	}
+
+	public GameObject GetFlower()
+	{
+		return flower;
+	}
 }

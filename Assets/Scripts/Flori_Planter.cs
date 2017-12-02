@@ -11,6 +11,8 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	public bool hasCrop = false;
 	[Tooltip("True if watering can collider is within bounds to plant")]
 	public bool canIsInRange = false;
+	[Tooltip("Lock seed when planted in this planter")]
+	public bool lockSeedInPlanter = false;
 
 	Flori_Seed seedInPlanter;
 	float waterCounter = 0f;
@@ -21,6 +23,12 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	{
 		base.SnapObjectToZone (objectToSnap);
 		PlantSeed (objectToSnap);
+	}
+
+	public override void OnObjectUnsnappedFromDropZone (SnapDropZoneEventArgs e)
+	{
+		RemoveCropFrom ();
+		base.OnObjectUnsnappedFromDropZone (e);
 	}
 
 	void Update() {
@@ -41,11 +49,17 @@ public class Flori_Planter : VRTK_SnapDropZone {
 		try 
 		{
             seedInPlanter = seed.GetComponent<Flori_Seed>();
-			LockSeedInPlanter();
+			if (lockSeedInPlanter) 
+			{
+				LockSeedInPlanter();	
+			}
 			waterDropsToBloom = seedInPlanter.GetWaterDropsToBloom();
 
 			hasCrop = true;
-            seedInPlanter.Sprout();
+			if (seedInPlanter.GetFlower() == null) 
+			{
+				seedInPlanter.Sprout();
+			}
         }
 		catch (NullReferenceException ex)
         {
