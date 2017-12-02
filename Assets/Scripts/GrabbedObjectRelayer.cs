@@ -27,6 +27,9 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			{
 				if (planter.GetComponent<Flori_Planter>().GetSeedInPlanter() == objectToGrab.GetComponent<Flori_Flower>().GetParentSeed())
 				{
+					Flori_Seed seedInThisPlanter = planter.GetComponent<Flori_Planter> ().GetSeedInPlanter ();
+					planter.GetComponent<VRTK_SnapDropZone> ().ForceUnsnap ();
+					Destroy(seedInThisPlanter.gameObject);
 					planter.GetComponent<Flori_Planter> ().RemoveCropFrom ();
 				}	
 			}
