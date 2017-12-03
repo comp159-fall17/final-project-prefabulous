@@ -10,9 +10,9 @@ public class Chicken : MonoBehaviour {
 
     private Transform target;
     private NavMeshAgent agent;
-    private float timer;
-    private bool isWalking = false;
-    private float transitionDuration = 100f;
+    private float timer, randNum, scratchStart, scratchStop ;
+    private bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false;
+    Vector3 goalPosition;
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -20,19 +20,50 @@ public class Chicken : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-        timer += Time.deltaTime;
-
-        if (timer >= wanderTimer)
+    void Update()
+    {
+        if (isWalkingTimer)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.SetDestination(newPos);
-            timer = 0;
+            if (!scratchDelayGenerated)
+            {
+                scratchStart = 1; // left these two float values like this because of the animation clip time
+                scratchStop = 2f;
+                scratchDelayGenerated = true;
+                scratchTimerRunning = true;
+                isWalkingTimer = false;
+                agent.SetDestination(gameObject.transform.position);
+            }
+            timer += Time.deltaTime;
+            if (timer >= wanderTimer)
+            {
+                timer = 0;
+                scratchDelayGenerated = false;
+            }
+            if (goalPosition == gameObject.transform.position) //if the chicken is in the target postion before getting a new postion to wander to
+            {            
+               gameObject.GetComponent<Animator>().Play("Armature|Idle_1");          
+            }
+            if (!gameObject.GetComponent<Rigidbody>().IsSleeping()) //moving
+            {
+                gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+            }
+           
         }
-
-        if (!gameObject.GetComponent<Rigidbody>().IsSleeping())
+        else if (scratchTimerRunning)
         {
-            gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+            scratchStart += Time.deltaTime;
+            gameObject.GetComponent<Animator>().SetBool("isWalking", false);
+            gameObject.GetComponent<Animator>().Play("Armature|Eating");
+            if (scratchStart >= scratchStop)
+            {
+                scratchTimerRunning = false;
+                isWalkingTimer = true;
+                scratchDelayGenerated = true;
+                Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+                agent.SetDestination(newPos);
+                gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+                goalPosition = newPos;
+            }
         }
     }
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
