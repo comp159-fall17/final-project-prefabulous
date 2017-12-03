@@ -10,6 +10,16 @@ public class Flori_Flower : MonoBehaviour {
 	[Tooltip("Signifies if the flower is attached to a seed")]
 	public bool isAttached = true;
 
+	[Header("Flower Coloring Data")]
+	[Tooltip("Object mesh in flower bloom to be colored.")]
+	public MeshRenderer bloom;
+	[Tooltip("Object mesh in flower stamen to be colored.")]
+	public MeshRenderer stamen;
+	[Tooltip("Object mesh of flower stem to be colored.")]
+	public MeshRenderer stem;
+	[Tooltip("All object meshes in flower leaves to be colored.")]
+	public List<MeshRenderer> leaves = new List<MeshRenderer>();
+
 	[Header("Flower Data")]
 	[Tooltip("Amount of money this flower sells for at the market")]
 	public int flowerWorth = 5;
@@ -53,6 +63,29 @@ public class Flori_Flower : MonoBehaviour {
 	public Flori_Seed GetParentSeed()
 	{
 		return parentSeed;
+	}
+
+	public void SetBloomColor(Color bloomColor)
+	{
+		bloom.material.color = bloomColor;
+	}
+
+	public void SetStamenColor(Color stamenColor)
+	{
+		stamen.material.color = stamenColor;
+	}
+		
+	public void SetLeavesColor(Color leafColor)
+	{
+		foreach (MeshRenderer leaf in leaves)
+		{
+			leaf.material.color = leafColor;
+		}
+	}
+
+	public void SetStemColor(Color stemColor)
+	{
+		stem.material.color = stemColor;
 	}
 
 }

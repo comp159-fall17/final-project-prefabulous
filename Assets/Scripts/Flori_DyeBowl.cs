@@ -15,7 +15,6 @@ public class Flori_DyeBowl : MonoBehaviour {
 	// Use this for intialization
 	void Start() {
 
-		// need to set this correctly to "Dye" GameObject mesh color
 		dyeColor = dye.GetComponent<MeshRenderer>().material.color;
 		dyeCounter = dyeingDuration;
 

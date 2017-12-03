@@ -70,7 +70,10 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		flower = (GameObject)Instantiate (flowerModel, transform);
 		flower.name = flower.name.TrimEnd (new char[] {'(', 'C', 'l', 'o', 'n', 'e', ')' });
+
+		ColorFlower (flower);
 		SetFlowerComponents (false);
+
 		flower.transform.localPosition = Vector3.zero;
 		Vector3 rotation = flower.transform.localRotation.eulerAngles;
 		rotation.x = 0;
@@ -169,6 +172,20 @@ public class Flori_Seed : MonoBehaviour {
 	public GameObject GetFlower()
 	{
 		return flower;
+	}
+
+	Color GetSeedColor()
+	{
+		return GetComponent<MeshRenderer> ().material.color;
+	}
+
+	public void ColorFlower(GameObject flower)
+	{
+		Flori_Flower flori = flower.GetComponent<Flori_Flower> ();
+		flori.SetBloomColor (GetSeedColor());
+//		flori.SetLeavesColor ();
+//		flori.SetStamenColor();
+//		flori.SetStemColor();
 	}
 
 }

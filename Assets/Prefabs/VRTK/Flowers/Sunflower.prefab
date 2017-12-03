@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 23206060800233186}
   - component: {fileID: 64179099178580492}
   m_Layer: 0
-  m_Name: Sunflower
+  m_Name: Leaf Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 23997813459279372}
   - component: {fileID: 64689064004429126}
   m_Layer: 0
-  m_Name: Sunflower
+  m_Name: Bloom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 23778295401387764}
   - component: {fileID: 64680904397958450}
   m_Layer: 0
-  m_Name: Sunflower
+  m_Name: Stamen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 23780447910437418}
   - component: {fileID: 64770743827284414}
   m_Layer: 0
-  m_Name: Sunflower
+  m_Name: Leaf Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 23564648708950242}
   - component: {fileID: 64475891409369482}
   m_Layer: 0
-  m_Name: Sunflower
+  m_Name: Stem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ Transform:
   m_LocalScale: {x: 2.2173548, y: 2.956473, z: 2.2173548}
   m_Children: []
   m_Father: {fileID: 4331644278582824}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4259036973078646
 Transform:
@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 21.128536, y: 2.931871, z: 2.1744735}
   m_Children: []
   m_Father: {fileID: 4331644278582824}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4331644278582824
 Transform:
@@ -175,14 +175,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341620893350032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 0.79, z: -0.4401}
+  m_LocalPosition: {x: -1.1802173, y: 0.7657552, z: 0.001499981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4907994752683166}
   - {fileID: 4532034301077176}
   - {fileID: 4259036973078646}
   - {fileID: 4165328751733102}
   - {fileID: 4588362978917344}
-  - {fileID: 4907994752683166}
   - {fileID: 4395581133092512}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -211,7 +211,7 @@ Transform:
   m_LocalScale: {x: 21.818066, y: 3.0275567, z: 2.2454379}
   m_Children: []
   m_Father: {fileID: 4331644278582824}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4588362978917344
 Transform:
@@ -224,7 +224,7 @@ Transform:
   m_LocalScale: {x: 3, y: 4, z: 3}
   m_Children: []
   m_Father: {fileID: 4331644278582824}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4907994752683166
 Transform:
@@ -237,7 +237,7 @@ Transform:
   m_LocalScale: {x: 3, y: 4, z: 3}
   m_Children: []
   m_Father: {fileID: 4331644278582824}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23206060800233186
 MeshRenderer:
@@ -687,6 +687,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePicked: 0
   isAttached: 1
+  bloom: {fileID: 23997813459279372}
+  stamen: {fileID: 23778295401387764}
+  stem: {fileID: 23564648708950242}
+  leaves:
+  - {fileID: 23780447910437418}
+  - {fileID: 23206060800233186}
   flowerWorth: 5
 --- !u!114 &114926301282557006
 MonoBehaviour:
