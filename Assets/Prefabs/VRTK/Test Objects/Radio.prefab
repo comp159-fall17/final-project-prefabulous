@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33082951602316476}
   - component: {fileID: 23849605009785978}
   - component: {fileID: 54362730520508350}
+  - component: {fileID: 64909345877039710}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -104,3 +105,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64909345877039710
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141927437941002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 72e9a9f606fe9d542a2baaec85c25a9a, type: 3}
