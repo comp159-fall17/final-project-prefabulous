@@ -183,9 +183,18 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		Flori_Flower flori = flower.GetComponent<Flori_Flower> ();
 		flori.SetBloomColor (GetSeedColor());
-		//flori.SetStamenColor(ChangeColorBrightness(GetSeedColor(), Random.Range(-1, 1) * 0.4f));
-        Color yellow = new Color(1F, 0.92F, 0.016F, 1F);
-        flori.SetStamenColor(yellow);
+        //flori.SetStamenColor(ChangeColorBrightness(GetSeedColor(), Random.Range(-1, 1) * 0.4f));
+        int colorChoice = Random.Range(0, 2); //return value 0 or 1
+        if(colorChoice == 0)
+        {
+            Color yellow = new Color(1F, 0.92F, 0.016F, 1F);
+            flori.SetStamenColor(yellow);
+        }
+        else
+        {
+            Color white = new Color(255F, 255F, 255F, 1F);
+            flori.SetStamenColor(white);
+        }     
         //		flori.SetLeavesColor ();
         if (stemColor != Color.green) 
 		{
