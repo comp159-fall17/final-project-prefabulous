@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Flori_DyeBowl : MonoBehaviour {
 
-	public Color dyeColor;
-	public float dyeingDuration = 1f;
+	public float dyeingDuration = 5f;
+	public GameObject dye;
 
-	MeshRenderer seedMesh;
+	Color dyeColor;
+	List<MeshRenderer> seedMeshes = new List<MeshRenderer>();
+
+	float dyeCounter;
 
 	// Use this for intialization
 	void Start() {
 
 		// need to set this correctly to "Dye" GameObject mesh color
-		dyeColor = gameObject.transform.parent.GetComponentInChildren<MeshRenderer> ().material.color;
+		dyeColor = dye.GetComponent<MeshRenderer>().material.color;
+		dyeCounter = dyeingDuration;
 
 	}
 
@@ -23,27 +27,38 @@ public class Flori_DyeBowl : MonoBehaviour {
 		{
 			return;
 		}
-		if (seedMesh != other.GetComponent<MeshRenderer>())
+		if (!seedMeshes.Contains(other.GetComponent<MeshRenderer>()))
 		{
-			seedMesh = other.GetComponent<MeshRenderer> ();
+			seedMeshes.Add (other.GetComponent<MeshRenderer> ());
 		}
 
-		DyeSeed (other.gameObject);
+		foreach (MeshRenderer seedMesh in seedMeshes) 
+		{
+			DyeSeed (seedMesh);
+		}
 	}
 
-	void DyeSeed(GameObject seed)
+	void OnTriggerExit(Collider other)
 	{
-		if (seedMesh.material.color != dyeColor)
+		if (!other.CompareTag("Seed"))
 		{
-			seedMesh.material.color = Color.Lerp (seedMesh.material.color, dyeColor, Time.deltaTime / dyeingDuration);
-			dyeingDuration -= Time.deltaTime;
-			if (seedMesh.material.color == dyeColor)
-			{
-				dyeingDuration = 1f;
-			}
+			return;
 		}
 
+		seedMeshes.Remove(other.GetComponent<MeshRenderer>());
+	}
 
+	void DyeSeed(MeshRenderer seedMesh)
+	{
+		if (seedMesh.material.color != dyeColor) 
+		{
+			seedMesh.material.color = Color.Lerp (seedMesh.material.color, dyeColor, Time.deltaTime / dyeCounter);
+			dyeCounter -= Time.deltaTime;
+			if (seedMesh.material.color == dyeColor)
+			{
+				dyeCounter = dyeingDuration;
+			}
+		}
 	}
 
 }
