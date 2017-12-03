@@ -22,7 +22,10 @@ public class Flori_Planter : VRTK_SnapDropZone {
 	protected override void SnapObjectToZone (VRTK_InteractableObject objectToSnap)
 	{
 		base.SnapObjectToZone (objectToSnap);
-		PlantSeed (objectToSnap);
+		if (!hasCrop) 
+		{
+			PlantSeed (objectToSnap);
+		}
 	}
 
 	public override void OnObjectUnsnappedFromDropZone (SnapDropZoneEventArgs e)
