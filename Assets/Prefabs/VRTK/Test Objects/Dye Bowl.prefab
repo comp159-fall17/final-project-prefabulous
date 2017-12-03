@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 64526151953866506}
   - component: {fileID: 114224859248603122}
   m_Layer: 0
-  m_Name: Trigger Collider
+  m_Name: Dye Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798475724579436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000012108, y: 0.0921, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0925, z: 0}
   m_LocalScale: {x: 0.225, y: 0.005, z: 0.225}
   m_Children: []
   m_Father: {fileID: 4138748675764148}
@@ -225,5 +225,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a9b0404658a4b429186395d18e5304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dyeingDuration: 3
-  dyeMaterial: {fileID: 2100000, guid: 40ec31c9f31004a4fb001241d4a8d86e, type: 2}
+  dyeingDuration: 5
+  dye: {fileID: 1798475724579436}

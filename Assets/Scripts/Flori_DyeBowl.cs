@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flori_DyeBowl : MonoBehaviour {
 
 	public float dyeingDuration = 5f;
-	public Material dyeMaterial;
+	public GameObject dye;
 
 	Color dyeColor;
 	List<MeshRenderer> seedMeshes = new List<MeshRenderer>();
@@ -16,7 +16,7 @@ public class Flori_DyeBowl : MonoBehaviour {
 	void Start() {
 
 		// need to set this correctly to "Dye" GameObject mesh color
-		dyeColor = dyeMaterial.color;
+		dyeColor = dye.GetComponent<MeshRenderer>().material.color;
 		dyeCounter = dyeingDuration;
 
 	}
