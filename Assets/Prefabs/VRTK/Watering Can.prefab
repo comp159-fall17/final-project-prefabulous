@@ -2695,7 +2695,7 @@ MonoBehaviour:
   spillingAngle: 95
   maximumWaterLevel: 100
   startingWaterLevel: 75
-  pouringInterval: 0.5
+  pouringInterval: 0.1
   spillingInterval: 0.02
   visualLevel: {fileID: 1562699139025514}
   visualBounds: {x: 0.05, y: 0.2}
