@@ -4,19 +4,24 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Chicken : MonoBehaviour {
+	
     public float wanderRadius;
     public float wanderTimer;
     public Animator animator;
 
-    private Transform target;
-    private NavMeshAgent agent;
-    private float timer, randNum, scratchStart, scratchStop ;
-    private bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false;
-    Vector3 goalPosition;
+    Transform target;
+    NavMeshAgent agent;
+	Vector3 goalPosition;
+
+    float timer, randNum, scratchStart, scratchStop ;
+    bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false;
+
     // Use this for initialization
     void Start () {
+		
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
+
     }
 
     // Update is called once per frame
@@ -33,6 +38,7 @@ public class Chicken : MonoBehaviour {
                 isWalkingTimer = false;
                 agent.SetDestination(gameObject.transform.position);
             }
+
             timer += Time.deltaTime;
             if (timer >= wanderTimer)
             {
