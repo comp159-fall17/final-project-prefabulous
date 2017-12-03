@@ -58,7 +58,7 @@ public class Flori_Planter : VRTK_SnapDropZone {
 			hasCrop = true;
 			if (seedInPlanter.GetFlower() == null) 
 			{
-				seedInPlanter.Sprout();
+				seedInPlanter.Sprout(GetComponentInParent<MeshRenderer>().material.color);
 			}
         }
 		catch (NullReferenceException ex)

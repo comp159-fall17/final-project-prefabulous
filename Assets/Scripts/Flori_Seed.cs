@@ -66,12 +66,12 @@ public class Flori_Seed : MonoBehaviour {
 	}
 
 	//Not sure if need to add in the rest of the code
-	public void Sprout()
+	public void Sprout(Color stemColor)
 	{
 		flower = (GameObject)Instantiate (flowerModel, transform);
 		flower.name = flower.name.TrimEnd (new char[] {'(', 'C', 'l', 'o', 'n', 'e', ')' });
 
-		ColorFlower (flower);
+		ColorFlower (flower, stemColor);
 		SetFlowerComponents (false);
 
 		flower.transform.localPosition = Vector3.zero;
@@ -179,13 +179,16 @@ public class Flori_Seed : MonoBehaviour {
 		return GetComponent<MeshRenderer> ().material.color;
 	}
 
-	public void ColorFlower(GameObject flower)
+	public void ColorFlower(GameObject flower, Color stemColor)
 	{
 		Flori_Flower flori = flower.GetComponent<Flori_Flower> ();
 		flori.SetBloomColor (GetSeedColor());
 		flori.SetStamenColor(ChangeColorBrightness(GetSeedColor(), Random.Range(-1, 1) * 0.4f));
 //		flori.SetLeavesColor ();
-//		flori.SetStemColor();
+		if (stemColor != Color.green) 
+		{
+			flori.SetStemColor(stemColor);	
+		}
 	}
 
 	// Taken from http://www.pvladov.com/2012/09/make-color-lighter-or-darker.html
