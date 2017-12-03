@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4572224487312382}
   - component: {fileID: 33948970794004994}
   - component: {fileID: 23832421877833432}
-  - component: {fileID: 64463372233653200}
   m_Layer: 0
   m_Name: Dye
   m_TagString: Untagged
@@ -201,20 +200,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: de828e6befacb434584415fd3435b7b8, type: 3}
---- !u!64 &64463372233653200
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1798475724579436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64526151953866506
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -240,5 +225,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a9b0404658a4b429186395d18e5304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dyeColor: {r: 0, g: 0, b: 0, a: 0}
-  dyeingDuration: 1
+  dyeingDuration: 3
+  dyeMaterial: {fileID: 2100000, guid: 40ec31c9f31004a4fb001241d4a8d86e, type: 2}
