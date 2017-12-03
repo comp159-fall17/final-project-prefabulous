@@ -183,9 +183,33 @@ public class Flori_Seed : MonoBehaviour {
 	{
 		Flori_Flower flori = flower.GetComponent<Flori_Flower> ();
 		flori.SetBloomColor (GetSeedColor());
+		flori.SetStamenColor(ChangeColorBrightness(GetSeedColor(), Random.Range(-1, 1) * 0.4f));
 //		flori.SetLeavesColor ();
-//		flori.SetStamenColor();
 //		flori.SetStemColor();
+	}
+
+	// Taken from http://www.pvladov.com/2012/09/make-color-lighter-or-darker.html
+	public static Color ChangeColorBrightness(Color color, float correctionFactor)
+	{
+		float red = (float)color.r;
+		float green = (float)color.g;
+		float blue = (float)color.b;
+
+		if (correctionFactor < 0)
+		{
+			correctionFactor = 1 + correctionFactor;
+			red *= correctionFactor;
+			green *= correctionFactor;
+			blue *= correctionFactor;
+		}
+		else
+		{
+			red = (255 - red) * correctionFactor + red;
+			green = (255 - green) * correctionFactor + green;
+			blue = (255 - blue) * correctionFactor + blue;
+		}
+
+		return new Color(red, green, blue, color.a);
 	}
 
 }
