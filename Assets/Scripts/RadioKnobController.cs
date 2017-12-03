@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK.Controllables.PhysicsBased;
+using VRTK;
 
 public class RadioKnobController : VRTK_PhysicsRotator
 {
@@ -16,9 +17,9 @@ public class RadioKnobController : VRTK_PhysicsRotator
 		
 	}
 
-    protected override float GetNormalizedValue()
-    {
-        Debug.Log("GetNormalizedValue, GetValue() = " + GetValue() + " angleLimits.minimum = " + angleLimits.minimum + " angleLimits.maximum = " + angleLimits.maximum);
-        return VRTK_SharedMethods.NormalizeValue(GetValue(), angleLimits.minimum, angleLimits.maximum);
-    }
+	public override float GetNormalizedValue ()
+	{
+		Debug.Log("GetNormalizedValue, GetValue() = " + GetValue() + " angleLimits.minimum = " + angleLimits.minimum + " angleLimits.maximum = " + angleLimits.maximum);
+		return base.GetNormalizedValue ();
+	}
 }
