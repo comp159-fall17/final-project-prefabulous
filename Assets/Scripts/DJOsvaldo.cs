@@ -20,19 +20,25 @@ public class DJOsvaldo : MonoBehaviour {
 		audio = GetComponent<AudioSource> ();
 		Beats.Add ("cheer", audioClips[0]);
 		Beats.Add ("whoosh", audioClips[1]);
-	}
 
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 	}
 
 	public static void PlayClipAt(string name, float level = 0.35f)
 	{
 		if (Beats.ContainsKey(name) && !audio.isPlaying) {
-			audio.volume = level;
+            audio.volume = level;
 			audio.clip = Beats [name];
 			audio.Play ();
 		}
 	}
+
+    public static void ChangeMusicVolume(float soundLevel)
+    {
+        audio.volume = soundLevel;
+    }
 }

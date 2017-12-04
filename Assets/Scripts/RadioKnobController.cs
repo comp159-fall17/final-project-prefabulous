@@ -13,12 +13,14 @@ public class RadioKnobController : VRTK_PhysicsRotator
     protected VRTK_BaseControllable controllableEvents;
 
     void Start () {
+        //for testing
+        DJOsvaldo.PlayClipAt("Outside" , 0.35f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
 	public override float GetNormalizedValue ()
 	{
@@ -30,24 +32,13 @@ public class RadioKnobController : VRTK_PhysicsRotator
     protected override void AttemptMove()
     {
         SetFrictions(grabbedFriction);
-        float test = GetAngleFromStepValue(GetStepValue(GetValue()));
-        Debug.Log("test " + test);
+        float test = GetStepValue(GetValue())/100;
+        Debug.Log("test/100 " + test);
+        DJOsvaldo.ChangeMusicVolume(test);
         ManageSpring(false, restingAngle);
     }
  
-    /// <summary>
-    /// The GetAngleFromStepValue returns the angle the rotator would be at based on the given step value.
-    /// </summary>
-    /// <param name="givenStepValue">The step value to check the angle for.</param>
-    /// <returns>The angle the rotator would be at based on the given step value.</returns>
-    public override float GetAngleFromStepValue(float givenStepValue)
-    {
-        float normalizedStepValue = VRTK_SharedMethods.NormalizeValue(givenStepValue, stepValueRange.minimum, stepValueRange.maximum);
-        Debug.Log("normalizedStepValue " + normalizedStepValue);
-
-        return (controlJoint != null ? Mathf.Lerp(controlJoint.limits.min, controlJoint.limits.max, Mathf.Clamp01(normalizedStepValue)) : 0f);
-    }
-
+    
     /// <summary>
     /// The GetStepValue method returns the current angle of the rotator based on the step value range.
     /// </summary>
