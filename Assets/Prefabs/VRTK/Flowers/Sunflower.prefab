@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 136011821679189608}
   - component: {fileID: 54093476498000636}
   - component: {fileID: 114013199999168574}
-  - component: {fileID: 114926301282557006}
   - component: {fileID: 114057555584977726}
   - component: {fileID: 114332878107799396}
   - component: {fileID: 114142798304429684}
@@ -175,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341620893350032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1802173, y: 0.7657552, z: 0.001499981}
+  m_LocalPosition: {x: -1.1, y: 0.79, z: -0.4401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4907994752683166}
@@ -694,22 +693,6 @@ MonoBehaviour:
   - {fileID: 23780447910437418}
   - {fileID: 23206060800233186}
   flowerWorth: 5
---- !u!114 &114926301282557006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341620893350032}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.6838235, g: 1, b: 0.73833674, a: 0}
-  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
-  useHighlight: {r: 0, g: 0, b: 0, a: 0}
-  objectToAffect: {fileID: 0}
 --- !u!136 &136011821679189608
 CapsuleCollider:
   m_ObjectHideFlags: 1
