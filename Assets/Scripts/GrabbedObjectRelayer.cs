@@ -38,6 +38,12 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			objectToGrab.GetComponent<Flori_Flower> ().Detach ();
 		}
 
+		if (objectToGrab.CompareTag("Mat"))
+		{
+			Flori_FlowerMat.Instance.ClearConstraintsOfFlowersOnMat ();
+			Flori_FlowerMat.Instance.FreezeRotationOfFlowersOnMat ();
+		}
+
 		base.PerformGrabAttempt (objectToGrab);
 		if (objectToGrab != null) 
 		{
@@ -53,6 +59,11 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 
 	protected override void AttemptReleaseObject ()
 	{
+		if (GetGrabbedObject() != null && GetGrabbedObject().CompareTag("Flower") && Flori_FlowerMat.Instance.ContainsFlower(GetGrabbedObject()))
+		{
+			Debug.Log (GetGrabbedObject().name);
+		}
+
 		base.AttemptReleaseObject ();
 		DestroyItemText ();
 

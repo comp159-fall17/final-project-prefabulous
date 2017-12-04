@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Flori_FlowerMat : MonoBehaviour {
 
+	public static Flori_FlowerMat Instance;
+
 	// Use this for initialization
 	void Start () {
-		
+
+		if (Instance == null)	
+		{
+			Instance = this;	
+		}
+		else if (Instance == this)	
+		{
+			Destroy(gameObject);	
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -22,6 +33,7 @@ public class Flori_FlowerMat : MonoBehaviour {
 		}
 
 		other.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+		other.transform.SetParent (transform);
 	}
 
 	void OnTriggerExit(Collider other)
@@ -32,6 +44,43 @@ public class Flori_FlowerMat : MonoBehaviour {
 		}
 
 		other.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+		other.transform.SetParent (GameObject.Find("Flowers").transform);
+	}
+
+	public void FreezePositionOfFlowersOnMat()
+	{
+		foreach(GameObject flower in transform.GetComponentsInChildren<GameObject>())
+		{
+			flower.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+		}
+	}
+
+	public void FreezeRotationOfFlowersOnMat()
+	{
+		foreach(GameObject flower in transform.GetComponentsInChildren<GameObject>())
+		{
+			flower.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation;
+		}
+	}
+
+	public void ClearConstraintsOfFlowersOnMat()
+	{
+		foreach(GameObject flower in transform.GetComponentsInChildren<GameObject>())
+		{
+			flower.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+		}
+	}
+
+	public bool ContainsFlower(GameObject flowerToCheck)
+	{
+		foreach (Transform child in transform)
+		{
+			if (child.gameObject == flowerToCheck)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
