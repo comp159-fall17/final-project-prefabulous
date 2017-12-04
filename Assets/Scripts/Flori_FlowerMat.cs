@@ -49,25 +49,25 @@ public class Flori_FlowerMat : MonoBehaviour {
 
 	public void FreezePositionOfFlowersOnMat()
 	{
-		foreach(GameObject flower in transform.GetComponentsInChildren<GameObject>())
+		foreach(Transform child in transform)
 		{
-			flower.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+			child.gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 		}
 	}
 
 	public void FreezeRotationOfFlowersOnMat()
 	{
-		foreach(GameObject flower in transform.GetComponentsInChildren<GameObject>())
+		foreach(Transform child in transform)
 		{
-			flower.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation;
+			child.gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation;
 		}
 	}
 
 	public void ClearConstraintsOfFlowersOnMat()
 	{
-		foreach(GameObject flower in transform.GetComponentsInChildren<GameObject>())
+		foreach(Transform child in transform)
 		{
-			flower.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+			child.gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
 		}
 	}
 

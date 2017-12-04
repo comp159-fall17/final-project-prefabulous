@@ -102,14 +102,14 @@ public class Flori_WateringCan : MonoBehaviour {
         // TODO: Discuss wether it is better to compare previous angle to avoid unnecessary calls of CanIsTipped()
         wateringCanIsActive = CanIsPouring();
         wateringCanIsSpilling = CanIsSpilling();
-		if (wateringCanIsSpilling)
+		if (wateringCanIsSpilling && !IsEmpty())
 		{
 			if (testingCan && render.material != spillingMaterial) 
 			{
 				render.material = spillingMaterial;
 			}
 		} 
-		else if (wateringCanIsActive)
+		else if (wateringCanIsActive && !IsEmpty())
         {
 			if (testingCan && render.material != inRangeMaterial) 
 			{
@@ -186,7 +186,8 @@ public class Flori_WateringCan : MonoBehaviour {
 	/// Determines whether this instance can is spilling.
 	/// </summary>
 	/// <returns><c>true</c> if this instance can is spilling; otherwise, <c>false</c>.</returns>
-    public bool CanIsSpilling() {
+    public bool CanIsSpilling() 
+	{
         float magnitudeOfX = transform.eulerAngles.x;
         float magnitudeOfZ = transform.eulerAngles.z;
         magnitudeOfX = ConvertToSignedAngleRange(magnitudeOfX);
@@ -246,7 +247,7 @@ public class Flori_WateringCan : MonoBehaviour {
 	void SetVisualLevel(float height)
 	{
 		Vector3 newLevel = visualLevel.transform.localPosition;
-		newLevel.y = Mathf.Clamp(height / maximumWaterLevel * visualBounds.y, visualBounds.x, visualBounds.y);
+		newLevel.y = Mathf.Clamp((height / maximumWaterLevel * (visualBounds.y - visualBounds.x)) + visualBounds.x, visualBounds.x, visualBounds.y);
 		visualLevel.transform.localPosition = newLevel;
 	}
 

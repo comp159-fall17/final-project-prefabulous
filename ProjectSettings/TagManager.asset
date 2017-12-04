@@ -12,6 +12,7 @@ TagManager:
   - Refill Point
   - Can Body
   - Planter
+  - Mat
   layers:
   - Default
   - TransparentFX
