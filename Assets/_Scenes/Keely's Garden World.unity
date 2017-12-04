@@ -2949,6 +2949,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042755189}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1043807671
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126791210278172, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9d74655d9fc48284c85734a67f650966, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1082740752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,7 +3628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1343938424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3598,11 +3640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de31de589e3e6b042ae2666fa7f9f5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 26650ea8a88357247a3079ba16c8ae01, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  soundEffects: []
+  soundtracks: []
 --- !u!4 &1343938425
 Transform:
   m_ObjectHideFlags: 0

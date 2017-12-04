@@ -186,7 +186,7 @@ public class FloriPlayerController : MonoBehaviour {
 			} 
 			else 
 			{
-				DJOsvaldo.PlayClipAt ("cheer");
+				DJOsvaldo.PlayEffectAt ("cheer");
 			}
 
 

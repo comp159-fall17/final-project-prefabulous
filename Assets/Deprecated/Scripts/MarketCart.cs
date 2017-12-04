@@ -20,7 +20,7 @@ public class MarketCart : MonoBehaviour {
 		if (other.CompareTag("Flower"))	{
 			FloriPlayerController.instance.ForceDropObject ();
 			Debug.Log (other.gameObject.name);
-			DJOsvaldo.PlayClipAt ("whoosh", 1f);
+			DJOsvaldo.PlayEffectAt ("whoosh", 1f);
 			Accountant.AddCoin (other.gameObject.name.TrimEnd(clone));
 			Destroy (other.gameObject);
 
