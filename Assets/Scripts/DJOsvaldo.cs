@@ -6,6 +6,7 @@ public class DJOsvaldo : MonoBehaviour {
 
 	static AudioSource audio;
 	public AudioClip[] audioClips;
+	public AudioClip[] soundtracks;
 	public static DJOsvaldo instance = null;
 
 	public static Dictionary<string, AudioClip> Beats = new Dictionary<string, AudioClip> ();
@@ -18,8 +19,8 @@ public class DJOsvaldo : MonoBehaviour {
 		else if (instance != this) Destroy(gameObject);
 
 		audio = GetComponent<AudioSource> ();
-		Beats.Add ("cheer", audioClips[0]);
-		Beats.Add ("whoosh", audioClips[1]);
+		Beats.Add ("Outside", soundtracks[0]);
+		Beats.Add ("Clarinet", soundtracks[1]);
 
     }
 
