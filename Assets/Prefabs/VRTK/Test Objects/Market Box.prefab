@@ -607,7 +607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb5571ec609a4497a4637cb019563fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lidObject: {fileID: 0}
   inCollision: []
 --- !u!114 &114812510873358880
 MonoBehaviour:
