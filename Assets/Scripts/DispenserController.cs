@@ -28,7 +28,8 @@ public class DispenserController : VRTK_SnapDropZone {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
+        base.Update();
         if (!grabbed) {
             grabbed = SeedWasGrabbed();
             if (grabbed)

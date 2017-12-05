@@ -1270,22 +1270,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114650706828064318, guid: fc7ae15e3e4ac44b192153c59a74d075,
-        type: 2}
-      propertyPath: defaultSnappedInteractableObject
-      value: 
-      objectReference: {fileID: 2069584524}
     - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
         type: 2}
       propertyPath: defaultSnappedInteractableObject
       value: 
       objectReference: {fileID: 2069584524}
-    - target: {fileID: 1134022166768314, guid: fc7ae15e3e4ac44b192153c59a74d075, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114650706828064318, guid: fc7ae15e3e4ac44b192153c59a74d075, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc7ae15e3e4ac44b192153c59a74d075, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &602991485 stripped
