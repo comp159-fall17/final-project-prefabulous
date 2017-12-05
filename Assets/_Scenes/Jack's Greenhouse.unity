@@ -1272,19 +1272,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
         type: 2}
-      propertyPath: seedScalar.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
-        type: 2}
-      propertyPath: seedScalar.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114870347379417322, guid: fc7ae15e3e4ac44b192153c59a74d075,
-        type: 2}
-      propertyPath: seedScalar.z
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: defaultSnappedInteractableObject
+      value: 
+      objectReference: {fileID: 2069584524}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc7ae15e3e4ac44b192153c59a74d075, type: 2}
   m_IsPrefabParent: 0
@@ -1867,9 +1857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534880977be87d242a46ca37c42bba9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 8300000, guid: 0578ceb46955e4548ba464d4b6c054ad, type: 3}
-  - {fileID: 8300000, guid: 93955aae41197ae4da58e456f92fcb51, type: 3}
 --- !u!1 &1039012354 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
@@ -3077,6 +3064,12 @@ Transform:
   m_Father: {fileID: 1082740753}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069584524 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114506048596802450, guid: 9232839df8fd04d5182bcf499aeebd48,
+    type: 2}
+  m_PrefabInternal: {fileID: 1235851192}
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
 --- !u!1 &2107573571 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
