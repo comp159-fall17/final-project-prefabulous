@@ -5,13 +5,12 @@ using UnityEngine.AI;
 
 public class Chicken : MonoBehaviour {
 	
-    public float wanderRadius;
-    public float wanderTimer;
+    public float wanderRadius, wanderTimer, randNumMin, randNumMax;
     public Animator animator;
     public AudioClip scratchSound, clucking;
     Transform target;
     NavMeshAgent agent;
-	Vector3 goalPosition;
+	Vector3 goalPosition, lastPosition;
 
     float timer, randNum, scratchStart, scratchStop ;
     bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false, inIdle = true;
@@ -43,11 +42,11 @@ public class Chicken : MonoBehaviour {
             timer += Time.deltaTime;
             if (timer >= wanderTimer)
             {
-                wanderTimer = Random.Range(5f, 15f);
+                wanderTimer = Random.Range(randNumMin, randNumMax);
                 timer = 0;
                 scratchDelayGenerated = false;
             }
-            if (goalPosition == gameObject.transform.position) //if the chicken is in the target postion before getting a new postion to wander to
+            if (goalPosition == gameObject.transform.position ) //if the chicken is in the target postion before getting a new postion to wander to || gameObject.transform.position == lastPosition
             {
                 if (inIdle)
                 {
@@ -56,6 +55,15 @@ public class Chicken : MonoBehaviour {
 
                 }
             }
+            if (gameObject.transform.position == lastPosition) // if the chicken runs into the edge of the mesh
+            {
+                gameObject.GetComponent<Animator>().SetBool("isWalking", false);
+            }
+            else
+            {
+                gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+            }
+            lastPosition = gameObject.transform.position;
         }
         else if (scratchTimerRunning)
         {
