@@ -53,7 +53,7 @@ public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
     public override bool StartGrab(GameObject grabbingObject, GameObject givenGrabbedObject, Rigidbody givenControllerAttachPoint) {
         
 		bool result = base.StartGrab(grabbingObject, givenGrabbedObject, givenControllerAttachPoint);
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         return result;
     
 	}
