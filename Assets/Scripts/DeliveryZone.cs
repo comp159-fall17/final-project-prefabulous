@@ -13,11 +13,13 @@ public class DeliveryZone : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        script.inCollision.Add(other.gameObject);
+        if (other.gameObject.GetComponent<Sellable>() != null)
+            script.inCollision.Add(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        script.inCollision.Remove(other.gameObject);
+        if (other.gameObject.GetComponent<Sellable>() != null)
+            script.inCollision.Remove(other.gameObject);
     }
 }
