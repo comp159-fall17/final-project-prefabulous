@@ -13,6 +13,7 @@ TagManager:
   - Can Body
   - Planter
   - Mat
+  - Ground
   layers:
   - Default
   - TransparentFX

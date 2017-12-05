@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 114756572186248946}
   - component: {fileID: 114046440167807364}
   - component: {fileID: 114058446562536588}
+  - component: {fileID: 114392829913154864}
+  - component: {fileID: 135863176854969334}
   m_Layer: 0
   m_Name: Sunflower Seed
   m_TagString: Seed
@@ -230,6 +232,18 @@ MonoBehaviour:
   allowedUseControllers: 0
   objectHighlighter: {fileID: 0}
   usingState: 0
+--- !u!114 &114392829913154864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692570841287200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3ec35020e97714baf0b7f78f22e4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetTime: 20
 --- !u!114 &114411515031895442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,3 +287,15 @@ MonoBehaviour:
   intervalOnUse: 0.05
   cancelOnUnuse: 1
   objectToAffect: {fileID: 0}
+--- !u!135 &135863176854969334
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692570841287200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: -0.00031411462, y: 0.02761827, z: -0.000027914997}
