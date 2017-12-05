@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
-public class DispenserController : MonoBehaviour {
+public class DispenserController : VRTK_SnapDropZone {
     [Header("Seed Spawning")]
     [Tooltip("The prefab for the seed that this dispenser will contain")]
     public GameObject seedPrefab;
