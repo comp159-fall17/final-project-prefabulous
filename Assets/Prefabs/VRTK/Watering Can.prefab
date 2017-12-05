@@ -429,6 +429,8 @@ GameObject:
   - component: {fileID: 114621418683492304}
   - component: {fileID: 114037871263091270}
   - component: {fileID: 114731092972961512}
+  - component: {fileID: 64597605531436356}
+  - component: {fileID: 114212993007445916}
   m_Layer: 0
   m_Name: Watering Can
   m_TagString: Can Body
@@ -2359,6 +2361,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64597605531436356
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582928126453008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 1
+  m_SkinWidth: 0.2
+  m_Mesh: {fileID: 4300000, guid: d99f79ebe4edafb4092a9891e8662322, type: 3}
 --- !u!64 &64918753493910726
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -2731,6 +2747,18 @@ MonoBehaviour:
   allowedUseControllers: 0
   objectHighlighter: {fileID: 0}
   usingState: 0
+--- !u!114 &114212993007445916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582928126453008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3ec35020e97714baf0b7f78f22e4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetTime: 25
 --- !u!114 &114323388707796752
 MonoBehaviour:
   m_ObjectHideFlags: 1
