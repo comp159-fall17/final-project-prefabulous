@@ -14,8 +14,7 @@ public class Chicken : MonoBehaviour {
 	Vector3 goalPosition;
 
     float timer, randNum, scratchStart, scratchStop ;
-    bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false;
-
+    bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false, inIdle = true;
     // Use this for initialization
     void Start () {
 		
@@ -42,18 +41,19 @@ public class Chicken : MonoBehaviour {
             timer += Time.deltaTime;
             if (timer >= wanderTimer)
             {
+                wanderTimer = Random.Range(5f, 15f);
                 timer = 0;
                 scratchDelayGenerated = false;
             }
             if (goalPosition == gameObject.transform.position) //if the chicken is in the target postion before getting a new postion to wander to
-            {            
-               gameObject.GetComponent<Animator>().Play("Armature|Idle_1");          
-            }
-            if (!gameObject.GetComponent<Rigidbody>().IsSleeping()) //moving
             {
-                gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+                if (inIdle)
+                {
+                    gameObject.GetComponent<Animator>().SetBool("isWalking", false);
+                    StartCoroutine(PlayIdle("Armature|Idle_1"));
+
+                }
             }
-           
         }
         else if (scratchTimerRunning)
         {
@@ -83,5 +83,12 @@ public class Chicken : MonoBehaviour {
         NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
 
         return navHit.position;
+    }
+    IEnumerator PlayIdle(string animationName)
+    {
+        inIdle = false;
+        gameObject.GetComponent<Animator>().Play(animationName);
+        yield return new WaitForSeconds(gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1);
+        inIdle = true;
     }
 }
