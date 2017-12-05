@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRTK.GrabAttachMechanics;
 
-public class PiggyBankController : VRTK_ChildOfControllerGrabAttach {
+public class PiggyBank : VRTK_ChildOfControllerGrabAttach {
     
-	public static PiggyBankController Instance;
+	public static PiggyBank Instance;
 
     [Tooltip("The amount of money the user starts with")]
     [Range(0, 10000)]

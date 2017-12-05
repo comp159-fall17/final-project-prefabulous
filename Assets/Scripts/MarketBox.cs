@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK.Controllables.PhysicsBased;
 
-public class MarketBoxController : MonoBehaviour {
+public class MarketBox : MonoBehaviour {
     public GameObject lidObject;
+    [HideInInspector]
     public List<GameObject> inCollision;
 
     VRTK_PhysicsRotator lid;
@@ -30,7 +31,7 @@ public class MarketBoxController : MonoBehaviour {
             Sellable worth = go.GetComponent<Sellable>();
             if (worth != null)
             {
-                PiggyBankController.Instance.Earn(worth.worth);
+                PiggyBank.Instance.Earn(worth.worth);
                 toBeDestroyed.Add(go);
             }
         }

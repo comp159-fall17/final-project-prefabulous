@@ -8,7 +8,6 @@ public class Cloud : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        print(UnityEngine.Random.Range(0f, 1f));
         bool xDir = UnityEngine.Random.Range(0f, 1f) > 0.5;
         bool zDir = UnityEngine.Random.Range(0f, 1f) > 0.5;
         int xSign = -1;

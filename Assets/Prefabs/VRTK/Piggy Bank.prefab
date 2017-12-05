@@ -176,16 +176,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140129026781882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe733bbd52324a50be6cad49baab11e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d2494d8e98774fdd993056a4857b1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 4698749571472384}
   leftSnapHandle: {fileID: 4698749571472384}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  startingMoney: 1000
+  startingMoney: 200
   fadeSpeed: 0.75
 --- !u!114 &114474551900116946
 MonoBehaviour:
@@ -293,7 +293,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140129026781882}
   m_LocalRotation: {x: -0, y: 0.5145192, z: -0, w: 0.8574789}
-  m_LocalPosition: {x: -0.9068985, y: 0.92100143, z: 0.058853123}
+  m_LocalPosition: {x: -0.96900177, y: 0.92100143, z: -0.008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4698749571472384}
@@ -302,6 +302,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 61.931004, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.90689933, y: 0.921}
+  m_AnchoredPosition: {x: -0.969, y: 0.921}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

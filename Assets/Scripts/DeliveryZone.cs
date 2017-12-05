@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DeliveryZone : MonoBehaviour {
     public GameObject box;
-    MarketBoxController script;
+    MarketBox script;
 
     private void Start()
     {
-        script = box.GetComponent<MarketBoxController>();
+        script = box.GetComponent<MarketBox>();
     }
 
     private void OnTriggerEnter(Collider other)

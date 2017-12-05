@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class DispenserController : VRTK_SnapDropZone {
+public class Dispenser : VRTK_SnapDropZone {
     //[Header("Seed Spawning")]
     //[Tooltip("The prefab for the seed that this dispenser will contain")]
     //public GameObject seedPrefab;
@@ -19,7 +19,7 @@ public class DispenserController : VRTK_SnapDropZone {
     public override void OnObjectUnsnappedFromDropZone(SnapDropZoneEventArgs e)
     {
         base.OnObjectUnsnappedFromDropZone(e);
-        PiggyBankController.Instance.Spend(sellPrice);
+        PiggyBank.Instance.Spend(sellPrice);
         GetComponent<AudioSource>().Play();
     }
 }
