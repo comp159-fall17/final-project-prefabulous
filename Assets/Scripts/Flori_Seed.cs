@@ -21,27 +21,29 @@ public class Flori_Seed : MonoBehaviour {
 	}
 
 	[Header("Growth Variables")]
-	[Tooltip("Height limit for the first stage of flower growth")]
+	[Tooltip("Height limit for the first stage of flower growth.")]
 	public float stageOneHeightLimit = 350f;
-	[Tooltip("Height limit for the second stage of flower growth")]
+	[Tooltip("Height limit for the second stage of flower growth.")]
 	public float stageTwoHeightLimit = 600f;
-	[Tooltip("Reduced rate multiplier for stage two growth along the x and z axes")]
+	[Tooltip("Reduced rate multiplier for stage two growth along the x and z axes.")]
 	[Range(0.05f, 1f)]
 	public float stageTwoReducer = 0.8f;
-	[Tooltip("Amount of water drops needed to trigger growth")]
+	[Tooltip("Amount of water drops needed to trigger growth.")]
 	[Range(1, 100)]
 	public int waterDropsToBloom = 5;
 
 	[Header("Flower Data")]
-	[Tooltip("The flower prefab the seed will sprout once watered")]
+	[Tooltip("The flower prefab the seed will sprout once watered.")]
 	public GameObject flowerModel;
-	[Tooltip("Rate at which this flower grows")]
-	[Range(0.1f, 2f)]
-	public float growthRate = 0.5f;
-
-	[Tooltip("Flower is currently set to grow until its first height limit")]
+	[Tooltip("Rate at which this flower grows.")]
+	[Range(0.01f, 1f)]
+	public float growthRate = 0.1f;
+	[Tooltip("Initial flower size when instantiated within the seed.")]
+	[Range(0.01f, 10f)]
+	public float initialFlowerScale = 1f;
+	[Tooltip("Flower is currently set to grow until its first height limit.")]
 	[HideInInspector] public bool inStageOneGrowth = true;
-	[Tooltip("Flower has grown to its first height limit and is set to grow until its second and final height limit")]
+	[Tooltip("Flower has grown to its first height limit and is set to grow until its second and final height limit.")]
 	[HideInInspector] public bool inStageTwoGrowth = false;
 		
 
@@ -74,11 +76,12 @@ public class Flori_Seed : MonoBehaviour {
 		ColorFlower (flower, stemColor);
 		SetFlowerComponents (false);
 
+		flower.transform.SetGlobalScale (new Vector3(initialFlowerScale, initialFlowerScale, initialFlowerScale));
 		flower.transform.localPosition = Vector3.zero;
 		Vector3 rotation = flower.transform.localRotation.eulerAngles;
 		rotation.x = 0;
 		rotation.y = 0;
-		rotation.z = 0;
+		rotation.z = 180;
 		flower.transform.localRotation = Quaternion.Euler(rotation);
 
 	}
