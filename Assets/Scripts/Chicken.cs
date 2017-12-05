@@ -8,19 +8,20 @@ public class Chicken : MonoBehaviour {
     public float wanderRadius;
     public float wanderTimer;
     public Animator animator;
-
+    public AudioClip scratchSound, clucking;
     Transform target;
     NavMeshAgent agent;
 	Vector3 goalPosition;
 
     float timer, randNum, scratchStart, scratchStop ;
     bool isWalkingTimer = true, scratchDelayGenerated =true, scratchTimerRunning = false, inIdle = true;
+    AudioSource audio;
     // Use this for initialization
     void Start () {
 		
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
-
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class Chicken : MonoBehaviour {
                 scratchTimerRunning = true;
                 isWalkingTimer = false;
                 agent.SetDestination(gameObject.transform.position);
+                audio.PlayOneShot(scratchSound);
             }
 
             timer += Time.deltaTime;
@@ -68,6 +70,7 @@ public class Chicken : MonoBehaviour {
                 Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
                 agent.SetDestination(newPos);
                 gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+                audio.PlayOneShot(clucking);
                 goalPosition = newPos;
             }
         }
