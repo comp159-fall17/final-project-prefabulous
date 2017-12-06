@@ -322,9 +322,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1723651403070158}
-  m_LocalRotation: {x: -0.97629607, y: 0, z: 0.2164396, w: 0}
-  m_LocalPosition: {x: 2.0792522, y: 0.155, z: -1.4884421}
-  m_LocalScale: {x: 3.4184499, y: 2.7700796, z: 2.7700796}
+  m_LocalRotation: {x: -0.97629607, y: -0, z: 0.2164396, w: 0}
+  m_LocalPosition: {x: -1.8, y: 0.155, z: 3.58}
+  m_LocalScale: {x: 3.4184504, y: 2.7700825, z: 2.7700822}
   m_Children:
   - {fileID: 4989259633658850}
   - {fileID: 4713650835323428}
@@ -765,7 +765,7 @@ MonoBehaviour:
   highlightColor: {r: 0.3455882, g: 0.7021297, b: 1, a: 0}
   validHighlightColor: {r: 0, g: 0.9191176, b: 0.2725659, a: 0}
   highlightAlwaysActive: 0
-  validObjectListPolicy: {fileID: 0}
+  validObjectListPolicy: {fileID: 114337460080479434}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}
@@ -807,7 +807,7 @@ MonoBehaviour:
   highlightColor: {r: 0.3455882, g: 0.7021297, b: 1, a: 0}
   validHighlightColor: {r: 0, g: 0.9191176, b: 0.2725659, a: 0}
   highlightAlwaysActive: 0
-  validObjectListPolicy: {fileID: 0}
+  validObjectListPolicy: {fileID: 114857012822663032}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}
@@ -849,7 +849,7 @@ MonoBehaviour:
   highlightColor: {r: 0.3455882, g: 0.7021297, b: 1, a: 0}
   validHighlightColor: {r: 0, g: 0.9191176, b: 0.2725659, a: 0}
   highlightAlwaysActive: 0
-  validObjectListPolicy: {fileID: 0}
+  validObjectListPolicy: {fileID: 114468236633461838}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}

@@ -242,7 +242,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de31de589e3e6b042ae2666fa7f9f5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffects: []
+  soundEffects:
+  - {fileID: 8300000, guid: f9dafc94a98c6b04cbec0bc0bfd5797c, type: 3}
   soundtracks:
   - {fileID: 8300000, guid: 26650ea8a88357247a3079ba16c8ae01, type: 3}
   - {fileID: 8300000, guid: 3092dc372b9237a42bcd272031ca09f5, type: 3}
+  - {fileID: 8300000, guid: cbc7f7a80a732ae4aa593bdb57931e12, type: 3}
+  - {fileID: 8300000, guid: e105fa21ab91ae2428795db5460d9f46, type: 3}
+  - {fileID: 8300000, guid: 5b12dd3fde812804e95d5966ebb2dedb, type: 3}
+  - {fileID: 8300000, guid: 3db63697287d9344fa4d83bd364e72b1, type: 3}
+  - {fileID: 8300000, guid: 540621e30f5663e41b7a98092fe83885, type: 3}
+  - {fileID: 8300000, guid: 0fdbb48b3328892479fdf3d0885d6511, type: 3}
+  - {fileID: 8300000, guid: 5341d2f5871457242a401be3028a335d, type: 3}
+  - {fileID: 8300000, guid: 765c9998d8db23d4faa60c6f1142d91d, type: 3}
+  - {fileID: 8300000, guid: 84cc0f5d1e400da44a1656fbab82e230, type: 3}
+  effectsSource: {fileID: 82873200751455212}

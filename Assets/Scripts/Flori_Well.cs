@@ -51,7 +51,10 @@ public class Flori_Well : MonoBehaviour {
 			return;
 		}
 
-		fwc.SetIsSubmerged (false);
+		if (fwc != null) 
+		{
+			fwc.SetIsSubmerged (false);
+		}
 		fwc = null;
 		isFilling = false;
 

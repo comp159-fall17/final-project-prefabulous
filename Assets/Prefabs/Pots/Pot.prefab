@@ -412,7 +412,7 @@ MonoBehaviour:
   highlightColor: {r: 0.3455882, g: 0.7021297, b: 1, a: 0}
   validHighlightColor: {r: 0, g: 0.9191176, b: 0.2725659, a: 0}
   highlightAlwaysActive: 0
-  validObjectListPolicy: {fileID: 0}
+  validObjectListPolicy: {fileID: 114616478414613166}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
   defaultSnappedInteractableObject: {fileID: 0}
@@ -455,7 +455,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.135
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136109367149813588
 CapsuleCollider:

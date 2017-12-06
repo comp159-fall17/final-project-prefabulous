@@ -1,27 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK.Controllables.PhysicsBased;
-using VRTK;
-using VRTK.Controllables;
+using VRTK.Examples;
 
-public class RadioKnobController : VRTK_PhysicsRotator
+public class RadioKnobController : ControlReactor
 {
 	[Header("RadioKnobController Options")]
 	public bool isVolumeKnob;
-	// Use this for initialization
-	protected VRTK_BaseControllable controllableEvents;
 
-	void Start () {
-		//for testing
-		DJOsvaldo.ChangeSoundTrackTo("Outside" );
+	float lastValue;
+
+	protected override void ValueChanged (object sender, VRTK.Controllables.ControllableEventArgs e)
+	{
+		base.ValueChanged (sender, e);
+		if (isVolumeKnob) 
+		{
+			if (e.value != lastValue)	
+			{
+				DJOsvaldo.PlayEffectAt ("click", 0.03f);
+				DJOsvaldo.ChangeMusicVolume (e.value / 10f);
+			} 
+		} 
+		else
+		{
+			if (e.value != lastValue)	
+			{
+				DJOsvaldo.PlayEffectAt ("click", 0.03f);
+				DJOsvaldo.ChangeSoundTrackTo ((int)e.value);
+			}
+		}
+			
+		lastValue = e.value;
 	}
-
-	// Update is called once per frame
-	void Update () {
-        //DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue())/100);
-        DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue()) / 100f);
-
-    }
 
 }
