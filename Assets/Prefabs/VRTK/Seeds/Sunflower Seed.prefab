@@ -20,7 +20,22 @@ GameObject:
   m_Component:
   - component: {fileID: 4412382389227034}
   m_Layer: 0
-  m_Name: Snap Point
+  m_Name: Snap Point Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1579191453471270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4760143073123838}
+  m_Layer: 0
+  m_Name: Snap Point Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,9 +75,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692570841287200}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.742, y: 0.8821, z: -0.1478}
+  m_LocalPosition: {x: -0.742, y: 0.8821, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4760143073123838}
   - {fileID: 4412382389227034}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +89,21 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481660225070168}
+  m_LocalRotation: {x: 0.9914449, y: -0.13052616, z: -0, w: 0}
+  m_LocalPosition: {x: -0.04, y: 0.01, z: -0.04}
+  m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4338261731194350}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 15}
+--- !u!4 &4760143073123838
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579191453471270}
   m_LocalRotation: {x: 0.9914449, y: -0.13052616, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0368, z: 0}
+  m_LocalPosition: {x: 0.018, y: 0.01, z: -0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4338261731194350}
@@ -196,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   precisionGrab: 0
   rightSnapHandle: {fileID: 4412382389227034}
-  leftSnapHandle: {fileID: 4412382389227034}
+  leftSnapHandle: {fileID: 4760143073123838}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
@@ -243,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3ec35020e97714baf0b7f78f22e4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetTime: 20
+  resetTime: 15
 --- !u!114 &114411515031895442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,5 +326,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.03
   m_Center: {x: -0.00031411462, y: 0.02761827, z: -0.000027914997}
