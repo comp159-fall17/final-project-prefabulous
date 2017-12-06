@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395581133092512}
   m_Layer: 0
-  m_Name: Snap Point
+  m_Name: Snap Point Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,21 @@ GameObject:
   m_Layer: 0
   m_Name: Sunflower
   m_TagString: Flower
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1434211601866928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4422039764810366}
+  m_Layer: 0
+  m_Name: Snap Point Left
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341620893350032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 0.79, z: -0.4401}
+  m_LocalPosition: {x: -0.65, y: 0.79, z: 1.029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4907994752683166}
@@ -181,6 +196,7 @@ Transform:
   - {fileID: 4259036973078646}
   - {fileID: 4165328751733102}
   - {fileID: 4588362978917344}
+  - {fileID: 4422039764810366}
   - {fileID: 4395581133092512}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -191,13 +207,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063583142340186}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0010999441, y: 0.11799997, z: 0.0041000247}
+  m_LocalRotation: {x: -0.085831694, y: -0.015134449, z: -0.17298746, w: 0.98106027}
+  m_LocalPosition: {x: -0.0155, y: 0.1466, z: 0.019}
+  m_LocalScale: {x: 3, y: 4, z: 3}
+  m_Children: []
+  m_Father: {fileID: 4331644278582824}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -10, y: 0, z: -20}
+--- !u!4 &4422039764810366
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434211601866928}
+  m_LocalRotation: {x: -0.25488698, y: 0.044943444, z: 0.16773126, w: 0.95125127}
+  m_LocalPosition: {x: 0.0007, y: 0.1338, z: 0.0083}
   m_LocalScale: {x: 3, y: 4, z: 3}
   m_Children: []
   m_Father: {fileID: 4331644278582824}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 20}
 --- !u!4 &4532034301077176
 Transform:
   m_ObjectHideFlags: 1
@@ -616,7 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   precisionGrab: 0
   rightSnapHandle: {fileID: 4395581133092512}
-  leftSnapHandle: {fileID: 4395581133092512}
+  leftSnapHandle: {fileID: 4422039764810366}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
