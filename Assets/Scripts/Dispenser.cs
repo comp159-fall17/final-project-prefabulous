@@ -15,11 +15,17 @@ public class Dispenser : VRTK_SnapDropZone {
     [Header("Market")]
     [Tooltip("The amount of money it costs to buy this seed")]
     public int sellPrice;
+    int occured;
 
     public override void OnObjectUnsnappedFromDropZone(SnapDropZoneEventArgs e)
     {
         base.OnObjectUnsnappedFromDropZone(e);
-        PiggyBank.Instance.Spend(sellPrice);
-        GetComponent<AudioSource>().Play();
+        if (occured >= 2)
+        {
+            PiggyBank.Instance.Spend(sellPrice);
+            GetComponent<AudioSource>().Play();
+        } else {
+            occured++;
+        }
     }
 }
