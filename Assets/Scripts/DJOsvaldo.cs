@@ -9,18 +9,19 @@ public class DJOsvaldo : MonoBehaviour {
 	public AudioClip[] soundEffects;
 	public AudioClip[] soundtracks;
 
-	public static Dictionary<string, AudioClip> Beats = new Dictionary<string, AudioClip> ();
+	public static List<AudioClip> Beats = new List<AudioClip>();
 	public static Dictionary<string, AudioClip> Effects = new Dictionary<string, AudioClip> ();
 	static bool isPlaying;
 
-	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 		radio = GetComponent<AudioSource> ();
 		effectsSource = GetComponentInChildren<AudioSource> ();
 
-		Beats.Add ("Outside", soundtracks[0]);
-		Beats.Add ("Clarinet", soundtracks[1]);
+		foreach (AudioClip soundtrack in soundtracks) 
+		{
+			Beats.Add (soundtrack);
+		}
 
 //		Effects.Add ("<Title>", soundEffects[0]); // sample for effects
 
@@ -41,19 +42,17 @@ public class DJOsvaldo : MonoBehaviour {
 	/// </summary>
 	/// <param name="station">Station.</param>
 	/// <param name="silencing">If set to <c>true</c> silencing.</param>
-	public static void ChangeSoundTrackTo(string station, bool silencing = false)
+	public static void ChangeSoundTrackTo(int station, bool silencing = false)
 	{
+		Debug.Log ("Changing soundtrack to: " + Beats[station].name);
 		if (silencing)
 		{
 			radio.Stop ();
 			radio.clip = null;
 			return;
 		}
-		if (Beats.ContainsKey(station))
-		{
-			radio.clip = Beats [station];
-			radio.Play ();
-		}
+		radio.clip = Beats[station];
+		radio.Play ();
 
 	}
 
