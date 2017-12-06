@@ -46,7 +46,7 @@ public class Chicken : MonoBehaviour {
                 timer = 0;
                 scratchDelayGenerated = false;
             }
-            if (goalPosition == gameObject.transform.position ) //if the chicken is in the target postion before getting a new postion to wander to || gameObject.transform.position == lastPosition
+            if (goalPosition == gameObject.transform.position ) //if the chicken is in the target postion before getting a new postion to wander to 
             {
                 if (inIdle)
                 {
