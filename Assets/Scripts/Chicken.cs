@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class Chicken : MonoBehaviour {
 	
-    public float wanderRadius, wanderTimer, randNumMin, randNumMax;
+    public float wanderRadius, wanderTimer, randNumMin, randNumMax, cluckVolume = .2f;
     public Animator animator;
-    public AudioClip scratchSound, clucking;
+    public AudioClip scratchSound;
     Transform target;
     NavMeshAgent agent;
 	Vector3 goalPosition, lastPosition;
@@ -21,6 +21,9 @@ public class Chicken : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
         audio = GetComponent<AudioSource>();
+        audio.clip = scratchSound;
+        audio.volume = cluckVolume;
+
     }
 
     // Update is called once per frame
@@ -78,7 +81,6 @@ public class Chicken : MonoBehaviour {
                 Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
                 agent.SetDestination(newPos);
                 gameObject.GetComponent<Animator>().SetBool("isWalking", true);
-                audio.PlayOneShot(clucking);
                 goalPosition = newPos;
             }
         }

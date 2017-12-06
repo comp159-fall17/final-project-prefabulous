@@ -63,6 +63,7 @@ public class DJOsvaldo : MonoBehaviour {
 	/// <param name="soundLevel">Sound level.</param>
     public static void ChangeMusicVolume(float soundLevel)
     {
+        Debug.Log("soundLevel = " + soundLevel);
 		radio.volume = Mathf.Clamp01(soundLevel);
     }
 }

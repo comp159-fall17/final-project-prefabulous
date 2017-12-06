@@ -20,13 +20,8 @@ public class RadioKnobController : VRTK_PhysicsRotator
 	// Update is called once per frame
 	void Update () {
         //DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue())/100);
-    }
+        DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue()) / 100f);
 
-	protected override void AttemptMove()
-	{
-        base.AttemptMove();
-		DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue())/100f);
-        Debug.Log("AttemptMove: GetStepValue(GetValue()) / 100 = " + GetStepValue(GetValue()) / 100);
-	}
+    }
 
 }
