@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: f08b8694589b94e07972a5a7a6ffd74e
+timeCreated: 1512554687
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box001
+    100002: ChamferCyl001
+    100004: ChamferCyl002
+    100006: ChamferCyl003
+    100008: ChamferCyl004
+    100010: ChamferCyl005
+    100012: ChamferCyl006
+    100014: ChamferCyl007
+    100016: ChamferCyl008
+    100018: ChamferCyl009
+    100020: ChamferCyl010
+    100022: ChamferCyl011
+    100024: ChamferCyl012
+    100026: ChamferCyl013
+    100028: ChamferCyl014
+    100030: ChamferCyl015
+    100032: ChamferCyl016
+    100034: ChamferCyl017
+    100036: ChamferCyl018
+    100038: ChamferCyl019
+    100040: ChamferCyl020
+    100042: //RootNode
+    400000: Box001
+    400002: ChamferCyl001
+    400004: ChamferCyl002
+    400006: ChamferCyl003
+    400008: ChamferCyl004
+    400010: ChamferCyl005
+    400012: ChamferCyl006
+    400014: ChamferCyl007
+    400016: ChamferCyl008
+    400018: ChamferCyl009
+    400020: ChamferCyl010
+    400022: ChamferCyl011
+    400024: ChamferCyl012
+    400026: ChamferCyl013
+    400028: ChamferCyl014
+    400030: ChamferCyl015
+    400032: ChamferCyl016
+    400034: ChamferCyl017
+    400036: ChamferCyl018
+    400038: ChamferCyl019
+    400040: ChamferCyl020
+    400042: //RootNode
+    2300000: Box001
+    2300002: ChamferCyl001
+    2300004: ChamferCyl002
+    2300006: ChamferCyl003
+    2300008: ChamferCyl004
+    2300010: ChamferCyl005
+    2300012: ChamferCyl006
+    2300014: ChamferCyl007
+    2300016: ChamferCyl008
+    2300018: ChamferCyl009
+    2300020: ChamferCyl010
+    2300022: ChamferCyl011
+    2300024: ChamferCyl012
+    2300026: ChamferCyl013
+    2300028: ChamferCyl014
+    2300030: ChamferCyl015
+    2300032: ChamferCyl016
+    2300034: ChamferCyl017
+    2300036: ChamferCyl018
+    2300038: ChamferCyl019
+    2300040: ChamferCyl020
+    3300000: Box001
+    3300002: ChamferCyl001
+    3300004: ChamferCyl002
+    3300006: ChamferCyl003
+    3300008: ChamferCyl004
+    3300010: ChamferCyl005
+    3300012: ChamferCyl006
+    3300014: ChamferCyl007
+    3300016: ChamferCyl008
+    3300018: ChamferCyl009
+    3300020: ChamferCyl010
+    3300022: ChamferCyl011
+    3300024: ChamferCyl012
+    3300026: ChamferCyl013
+    3300028: ChamferCyl014
+    3300030: ChamferCyl015
+    3300032: ChamferCyl016
+    3300034: ChamferCyl017
+    3300036: ChamferCyl018
+    3300038: ChamferCyl019
+    3300040: ChamferCyl020
+    4300000: Box001
+    4300002: ChamferCyl001
+    4300004: ChamferCyl002
+    4300006: ChamferCyl003
+    4300008: ChamferCyl004
+    4300010: ChamferCyl005
+    4300012: ChamferCyl006
+    4300014: ChamferCyl007
+    4300016: ChamferCyl008
+    4300018: ChamferCyl009
+    4300020: ChamferCyl010
+    4300022: ChamferCyl011
+    4300024: ChamferCyl012
+    4300026: ChamferCyl013
+    4300028: ChamferCyl014
+    4300030: ChamferCyl015
+    4300032: ChamferCyl016
+    4300034: ChamferCyl017
+    4300036: ChamferCyl018
+    4300038: ChamferCyl019
+    4300040: ChamferCyl020
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02___Default
+    second: {fileID: 2100000, guid: 66e0d533e580745e9b0ab70f88b81b98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03___Default
+    second: {fileID: 2100000, guid: dcbd12eadc1754ddda844e3863885660, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 04___Default
+    second: {fileID: 2100000, guid: 9109ba04c3b2f44158ea1da0352ba497, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_153227214
+    second: {fileID: 2100000, guid: bfb3f945416c5481aaeaf56ca4c7a1d3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
