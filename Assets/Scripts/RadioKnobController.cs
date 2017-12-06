@@ -17,6 +17,7 @@ public class RadioKnobController : ControlReactor
 		{
 			if (e.value != lastValue)	
 			{
+				DJOsvaldo.PlayEffectAt ("click", 0.03f);
 				DJOsvaldo.ChangeMusicVolume (e.value / 10f);
 			} 
 		} 
@@ -24,6 +25,7 @@ public class RadioKnobController : ControlReactor
 		{
 			if (e.value != lastValue)	
 			{
+				DJOsvaldo.PlayEffectAt ("click", 0.03f);
 				DJOsvaldo.ChangeSoundTrackTo ((int)e.value);
 			}
 		}

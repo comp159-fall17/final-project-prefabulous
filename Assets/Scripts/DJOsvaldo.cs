@@ -5,9 +5,10 @@ using UnityEngine;
 public class DJOsvaldo : MonoBehaviour {
 
 	static AudioSource radio;
-	static AudioSource effectsSource;
+	static AudioSource EffectsSource;
 	public AudioClip[] soundEffects;
 	public AudioClip[] soundtracks;
+	public AudioSource effectsSource;
 
 	public static List<AudioClip> Beats = new List<AudioClip>();
 	public static Dictionary<string, AudioClip> Effects = new Dictionary<string, AudioClip> ();
@@ -16,24 +17,24 @@ public class DJOsvaldo : MonoBehaviour {
 	void Awake () {
 
 		radio = GetComponent<AudioSource> ();
-		effectsSource = GetComponentInChildren<AudioSource> ();
+		EffectsSource = effectsSource;
 
 		foreach (AudioClip soundtrack in soundtracks) 
 		{
 			Beats.Add (soundtrack);
 		}
 
-//		Effects.Add ("<Title>", soundEffects[0]); // sample for effects
+		Effects.Add ("click", soundEffects[0]); // sample for effects
 
     }
 
 	public static void PlayEffectAt(string name, float level = 0.35f)
 	{
-		if (Effects.ContainsKey(name) && !radio.isPlaying) 
+		if (Effects.ContainsKey(name)) 
 		{
-			effectsSource.volume = level;
-			effectsSource.clip = Effects [name];
-			effectsSource.Play ();
+			EffectsSource.volume = level;
+			EffectsSource.clip = Effects [name];
+			EffectsSource.Play ();
 		}
 	}
 
