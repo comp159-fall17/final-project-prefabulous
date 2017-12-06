@@ -11,7 +11,7 @@ public class VideoButton : ButtonReactor {
 	protected override void MaxLimitReached (object sender, VRTK.Controllables.ControllableEventArgs e)
 	{
 		base.MaxLimitReached (sender, e);
-		DJOsvaldo.PlayEffectAt ("click", 0.04f);
+		DJOsvaldo.PlayEffectAt ("click", 0.03f);
 		videoPlayer.time = 0d;
 		videoPlayer.Play ();
 	}
