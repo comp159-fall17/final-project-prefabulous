@@ -14,15 +14,15 @@ public class RadioKnobController : VRTK_PhysicsRotator
 
 	void Start () {
 		//for testing
-		DJOsvaldo.PlayEffectAt("Outside" , 0.35f);
+		DJOsvaldo.ChangeSoundTrackTo("Outside" );
 	}
 
 	// Update is called once per frame
 	void Update () {
+        //DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue())/100);
+    }
 
-	}
-
-	public override float GetNormalizedValue ()
+    public override float GetNormalizedValue ()
 	{
 		Debug.Log("GetNormalizedValue, GetValue() = " + GetValue() + " angleLimits.minimum = " + angleLimits.minimum + " angleLimits.maximum = " + angleLimits.maximum);
 		//return base.GetNormalizedValue ();
@@ -32,9 +32,8 @@ public class RadioKnobController : VRTK_PhysicsRotator
 	protected override void AttemptMove()
 	{
 		SetFrictions(grabbedFriction);
-		float test = GetStepValue(GetValue())/100;
-		Debug.Log("test/100 " + test);
-		DJOsvaldo.ChangeMusicVolume(test);
+		DJOsvaldo.ChangeMusicVolume(GetStepValue(GetValue())/100);
+        Debug.Log("AttemptMove: GetStepValue(GetValue()) / 100 = " + GetStepValue(GetValue()) / 100);
 		ManageSpring(false, restingAngle);
 	}
 
