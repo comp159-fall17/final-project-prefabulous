@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 1692570841287200}
   m_LocalRotation: {x: 0.17420317, y: 0.17790534, z: 0.6810376, w: -0.68861514}
   m_LocalPosition: {x: 5.98845, y: 1.47545, z: 0.6279497}
-  m_LocalScale: {x: 1.0000026, y: 1.0000057, z: 1.0000044}
+  m_LocalScale: {x: 1, y: 1.00001, z: 1}
   m_Children:
   - {fileID: 4760143073123838}
   - {fileID: 4412382389227034}
@@ -164,7 +164,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &64574079914411258
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -273,6 +273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetTime: 15
+  overrideLocation: 1
+  overridePosition: {x: 1, y: 1, z: 1}
+  useGameObjectForRespawnLocation: 1
+  gameObjectForRespawn: {fileID: 0}
+  dropHeight: 0.5
 --- !u!114 &114411515031895442
 MonoBehaviour:
   m_ObjectHideFlags: 1
