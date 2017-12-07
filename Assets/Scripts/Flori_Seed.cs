@@ -29,7 +29,7 @@ public class Flori_Seed : MonoBehaviour {
 	[Range(0.05f, 1f)]
 	public float stageTwoReducer = 0.8f;
 	[Tooltip("Amount of water drops needed to trigger growth.")]
-	[Range(1, 100)]
+	[Range(1, 150)]
 	public int waterDropsToBloom = 5;
 
 	[Header("Flower Data")]

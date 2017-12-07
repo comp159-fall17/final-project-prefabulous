@@ -75,8 +75,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692570841287200}
   m_LocalRotation: {x: 0.17420317, y: 0.17790534, z: 0.6810376, w: -0.68861514}
-  m_LocalPosition: {x: -1.354, y: 0.947, z: 0.303}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: -0.979, y: 0.947, z: -0.46}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.040000003}
   m_Children:
   - {fileID: 4760143073123838}
   - {fileID: 4412382389227034}
@@ -177,7 +177,7 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_InflateMesh: 1
-  m_SkinWidth: 0.00005
+  m_SkinWidth: 0.005
   m_Mesh: {fileID: 4300000, guid: b1db66405d3e742ccb52558030c07793, type: 2}
 --- !u!114 &114046440167807364
 MonoBehaviour:
@@ -193,10 +193,10 @@ MonoBehaviour:
   stageOneHeightLimit: 40
   stageTwoHeightLimit: 80
   stageTwoReducer: 0.8
-  waterDropsToBloom: 70
+  waterDropsToBloom: 65
   flowerModel: {fileID: 1717638713166256, guid: 004c17f225a0bdc4eab1d233f6949c2e,
     type: 2}
-  growthRate: 7.39
+  growthRate: 2
   initialFlowerScale: 0.1
   initialZAxisRotation: -180
   inStageOneGrowth: 1
