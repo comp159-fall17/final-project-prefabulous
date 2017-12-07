@@ -21,10 +21,16 @@ public class DJOsvaldo : MonoBehaviour {
 
 		foreach (AudioClip soundtrack in soundtracks) 
 		{
-			Beats.Add (soundtrack);
+			if (!Beats.Contains (soundtrack)) 
+			{
+				Beats.Add (soundtrack);
+			}
 		}
 
-		Effects.Add ("click", soundEffects[0]); // sample for effects
+		if (!Effects.ContainsKey ("click")) 
+		{
+			Effects.Add ("click", soundEffects[0]);
+		}
 
     }
 
@@ -45,7 +51,6 @@ public class DJOsvaldo : MonoBehaviour {
 	/// <param name="silencing">If set to <c>true</c> silencing.</param>
 	public static void ChangeSoundTrackTo(int station, bool silencing = false)
 	{
-		Debug.Log ("Changing soundtrack to: " + Beats[station].name);
 		if (silencing)
 		{
 			radio.Stop ();
@@ -63,7 +68,6 @@ public class DJOsvaldo : MonoBehaviour {
 	/// <param name="soundLevel">Sound level.</param>
     public static void ChangeMusicVolume(float soundLevel)
     {
-        Debug.Log("soundLevel = " + soundLevel);
 		radio.volume = Mathf.Clamp01(soundLevel);
     }
 }
