@@ -25,7 +25,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			Flori_Planter planterToReset;
 			foreach (GameObject planter in GameObject.FindGameObjectsWithTag("Planter"))
 			{
-				if (planter.GetComponent<Flori_Planter>().GetSeedInPlanter() == objectToGrab.GetComponent<Flori_Flower>().GetParentSeed())
+				if (objectToGrab.GetComponent<Flori_Flower>().GetParentSeed() == planter.GetComponent<Flori_Planter>().GetSeedInPlanter())
 				{
 					Flori_Seed seedInThisPlanter = planter.GetComponent<Flori_Planter> ().GetSeedInPlanter ();
 					planter.GetComponent<VRTK_SnapDropZone> ().ForceUnsnap ();

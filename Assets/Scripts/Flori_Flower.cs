@@ -12,11 +12,11 @@ public class Flori_Flower : MonoBehaviour {
 
 	[Header("Flower Coloring Data")]
 	[Tooltip("Object mesh in flower bloom to be colored.")]
-	public MeshRenderer bloom;
+	public List<MeshRenderer> blooms = new List<MeshRenderer>();
 	[Tooltip("Object mesh in flower stamen to be colored.")]
-	public MeshRenderer stamen;
+	public List<MeshRenderer> stamens = new List<MeshRenderer>();
 	[Tooltip("Object mesh of flower stem to be colored.")]
-	public MeshRenderer stem;
+	public List<MeshRenderer> stems = new List<MeshRenderer>();
 	[Tooltip("All object meshes in flower leaves to be colored.")]
 	public List<MeshRenderer> leaves = new List<MeshRenderer>();
 
@@ -67,12 +67,18 @@ public class Flori_Flower : MonoBehaviour {
 
 	public void SetBloomColor(Color bloomColor)
 	{
-		bloom.material.color = bloomColor;
+		foreach (MeshRenderer bloom in blooms) 
+		{
+			bloom.material.color = bloomColor;
+		}
 	}
 
 	public void SetStamenColor(Color stamenColor)
 	{
-		stamen.material.color = stamenColor;
+		foreach (MeshRenderer stamen in stamens)
+		{
+			stamen.material.color = stamenColor;
+		}
 	}
 		
 	public void SetLeavesColor(Color leafColor)
@@ -85,7 +91,10 @@ public class Flori_Flower : MonoBehaviour {
 
 	public void SetStemColor(Color stemColor)
 	{
-		stem.material.color = stemColor;
+		foreach (MeshRenderer stem in stems) 
+		{
+			stem.material.color = stemColor;
+		}
 	}
 
 }

@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114392829913154864}
   - component: {fileID: 135863176854969334}
   m_Layer: 0
-  m_Name: Sunflower Seed
+  m_Name: Bell Seed
   m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692570841287200}
   m_LocalRotation: {x: 0.17420317, y: 0.17790534, z: 0.6810376, w: -0.68861514}
-  m_LocalPosition: {x: 5.98845, y: 1.47545, z: 0.6279497}
-  m_LocalScale: {x: 1, y: 1.00001, z: 1}
+  m_LocalPosition: {x: -1.354, y: 0.947, z: 0.303}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4760143073123838}
   - {fileID: 4412382389227034}
@@ -123,7 +123,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 042a8f3572f1ddf478741f1c2210bace, type: 2}
+  - {fileID: 2100000, guid: 61bb373c1b2e6f84fa8e615f27cdf931, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,7 +149,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692570841287200}
-  m_Mesh: {fileID: 4300000, guid: edfc22445dc6bcd46aaba108534298b5, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b1db66405d3e742ccb52558030c07793, type: 2}
 --- !u!54 &54683532096456204
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -178,7 +178,7 @@ MeshCollider:
   m_Convex: 1
   m_InflateMesh: 1
   m_SkinWidth: 0.00005
-  m_Mesh: {fileID: 4300000, guid: edfc22445dc6bcd46aaba108534298b5, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b1db66405d3e742ccb52558030c07793, type: 2}
 --- !u!114 &114046440167807364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,15 +190,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aabdaf365e74ed42ab56905bffccdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageOneHeightLimit: 0.4
-  stageTwoHeightLimit: 1
+  stageOneHeightLimit: 40
+  stageTwoHeightLimit: 80
   stageTwoReducer: 0.8
-  waterDropsToBloom: 5
-  flowerModel: {fileID: 1341620893350032, guid: 4fe1911cb91884844ab2eb6195148565,
+  waterDropsToBloom: 70
+  flowerModel: {fileID: 1717638713166256, guid: 004c17f225a0bdc4eab1d233f6949c2e,
     type: 2}
-  growthRate: 0.1
-  initialFlowerScale: 0.01
-  initialZAxisRotation: 180
+  growthRate: 7.39
+  initialFlowerScale: 0.1
+  initialZAxisRotation: -180
   inStageOneGrowth: 1
   inStageTwoGrowth: 0
 --- !u!114 &114058446562536588
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae55674e8656548f6a9df78e3067ff5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worth: 25
+  worth: 50
 --- !u!114 &114236797443184516
 MonoBehaviour:
   m_ObjectHideFlags: 1

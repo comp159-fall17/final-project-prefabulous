@@ -36,11 +36,14 @@ public class Flori_Seed : MonoBehaviour {
 	[Tooltip("The flower prefab the seed will sprout once watered.")]
 	public GameObject flowerModel;
 	[Tooltip("Rate at which this flower grows.")]
-	[Range(0.01f, 1f)]
+	[Range(0.01f, 10f)]
 	public float growthRate = 0.1f;
 	[Tooltip("Initial flower size when instantiated within the seed.")]
 	[Range(0.01f, 10f)]
 	public float initialFlowerScale = 1f;
+	[Tooltip("Rotation of flower when it is spawned within seed.")]
+	[Range(-180f, 180f)]
+	public float initialZAxisRotation = 0f;
 	[Tooltip("Flower is currently set to grow until its first height limit.")]
 	[HideInInspector] public bool inStageOneGrowth = true;
 	[Tooltip("Flower has grown to its first height limit and is set to grow until its second and final height limit.")]
@@ -81,7 +84,7 @@ public class Flori_Seed : MonoBehaviour {
 		Vector3 rotation = flower.transform.localRotation.eulerAngles;
 		rotation.x = 0;
 		rotation.y = 0;
-		rotation.z = 180;
+		rotation.z = initialZAxisRotation;
 		flower.transform.localRotation = Quaternion.Euler(rotation);
 
 	}
