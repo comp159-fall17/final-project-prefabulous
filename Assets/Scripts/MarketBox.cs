@@ -4,6 +4,7 @@ using UnityEngine;
 using VRTK.Controllables.PhysicsBased;
 
 public class MarketBox : MonoBehaviour {
+	
     [HideInInspector]
     public List<GameObject> inCollision;
 
@@ -14,14 +15,19 @@ public class MarketBox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (inCollision.Count > 0) {
+		
+        if (inCollision.Count > 0) 
+		{
             VanishItems();
         }
+
 	}
 
-    void VanishItems() {
+    void VanishItems() 
+	{
         List<GameObject> toBeDestroyed = new List<GameObject>();
-        foreach (GameObject go in inCollision) {
+        foreach (GameObject go in inCollision) 
+		{
             Sellable worth = go.GetComponent<Sellable>();
             if (worth != null)
             {
@@ -29,7 +35,8 @@ public class MarketBox : MonoBehaviour {
                 toBeDestroyed.Add(go);
             }
         }
-        foreach (GameObject go in toBeDestroyed) {
+        foreach (GameObject go in toBeDestroyed) 
+		{
             inCollision.Remove(go);
             Destroy(go);
         }

@@ -19,17 +19,18 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4823763039383718}
-  - component: {fileID: 95957025481674986}
+  - component: {fileID: 33628324961783430}
+  - component: {fileID: 23271826574754530}
+  - component: {fileID: 64742774595690960}
   - component: {fileID: 54152809236300738}
   - component: {fileID: 114195560085404790}
   - component: {fileID: 114474551900116946}
   - component: {fileID: 114686353174919584}
   - component: {fileID: 114329179847915398}
-  - component: {fileID: 114723598273221048}
   - component: {fileID: 114506048596802450}
-  - component: {fileID: 33628324961783430}
-  - component: {fileID: 23271826574754530}
-  - component: {fileID: 64742774595690960}
+  - component: {fileID: 64210903782235624}
+  - component: {fileID: 114723598273221048}
+  - component: {fileID: 114384675371550530}
   m_Layer: 0
   m_Name: Piggy Bank
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140129026781882}
   m_LocalRotation: {x: -0, y: 0.5145192, z: -0, w: 0.8574789}
-  m_LocalPosition: {x: -0.96900177, y: 0.92100143, z: -0.008}
+  m_LocalPosition: {x: -1.212, y: 0.883, z: 0.063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4698749571472384}
@@ -135,6 +136,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64210903782235624
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140129026781882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 1
+  m_SkinWidth: 0.03
+  m_Mesh: {fileID: 4300000, guid: 9c40e688f3a034f9e8600b24c938fad7, type: 3}
 --- !u!64 &64742774595690960
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -149,23 +164,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 9c40e688f3a034f9e8600b24c938fad7, type: 3}
---- !u!95 &95957025481674986
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1140129026781882}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 821158ae724ce854e920539f935295b8, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114195560085404790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,6 +199,23 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   startingMoney: 200
   fadeSpeed: 0.75
+--- !u!114 &114384675371550530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140129026781882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3ec35020e97714baf0b7f78f22e4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetTime: 30
+  overrideLocation: 0
+  overridePosition: {x: 1, y: 1, z: 1}
+  useGameObjectForRespawnLocation: 0
+  gameObjectForRespawn: {fileID: 0}
+  dropHeight: 1
 --- !u!114 &114474551900116946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,13 +305,11 @@ MonoBehaviour:
   disableDescription: 0
   descriptionPosition: {x: 0, y: 0, z: 0.1}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
-  textRotation: 40
   namePosition: {x: 0, y: 0.2, z: -4}
   infoPosition: {x: 0, y: 20, z: -2}
-  leftHandTextShift: {x: 0, y: 0, z: 0}
-  leftHandTextRotation: 0
-  doNotInvert: 1
   itemInfo: $1000
   showItemInfo: 1
   overrideDefaultBendAngle: 0
   bendAngle: -90
+  overrideFadeDistance: 0
+  fadeDistance: 0.5
