@@ -1,5 +1,5 @@
-# Flori
-Final Project for Prefabulous, LLC
+![Flori](Images/Flori%20Banner.png) <br>
+*Final Project for Prefabulous, LLC*
 
 
 ## Flori Mission Statement
@@ -25,7 +25,7 @@ Wander around your garden and grow the *most beautiful flowers* of all time. Sel
 
 Press down on the thumbsticks to teleport. Only when the teleport dots are green will you be able to teleport. Seeds can be planted in any of the empty pots and you may sell them or the flowers you grow in the box with this logo on it: 
 
-![Flori Logo](https://github.com/comp159-fall17/final-project-prefabulous/blob/master/Flori%20Logo.png)
+![Flori Logo](Images/Flori%20Logo.png)
 
 Buy more seeds from the little pouches on the Market Wall and don't forget to check your piggy bank for how much money you have! 
 
