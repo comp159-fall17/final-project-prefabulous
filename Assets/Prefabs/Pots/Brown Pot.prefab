@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114148268529723470}
   m_Layer: 0
   m_Name: Seed Snap
-  m_TagString: Untagged
+  m_TagString: Planter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404197456457498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8688297, y: 0.857, z: -0.3516468}
+  m_LocalPosition: {x: -0.8688297, y: 0.857, z: -0.203}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4107096453134256}
@@ -445,6 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42caf1de1a04b754ea9c285de31fa200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirt: {fileID: 1797185675473128}
+  wetDirt: {fileID: 2100000, guid: e285f01094a23496aae9a56d8afede43, type: 2}
+  wetTime: 5
 --- !u!135 &135334958443388128
 SphereCollider:
   m_ObjectHideFlags: 1
