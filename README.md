@@ -34,6 +34,29 @@ Now get going! The adventure awaits!
 ---
 ## Key Features
 
+| Issue #        | Feature      |
+| :-------------: |:-------------|
+| [5](https://github.com/comp159-fall17/final-project-prefabulous/issues/5)      | Watering Can reacts to rotation (pours or spills based on angle settings). |
+| [6](https://github.com/comp159-fall17/final-project-prefabulous/issues/6) | Many assets were found to make the Flori you see before your eyes. Attribution links to models can be found on the [Flori Wiki](https://github.com/comp159-fall17/final-project-prefabulous/wiki/Model-License-Credits)  |
+| [7](https://github.com/comp159-fall17/final-project-prefabulous/issues/7)      | Water level in can accurately updates with pouring and spilling.      |
+| [11](https://github.com/comp159-fall17/final-project-prefabulous/issues/11) | Flowers can be picked from planters and with good snap handles.     |
+| [12](https://github.com/comp159-fall17/final-project-prefabulous/issues/12) | Objects dropped into the Market Box are sold! Your personal account balance is incremented according to a value set in each object.     |
+| [15](https://github.com/comp159-fall17/final-project-prefabulous/issues/15) | User can teleport on designated pathways.  |
+| [18](https://github.com/comp159-fall17/final-project-prefabulous/issues/18) | Seeds are plantable in pots and the interaction is visually appealing and immersive. Seeds are held in the palm of your Oculus hand which further adds to the immersion. |
+| [23](https://github.com/comp159-fall17/final-project-prefabulous/issues/23) | Intro scene creates a good segway into the world of Flori, with a unique tutorial.  |
+| [24](https://github.com/comp159-fall17/final-project-prefabulous/issues/24) | UI System shows information on select objects when they are held at a set distance from the players eyes.  |
+| [28](https://github.com/comp159-fall17/final-project-prefabulous/issues/28) | Planters keeps track of seeds planted within, when they can be removed, and other important factors like the amount of water drops to bloom. |
+| [32](https://github.com/comp159-fall17/final-project-prefabulous/issues/32) | The seed stand provides an intuitive way of purchasing seeds from the market.  |
+| [35](https://github.com/comp159-fall17/final-project-prefabulous/issues/35) | Well is incredibly immersive - it detects when the watering can is submerged and quickly increments its water level. |
+| [41](https://github.com/comp159-fall17/final-project-prefabulous/issues/41) | All objects meant to snap into hand are optimized for player immersion.  |
+| [44](https://github.com/comp159-fall17/final-project-prefabulous/issues/44) | Chickens wander on a baked NavMesh and exhibit a very chickenesque beavior. Cluck!  |
+| [45](https://github.com/comp159-fall17/final-project-prefabulous/issues/45) | Dye bowls are incredible fun. Seed colors translate to bloom colors.  |
+| [52](https://github.com/comp159-fall17/final-project-prefabulous/issues/52) | Oh, what fun! Tune in to Flori FM, where our radio host DJOsvaldo plays all the classics you've never heard.  |
+| [53](https://github.com/comp159-fall17/final-project-prefabulous/issues/53) | Pot colors translate to stem colors!  |
+| [57](https://github.com/comp159-fall17/final-project-prefabulous/issues/57) | Our custom-made skybox is a peaceful component of the Florisphere.  |
+| [60](https://github.com/comp159-fall17/final-project-prefabulous/issues/60) | Important objects are never out of reach! Certain objets "respawn" when dropped too far away to reach.  |
+| [65](https://github.com/comp159-fall17/final-project-prefabulous/issues/65) | A savvy addition to our features list, a secret combo restarts the scene and another changes the level. |
+
 ---
 ## Team Rules
 
