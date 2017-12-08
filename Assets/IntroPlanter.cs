@@ -41,9 +41,18 @@ public class IntroPlanter : VRTK_SnapDropZone {
 		}
 		else if (seed.name == "Be Happy")
 		{
+			LockSeedInPlanter ();
 			GameController.Instance.OpenIntroPath ();
 		}
 
+	}
+
+	void LockSeedInPlanter()
+	{
+		if (seedInPlanter != null)
+		{
+			seedInPlanter.GetComponent<VRTK_InteractableObject> ().isGrabbable = false;
+		}
 	}
 
 	/// <summary>

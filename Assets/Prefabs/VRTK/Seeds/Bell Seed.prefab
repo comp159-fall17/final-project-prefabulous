@@ -283,6 +283,8 @@ MonoBehaviour:
   showItemInfo: 1
   overrideDefaultBendAngle: 0
   bendAngle: -90
+  overrideFadeDistance: 0
+  fadeDistance: 0.5
 --- !u!114 &114392829913154864
 MonoBehaviour:
   m_ObjectHideFlags: 1

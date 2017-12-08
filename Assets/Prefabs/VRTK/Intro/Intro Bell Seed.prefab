@@ -124,7 +124,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 61bb373c1b2e6f84fa8e615f27cdf931, type: 2}
+  - {fileID: 2100000, guid: fa756b232992781448908e45ad28eece, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -243,6 +243,8 @@ MonoBehaviour:
   showItemInfo: 1
   overrideDefaultBendAngle: 0
   bendAngle: -90
+  overrideFadeDistance: 1
+  fadeDistance: 0.85
 --- !u!114 &114288919717995060
 MonoBehaviour:
   m_ObjectHideFlags: 1

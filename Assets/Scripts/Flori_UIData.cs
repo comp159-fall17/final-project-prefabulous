@@ -31,6 +31,13 @@ public class Flori_UIData : MonoBehaviour {
 	[Range(-360f, 360f)]
 	public int bendAngle = -90;
 
+	[Header("Fading Distance")]
+	[Tooltip("If true, the default fade distance is overrided with the one below.")]
+	public bool overrideFadeDistance = false;
+	[Tooltip("The overridden distance that the text fades in at.")]
+	[Range(0.4f, 2f)]
+	public float fadeDistance = 0.5f;
+
 	// Set item info to a new string
 	public void SetItemDescription(string newDescription)
 	{
