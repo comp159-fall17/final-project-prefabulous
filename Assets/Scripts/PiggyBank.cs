@@ -78,7 +78,6 @@ public class PiggyBank : VRTK_ChildOfControllerGrabAttach {
     public void Spend(int amount) 
 	{
         money -= amount;
-        Debug.Log(_money);
     }
 
     /// <summary>
@@ -88,6 +87,5 @@ public class PiggyBank : VRTK_ChildOfControllerGrabAttach {
     public void Earn(int amount) 
 	{
         money += amount;
-        Debug.Log(_money);
     }
 }

@@ -930,27 +930,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114549428409526682, guid: 8fd6169372db849068f3990decc1325c,
-        type: 2}
-      propertyPath: displayDropZoneInEditor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1323794758731584, guid: 8fd6169372db849068f3990decc1325c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4538977245964590, guid: 8fd6169372db849068f3990decc1325c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4538977245964590, guid: 8fd6169372db849068f3990decc1325c, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4538977245964590, guid: 8fd6169372db849068f3990decc1325c, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1292992033603396, guid: 8fd6169372db849068f3990decc1325c, type: 2}
       propertyPath: m_Name
       value: Sunflower Dispenser
@@ -2813,6 +2792,7 @@ GameObject:
   - component: {fileID: 828582851}
   - component: {fileID: 828582853}
   - component: {fileID: 828582852}
+  - component: {fileID: 828582854}
   m_Layer: 0
   m_Name: Bell Flower Dispenser
   m_TagString: Untagged
@@ -2827,7 +2807,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 828582850}
-  m_LocalRotation: {x: -0.17420317, y: -0.17790534, z: -0.6810376, w: 0.68861514}
+  m_LocalRotation: {x: -0.18301266, y: -0.18301266, z: -0.6830127, w: 0.6830127}
   m_LocalPosition: {x: 0.023333222, y: 0.45719972, z: 0.35340047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2837,7 +2817,7 @@ Transform:
   - {fileID: 901811417}
   m_Father: {fileID: 228804426}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -28.832, y: -0.50600004, z: -89.23601}
+  m_LocalEulerAnglesHint: {x: -30, y: 0, z: -90}
 --- !u!82 &828582852
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2945,6 +2925,18 @@ MonoBehaviour:
   defaultSnappedInteractableObject: {fileID: 114260235929288126, guid: 8b7bb64a180f29d45bced91e12de201e,
     type: 2}
   sellPrice: 200
+--- !u!135 &828582854
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 828582850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.07
+  m_Center: {x: 0.03, y: 0, z: -0.015}
 --- !u!4 &844747371 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4138748675764148, guid: 4b73e3fd330a9e3438ee372a644c7086,
@@ -4361,11 +4353,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4088366043890476, guid: 217d3f57c9dc04d379e31964466484c1, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4161292179696224, guid: 217d3f57c9dc04d379e31964466484c1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1850398603304276, guid: 217d3f57c9dc04d379e31964466484c1, type: 2}
       propertyPath: m_IsActive

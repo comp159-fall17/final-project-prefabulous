@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4538977245964590}
   - component: {fileID: 114549428409526682}
   - component: {fileID: 82427403419360956}
+  - component: {fileID: 135914817669468834}
   m_Layer: 0
   m_Name: Dispenser
   m_TagString: Untagged
@@ -334,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292992033603396}
   m_LocalRotation: {x: -0.17420311, y: -0.17790528, z: -0.6810376, w: 0.68861514}
-  m_LocalPosition: {x: 5.9975, y: 1.3613, z: 0.9101}
+  m_LocalPosition: {x: 0.01730001, y: 0.5332999, z: 0.16530013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4631809705324756}
@@ -974,6 +975,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0.1, y: -0.1}
   m_UseGraphicAlpha: 1
+--- !u!135 &135914817669468834
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292992033603396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.07
+  m_Center: {x: 0.03, y: 0, z: -0.015}
 --- !u!222 &222013261920602054
 CanvasRenderer:
   m_ObjectHideFlags: 1
