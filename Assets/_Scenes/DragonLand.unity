@@ -1006,9 +1006,30 @@ Prefab:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 310a801db4431b3408a2792807e233c0, type: 2}
+    - target: {fileID: 4924757503602890, guid: 0bd7c201806c9b244b34c500318a8de0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bd7c201806c9b244b34c500318a8de0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1768457773 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1783040451245248, guid: 0bd7c201806c9b244b34c500318a8de0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1768457772}
+--- !u!65 &1768457774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768457773}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0999994, y: 0.5959879, z: 0.3013}
+  m_Center: {x: -1.4999998, y: 0.29799396, z: -0.10065}
 --- !u!1 &1901651261
 GameObject:
   m_ObjectHideFlags: 0
