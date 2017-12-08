@@ -196,7 +196,7 @@ MonoBehaviour:
   waterDropsToBloom: 20
   flowerModel: {fileID: 1341620893350032, guid: 4fe1911cb91884844ab2eb6195148565,
     type: 2}
-  growthRate: 0.1
+  growthRate: 0.04
   initialFlowerScale: 0.01
   initialZAxisRotation: 180
   inStageOneGrowth: 1

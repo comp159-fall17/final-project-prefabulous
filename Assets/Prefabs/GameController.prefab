@@ -275,6 +275,7 @@ MonoBehaviour:
   treesParent: {fileID: 0}
   pathwaysParent: {fileID: 0}
   treeFadeLimits: {x: 0.5, y: 2}
+  disappearTime: 4
   firstButtonPressed: 0
   secondButtonPressed: 0
 --- !u!114 &114481582812051554

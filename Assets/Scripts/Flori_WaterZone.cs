@@ -42,7 +42,8 @@ public class Flori_WaterZone : MonoBehaviour {
 		GetComponentInChildren<Flori_Planter> ().SetCanInRange (false);
 	}
 
-    void DryUpDirt() {
+    void DryUpDirt() 
+	{
         if (TimeElapsed() > wetTime) {
             dirt.GetComponent<MeshRenderer>().material = dryDirt;
         }

@@ -14,8 +14,9 @@ public class GameController : MonoBehaviour {
 	[Tooltip("The GameObject named 'Intro Pathways'.")]
 	public GameObject pathwaysParent;
 	[Tooltip("Limits for randomly fading trees in intro.")]
-	[Range(0.1f, 5f)]
-	public Vector2 treeFadeLimits = new Vector2(0.05f, 0.4f);
+	public Vector2 treeFadeLimits = new Vector2(0.05f, 2f);
+	[Tooltip("The delay for trees to disappear after the 'Play Flori' seed is planted")]
+	public float disappearTime = 4f;
 
 	[HideInInspector] public bool firstButtonPressed = false;
 	[HideInInspector] public bool secondButtonPressed = false;
@@ -83,7 +84,7 @@ public class GameController : MonoBehaviour {
 
 	IEnumerator DisableTrees()
 	{
-		yield return new WaitForSeconds (5f);
+		yield return new WaitForSeconds (disappearTime);
 		treesParent.SetActive (false);
 	}
 
