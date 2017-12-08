@@ -29,7 +29,6 @@ public class Dispenser : VRTK_SnapDropZone {
 			Destroy (snappedObject);
 		}
 
-		Debug.Log ("Can buy seed on unsnap" + canBuySeed);
 		if (occured >= 2 && PiggyBank.Instance.money >= sellPrice)
         {
             PiggyBank.Instance.Spend(sellPrice);

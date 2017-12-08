@@ -60,7 +60,6 @@ public class GameController : MonoBehaviour {
 		{
 			if (thirdButtonPressed)
 			{
-				Debug.Log (SceneManager.GetActiveScene().buildIndex);
 				switch (SceneManager.GetActiveScene().buildIndex)
 				{
 				case 0:
