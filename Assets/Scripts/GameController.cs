@@ -78,6 +78,13 @@ public class GameController : MonoBehaviour {
 			float interval = Random.Range (treeFadeLimits.x, treeFadeLimits.y);
 			VAP.SetOpacity (tree, 0f, interval);
 		}
+		StartCoroutine ("DisableTrees");
+	}
+
+	IEnumerator DisableTrees()
+	{
+		yield return new WaitForSeconds (5f);
+		treesParent.SetActive (false);
 	}
 
 	public void LeaveTheGarden()
