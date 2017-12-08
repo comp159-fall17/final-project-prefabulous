@@ -193,7 +193,7 @@ MonoBehaviour:
   stageOneHeightLimit: 0.4
   stageTwoHeightLimit: 1
   stageTwoReducer: 0.8
-  waterDropsToBloom: 5
+  waterDropsToBloom: 20
   flowerModel: {fileID: 1341620893350032, guid: 4fe1911cb91884844ab2eb6195148565,
     type: 2}
   growthRate: 0.1
