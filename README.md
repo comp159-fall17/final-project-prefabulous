@@ -37,7 +37,7 @@ Now get going! The adventure awaits!
 | Issue #        | Feature      |
 | :-------------: |:-------------|
 | [5](https://github.com/comp159-fall17/final-project-prefabulous/issues/5)      | Watering Can reacts to rotation (pours or spills based on angle settings). |
-| [6](https://github.com/comp159-fall17/final-project-prefabulous/issues/6) | Many assets were found to make the Flori you see before your eyes. Attribution links to models can be found on the [Flori Wiki](https://github.com/comp159-fall17/final-project-prefabulous/wiki/Model-License-Credits)  |
+| [6](https://github.com/comp159-fall17/final-project-prefabulous/issues/6) | Many assets were found to make the Flori you see before your eyes. Attribution links to models can be found on the [Flori Wiki](https://github.com/comp159-fall17/final-project-prefabulous/wiki/Model-License-Credits).  |
 | [7](https://github.com/comp159-fall17/final-project-prefabulous/issues/7)      | Water level in can accurately updates with pouring and spilling.      |
 | [11](https://github.com/comp159-fall17/final-project-prefabulous/issues/11) | Flowers can be picked from planters and with good snap handles.     |
 | [12](https://github.com/comp159-fall17/final-project-prefabulous/issues/12) | Objects dropped into the Market Box are sold! Your personal account balance is incremented according to a value set in each object.     |
