@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
 
 	[HideInInspector] public bool firstButtonPressed = false;
 	[HideInInspector] public bool secondButtonPressed = false;
+	[HideInInspector] public bool thirdButtonPressed = false;
 
 	List<GameObject> introTrees = new List<GameObject>();
 	List<GameObject> introPathways = new List<GameObject>();
@@ -53,11 +54,29 @@ public class GameController : MonoBehaviour {
 	}
 
 
-	public void RestartScene()
+	public void ManageSceneLoading()
 	{
 		if (firstButtonPressed && secondButtonPressed) 
 		{
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+			if (thirdButtonPressed)
+			{
+				switch (SceneManager.GetActiveScene().buildIndex)
+				{
+				case 0:
+					SceneManager.LoadScene (1);
+					break;
+				case 1:
+					SceneManager.LoadScene (0);
+					break;
+				default:
+					Debug.Log ("Scene Manager switch statement defaulting");
+					break;
+				}
+			}
+			else
+			{
+				SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+			}
 		}
 	}
 
@@ -69,6 +88,11 @@ public class GameController : MonoBehaviour {
 	public void SetSecondButtonPressed(bool state)
 	{
 		secondButtonPressed = state;
+	}
+
+	public void SetThirdButtonPressed(bool state)
+	{
+		thirdButtonPressed = state;
 	}
 
 	public void OpenIntroPath()

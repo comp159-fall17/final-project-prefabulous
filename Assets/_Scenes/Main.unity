@@ -14664,6 +14664,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2122730389}
     m_Modifications:
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4179284080107870, guid: b2422a331fe1eff40ae3c2ec94fa8d61, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14701,6 +14711,66 @@ Prefab:
       propertyPath: OnButtonOnePressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1573085298}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnButtonOnePressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ManageSceneLoading
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1573085298}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetThirdButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1573085298}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetThirdButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649575611484460, guid: b2422a331fe1eff40ae3c2ec94fa8d61,
+        type: 2}
+      propertyPath: OnTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2422a331fe1eff40ae3c2ec94fa8d61, type: 2}
   m_IsPrefabParent: 0

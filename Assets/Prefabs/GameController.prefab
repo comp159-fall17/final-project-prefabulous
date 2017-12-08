@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treesParent: {fileID: 0}
   pathwaysParent: {fileID: 0}
-  treeFadeLimits: {x: 0.5, y: 2}
+  treeFadeLimits: {x: 2, y: 3}
   disappearTime: 3
   firstButtonPressed: 0
   secondButtonPressed: 0
