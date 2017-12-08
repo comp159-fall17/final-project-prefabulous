@@ -27,6 +27,10 @@ public class ItemDescriptionFader : MonoBehaviour {
 		{
 			ExcludeInfoText ();
 		}
+		if (GetComponentInParent<Flori_UIData>() != null && GetComponentInParent<Flori_UIData>().overrideFadeDistance)
+		{
+			activeDistance = GetComponentInParent<Flori_UIData> ().fadeDistance;
+		}
 
 	}
 	
