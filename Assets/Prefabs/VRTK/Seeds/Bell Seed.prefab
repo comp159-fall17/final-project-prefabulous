@@ -277,14 +277,8 @@ MonoBehaviour:
   disableDescription: 1
   descriptionPosition: {x: -1, y: 0, z: 0}
   textScale: {x: 0.005, y: 0.005, z: 0.01}
-  horizontalRotation: 118
-  verticalRotation: 212
   namePosition: {x: 0, y: -10, z: 5}
   infoPosition: {x: 0, y: 15, z: 0}
-  leftHandTextShift: {x: 0, y: 0, z: 0}
-  leftHandHorizontalTextRotation: 0
-  leftHandVerticalTextRotation: 0
-  doNotInvert: 0
   itemInfo: Quit Game
   showItemInfo: 1
   overrideDefaultBendAngle: 0

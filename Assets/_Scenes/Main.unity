@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19235794, g: 0.59281975, b: 0.77697575, a: 1}
+  m_IndirectSpecularColor: {r: 0.19238852, g: 0.5928397, b: 0.77375835, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1793,10 +1793,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1174623716442986, guid: 3eaa34192481f9d4ea5f02d7944f899a, type: 2}
-      propertyPath: m_TagString
-      value: Planter
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eaa34192481f9d4ea5f02d7944f899a, type: 2}
   m_IsPrefabParent: 0
@@ -3405,10 +3401,6 @@ Prefab:
     - target: {fileID: 4927717744298758, guid: 6ac391aedcef13e4b9b2a345c6398063, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976886549776012, guid: 6ac391aedcef13e4b9b2a345c6398063, type: 2}
-      propertyPath: m_TagString
-      value: Planter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac391aedcef13e4b9b2a345c6398063, type: 2}
@@ -6025,10 +6017,6 @@ Prefab:
     - target: {fileID: 4335125545489922, guid: c38b1e102b848074bb75d83744e2aac6, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1590926865879234, guid: c38b1e102b848074bb75d83744e2aac6, type: 2}
-      propertyPath: m_TagString
-      value: Planter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38b1e102b848074bb75d83744e2aac6, type: 2}

@@ -430,6 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42caf1de1a04b754ea9c285de31fa200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirt: {fileID: 1401259549812166}
+  wetDirt: {fileID: 2100000, guid: e285f01094a23496aae9a56d8afede43, type: 2}
+  wetTime: 5
 --- !u!114 &114616478414613166
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114123259432301268}
   m_Layer: 0
   m_Name: Seed Snap
-  m_TagString: Untagged
+  m_TagString: Planter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -445,6 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42caf1de1a04b754ea9c285de31fa200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirt: {fileID: 1300493836727370}
+  wetDirt: {fileID: 2100000, guid: e285f01094a23496aae9a56d8afede43, type: 2}
+  wetTime: 5
 --- !u!135 &135400771219602070
 SphereCollider:
   m_ObjectHideFlags: 1
