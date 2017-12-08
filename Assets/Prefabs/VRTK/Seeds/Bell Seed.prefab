@@ -57,10 +57,11 @@ GameObject:
   - component: {fileID: 114411515031895442}
   - component: {fileID: 54683532096456204}
   - component: {fileID: 114756572186248946}
+  - component: {fileID: 135863176854969334}
   - component: {fileID: 114046440167807364}
   - component: {fileID: 114058446562536588}
   - component: {fileID: 114392829913154864}
-  - component: {fileID: 135863176854969334}
+  - component: {fileID: 114295218512536730}
   m_Layer: 0
   m_Name: Bell Seed
   m_TagString: Seed
@@ -90,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481660225070168}
   m_LocalRotation: {x: 0.9914449, y: -0.13052616, z: -0, w: 0}
-  m_LocalPosition: {x: -0.04, y: 0.01, z: -0.04}
+  m_LocalPosition: {x: -1.2, y: -0.22, z: -0.93}
   m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 4338261731194350}
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579191453471270}
   m_LocalRotation: {x: 0.9914449, y: -0.13052616, z: 0, w: 0}
-  m_LocalPosition: {x: 0.018, y: 0.01, z: -0.04}
+  m_LocalPosition: {x: 0.37, y: -0.52, z: -0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4338261731194350}
@@ -262,6 +263,32 @@ MonoBehaviour:
   allowedUseControllers: 0
   objectHighlighter: {fileID: 0}
   usingState: 0
+--- !u!114 &114295218512536730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692570841287200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64201641266d8ba47a343cd190968b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableDescription: 1
+  descriptionPosition: {x: -1, y: 0, z: 0}
+  textScale: {x: 0.005, y: 0.005, z: 0.01}
+  horizontalRotation: 118
+  verticalRotation: 212
+  namePosition: {x: 0, y: -10, z: 5}
+  infoPosition: {x: 0, y: 15, z: 0}
+  leftHandTextShift: {x: 0, y: 0, z: 0}
+  leftHandHorizontalTextRotation: 0
+  leftHandVerticalTextRotation: 0
+  doNotInvert: 0
+  itemInfo: Quit Game
+  showItemInfo: 1
+  overrideDefaultBendAngle: 0
+  bendAngle: -90
 --- !u!114 &114392829913154864
 MonoBehaviour:
   m_ObjectHideFlags: 1

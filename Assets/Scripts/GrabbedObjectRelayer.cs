@@ -44,7 +44,7 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 			Flori_UIData UIData = objectToGrab.GetComponent<Flori_UIData>();
 			if (UIData != null && !UIData.disableDescription) 
 			{
-				CreateItemText (objectToGrab);	
+				CreateItemText (objectToGrab, UIData);	
 			}
 
 		}
@@ -58,38 +58,19 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 	}
 
 	// Creates a world space text UI that shows the object's name
-	void CreateItemText(GameObject forObject)
+	void CreateItemText(GameObject forObject, Flori_UIData UIData)
 	{
 		GameObject itemDescription = Instantiate (itemDescriptionPrefab, forObject.transform);
 		itemDescription.transform.localPosition = GetDescriptionPosition (itemDescription);
 		itemDescription.transform.SetGlobalScale (GetTextScale(itemDescription));
 
-		Flori_UIData UIData = itemDescription.GetComponentInParent<Flori_UIData> ();
-
 		HandleTextBending (UIData, itemDescription);
-
-		if (leftHandGrabbing)
-		{
-			if (!UIData.doNotInvert)
-			{
-				Debug.Log ("Inverting text");
-				RotateText (itemDescription, 180f);
-			}
-			RotateText (itemDescription, UIData.leftHandTextRotation);
-			ShiftText (itemDescription, UIData.leftHandTextShift);
-		}
-
-		if (UIData != null) RotateText (itemDescription, UIData.textRotation);
-
 		AssignComponentsOf (itemDescription);
 
 		itemInfo.transform.localPosition = GetInfoPosition (itemInfo.gameObject.transform.parent.gameObject);
 		itemName.transform.localPosition = GetNamePosition (itemName.gameObject.transform.parent.gameObject);
 
-		if (itemInfo.GetComponentInParent<Flori_UIData> () != null)
-		{
-			itemInfo.text = UIData.itemInfo;
-		}
+		itemInfo.text = UIData.itemInfo;
 		itemName.text = forObject.name;
 
 		currentItemDescription = itemDescription;
@@ -106,116 +87,25 @@ public class GrabbedObjectRelayer : VRTK_InteractGrab {
 
 	Vector3 GetDescriptionPosition(GameObject text)
 	{
-		try 
-		{
-			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
-			if (!leftHandGrabbing || UIData.doNotInvert) 
-			{
-				return UIData.descriptionPosition;
-			}
-			else
-			{
-				Vector3 textPosition = UIData.descriptionPosition;
-				textPosition.z *= -1f;
-				return textPosition;
-			}
-		} 
-		catch 
-		{
-			if (!leftHandGrabbing) 
-			{
-				return new Vector3 (0f, -0.0f, -0.7f);
-			}
-			else
-			{
-				return new Vector3 (0f, -0.0f, 0.7f);
-			}
-		}
+		return text.GetComponentInParent<Flori_UIData>().descriptionPosition;
 	}
 
 	// Tries to retrieve and return Flori_UIData scale variable
 	Vector3 GetTextScale(GameObject text)
 	{
-		try 
-		{
-			return text.GetComponentInParent<Flori_UIData>().textScale;
-		} 
-		catch 
-		{
-			return new Vector3 (0.005f, 0.005f, 0.01f);
-		}
+		return text.GetComponentInParent<Flori_UIData>().textScale;
 	}
 
 	// Tries to retrieve and return Flori_UIData position variable
 	Vector3 GetNamePosition(GameObject text)
 	{
-		try 
-		{
-			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
-			if (!leftHandGrabbing || UIData.doNotInvert) 
-			{
-				return UIData.namePosition;
-			}
-			else
-			{
-				Vector3 textPosition = UIData.namePosition;
-				textPosition.z *= -1f;
-				return textPosition;
-			}
-		} 
-		catch 
-		{
-			if (!leftHandGrabbing) 
-			{
-				return new Vector3 (0f, -20f, -0.5f);
-			}
-			else
-			{
-				return new Vector3 (0f, -20f, 0.5f);
-			}
-		}
+		return text.GetComponentInParent<Flori_UIData>().namePosition;
 	}
 
 	// Tries to retrieve and return Flori_UIData position variable
 	Vector3 GetInfoPosition(GameObject text)
 	{
-		try 
-		{
-			Flori_UIData UIData = text.GetComponentInParent<Flori_UIData>();
-			if (!leftHandGrabbing || UIData.doNotInvert) 
-			{
-				return UIData.infoPosition;
-			}
-			else
-			{
-				Vector3 textPosition = UIData.infoPosition;
-				textPosition.z *= -1f;
-				return textPosition;
-			}
-		} 
-		catch 
-		{
-			if (!leftHandGrabbing) 
-			{
-				return new Vector3 (0f, -0.4f, -0.7f);
-			}
-			else
-			{
-				return new Vector3 (0f, -0.4f, 0.7f);
-			}
-		}
-	}
-
-	/// <summary>
-	/// Rotate GameObject (meant for description objects) by degrees and in clockwise direction by default.
-	/// </summary>
-	/// <param name="description">UI Text Description to rotate.</param>
-	/// <param name="direction">Clockwise by default at -1.</param>
-	void RotateText(GameObject description, float degrees, int direction = -1)
-	{
-		Vector3 descriptionRotation = description.transform.eulerAngles;
-		descriptionRotation.y += direction * degrees;
-		description.transform.eulerAngles = descriptionRotation;
+		return text.GetComponentInParent<Flori_UIData>().infoPosition;
 	}
 
 	/// <summary>

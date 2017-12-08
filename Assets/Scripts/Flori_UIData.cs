@@ -11,24 +11,12 @@ public class Flori_UIData : MonoBehaviour {
 	public Vector3 descriptionPosition;
 	[Tooltip("Global (to parent) scale of UI text.")]
 	public Vector3 textScale = new Vector3(0.005f, 0.005f, 0.01f);
-	[Tooltip("Additional rotation about object in clockwise direction.")]
-	[Range(-360f, 360f)]
-	public float textRotation;
 
 	[Header("Text Properties")]
 	[Tooltip("Local (to parent) position of UI text object name.")]
 	public Vector3 namePosition;
 	[Tooltip("Local (to parent) position of UI text object info.")]
 	public Vector3 infoPosition;
-
-	[Header("Left-Handed Text Properties")]
-	[Tooltip("Position shift for text object when picked up with left hand")]
-	public Vector3 leftHandTextShift;
-	[Tooltip("Rotation angle of text from right hand in clockwise direction.")]
-	[Range(-360f, 360f)]
-	public float leftHandTextRotation;
-	[Tooltip("Global (to parent) scale of UI text object info.")]
-	public bool doNotInvert = true;
 
 	[Header("UI Information")]
 	[Tooltip("Information for UI to display.")]

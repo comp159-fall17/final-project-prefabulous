@@ -41,6 +41,7 @@ public class ItemDescriptionFader : MonoBehaviour {
 			StartCoroutine ("FadeTextOut");
 		}
 
+		transform.rotation = Camera.main.transform.rotation;
 
 	}
 
