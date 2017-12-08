@@ -1,4 +1,3 @@
- 
 # Flori
 Final Project for Prefabulous, LLC
 
@@ -15,6 +14,27 @@ Luther Burbank once said,
 Furthermore, Webster's Dictionary defines Flori as:
 > Flori: An authentic, *visceral* gardening experience in VIRTUAL REALITY.
 
+## Summary
+
+Enter Flori, where the only weapon you wield is a watering can and the pureness of your heart. 
+Guns? Swords? *Mini-nukes*? You won't need those here. <br>
+
+Wander around your garden and grow the *most beautiful flowers* of all time. Sell them at the market or keep them closeby and enjoy your pristine, visceral surroundings.
+
+## How to Play
+
+Press down on the thumbsticks to teleport. Only when the teleport dots are green will you be able to teleport. Seeds can be planted in any of the empty pots and you may sell them or the flowers you grow in the box with this logo on it: 
+
+![GitHub Logo](/images/logo.png)
+
+Buy more seeds from the little pouches on the Market Wall and don't forget to check your piggy bank for how much money you have! 
+
+Now get going! The adventure awaits!
+
+---
+## Key Features
+
+---
 ## Team Rules
 
 * Give your all! This is going to be awesome and, didn't we mention, visceral!
