@@ -272,6 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8338b6a15e46575489cf07f91b48f702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treesParent: {fileID: 0}
+  pathwaysParent: {fileID: 0}
+  treeFadeLimits: {x: 0.5, y: 2}
   firstButtonPressed: 0
   secondButtonPressed: 0
 --- !u!114 &114481582812051554
