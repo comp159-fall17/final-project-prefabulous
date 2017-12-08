@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour {
 		{
 			if (thirdButtonPressed)
 			{
+				Debug.Log (SceneManager.GetActiveScene().buildIndex);
 				switch (SceneManager.GetActiveScene().buildIndex)
 				{
 				case 0:
@@ -78,6 +79,15 @@ public class GameController : MonoBehaviour {
 				SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 			}
 		}
+	}
+
+	void Update() {
+
+		if (Input.GetKeyDown (KeyCode.F)) 
+		{
+			SceneManager.LoadScene (0);
+		}
+
 	}
 
 	public void SetFirstButtonPressed(bool state)
