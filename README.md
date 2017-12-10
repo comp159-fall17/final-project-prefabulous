@@ -19,7 +19,7 @@ Furthermore, Webster's Dictionary defines Flori as:
 Enter Flori, where the only weapon you wield is a watering can and the pureness of your heart. 
 Guns? Swords? *Mini-nukes*? You won't need those here. <br>
 
-Wander around your garden and grow the *most beautiful flowers* of all time. Sell them at the market or keep them closeby and enjoy your pristine, visceral surroundings.
+Wander around your garden and grow the *most beautiful flowers* of all time. Sell them at the market or keep them close-by and enjoy your pristine, visceral surroundings.
 
 ## How to Play
 
@@ -49,7 +49,7 @@ Now get going! The adventure awaits!
 | [32](https://github.com/comp159-fall17/final-project-prefabulous/issues/32) | The seed stand provides an intuitive way of purchasing seeds from the market.  |
 | [35](https://github.com/comp159-fall17/final-project-prefabulous/issues/35) | Well is incredibly immersive - it detects when the watering can is submerged and quickly increments its water level. |
 | [41](https://github.com/comp159-fall17/final-project-prefabulous/issues/41) | All objects meant to snap into hand are optimized for player immersion.  |
-| [44](https://github.com/comp159-fall17/final-project-prefabulous/issues/44) | Chickens wander on a baked NavMesh and exhibit a very chickenesque beavior. Cluck!  |
+| [44](https://github.com/comp159-fall17/final-project-prefabulous/issues/44) | Chickens wander on a baked NavMesh and exhibit a very chickenesque behavior. Cluck!  |
 | [45](https://github.com/comp159-fall17/final-project-prefabulous/issues/45) | Dye bowls are incredible fun. Seed colors translate to bloom colors.  |
 | [52](https://github.com/comp159-fall17/final-project-prefabulous/issues/52) | Oh, what fun! Tune in to Flori FM, where our radio host DJOsvaldo plays all the classics you've never heard.  |
 | [53](https://github.com/comp159-fall17/final-project-prefabulous/issues/53) | Pot colors translate to stem colors!  |
