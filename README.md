@@ -55,7 +55,7 @@ Now get going! The adventure awaits!
 | [53](https://github.com/comp159-fall17/final-project-prefabulous/issues/53) | Pot colors translate to stem colors!  |
 | [56](https://github.com/comp159-fall17/final-project-prefabulous/issues/56) | There are two gorgeous flower models, each with custom seed and properties.  |
 | [57](https://github.com/comp159-fall17/final-project-prefabulous/issues/57) | Our custom-made skybox is a peaceful component of the Florisphere.  |
-| [60](https://github.com/comp159-fall17/final-project-prefabulous/issues/60) | Important objects are never out of reach! Certain objets "respawn" when dropped too far away to reach.  |
+| [60](https://github.com/comp159-fall17/final-project-prefabulous/issues/60) | Important objects are never out of reach! Certain objects "respawn" when dropped too far away to reach.  |
 | [65](https://github.com/comp159-fall17/final-project-prefabulous/issues/65) | A savvy addition to our features list, a secret combo restarts the scene and another changes the level. |
 
 ---
