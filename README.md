@@ -31,6 +31,8 @@ Buy more seeds from the little pouches on the Market Wall and don't forget to ch
 
 Now get going! The adventure awaits!
 
+[![FloriVR Demo](Images/Flori%20Demo.png)](https://www.youtube.com/watch?v=PBZzeV47oR8&t) 
+
 ---
 ## Key Features
 
